@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rapicreditos</title>
+		<link rel="stylesheet" href="./public/css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<!-- HEADER RESPONSIVO -->
+		<header>
+			<nav class="navbar navbar-expand-md navbar-dark container-fluid">
+				<div
+					class="nav-wrapper d-flex w-100 align-items-center justify-content-between px-3"
+				>
+					<!-- Logo -->
+					<!-- LOGO -->
+					<a class="navbar-brand" href="#">
+						<div class="logo-container">
+							<img
+								src="/assets/rapicreditos.png.jpg"
+								alt="Logo RapiCréditos"
+								class="logo img-fluid"
+							/>
+						</div>
+					</a>
+
+					<!-- Boton -->
+					<!-- BOTÓN HAMBURGUESA -->
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#mainNavbar"
+						aria-controls="mainNavbar"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+
+				<!-- ENLACES -->
+				<div
+					class="collapse navbar-collapse justify-content-end px-3"
+					id="mainNavbar"
+				>
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#"
+								>Inicio</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./public/contacto.html"
+								>Contacto</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./public/login.html"
+								>Inicia sesión</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./public/signup.html"
+								>Registrarse</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./interfazAdmin.html"
+								>Gestion de clientes</a
+							>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Sección Hero con fondo parallax -->
+		<section class="parallax-bg">
+			<div class="overlay">
+				<div class="hero-content text-center text-white">
+					<h1>Tu crédito aprobado en minutos</h1>
+					<p class="lead">
+						Rápido, seguro y 100% online con Rapicréditos
+					</p>
+					<a href="#simulador" class="btn btn-primary mt-4"
+						>Simulá tu préstamo</a
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- CONTENIDO PRINCIPAL -->
+		<main class="container mt-5">
+			<h2 class="main-title" data-aos="fade-down">
+				Conocé nuestros créditos
+			</h2>
+
+			<!-- Sección de Cards -->
+			<div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+				<div class="col" data-aos="fade-up">
+					<div class="card card-credito h-100">
+						<div class="card-body">
+							<i class="bi bi-person card-icon"></i>
+							<h5 class="card-title">Crédito Personal</h5>
+							<p class="card-text">
+								Obtené hasta $1.000.000 en 24 cuotas fijas.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col" data-aos="fade-up" data-aos-delay="100">
+					<div class="card card-credito h-100">
+						<div class="card-body">
+							<i class="bi bi-car-front card-icon"></i>
+							<h5 class="card-title">Crédito Automotor</h5>
+							<p class="card-text">
+								Financiá tu próximo auto con tasas competitivas.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col" data-aos="fade-up" data-aos-delay="200">
+					<div class="card card-credito h-100">
+						<div class="card-body">
+							<i class="bi bi-briefcase card-icon"></i>
+							<h5 class="card-title">Crédito Emprendedor</h5>
+							<p class="card-text">
+								Impulsá tu negocio con respaldo financiero
+								inmediato.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Beneficios -->
+			<h2 class="main-title" data-aos="fade-down">¿Por qué elegirnos?</h2>
+			<div class="row text-center mb-5">
+				<div class="col-md-4" data-aos="zoom-in">
+					<div class="beneficio-icono">💼</div>
+					<h5>Aprobación rápida</h5>
+					<p>Solicitá online y recibí respuesta en minutos.</p>
+				</div>
+				<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+					<div class="beneficio-icono">🔒</div>
+					<h5>100% seguro</h5>
+					<p>Tus datos están protegidos con encriptación avanzada.</p>
+				</div>
+				<div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+					<div class="beneficio-icono">📈</div>
+					<h5>Planes flexibles</h5>
+					<p>Elegí la mejor cuota que se adapte a vos.</p>
+				</div>
+			</div>
+
+			<!-- NUEVA SECCIÓN: Cómo funciona -->
+			<h2 class="main-title" data-aos="fade-down">
+				¿Cómo funciona Rapicréditos?
+			</h2>
+			<div class="row text-center mb-5">
+				<div class="col-md-4" data-aos="fade-up">
+					<i class="bi bi-person-lines-fill beneficio-icono"></i>
+					<h5>1. Completá tu solicitud</h5>
+					<p>Llená el formulario online con tus datos en minutos.</p>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+					<i class="bi bi-shield-check beneficio-icono"></i>
+					<h5>2. Evaluamos tu perfil</h5>
+					<p>
+						Analizamos tu información y validamos tus datos en
+						tiempo real.
+					</p>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+					<i class="bi bi-cash-stack beneficio-icono"></i>
+					<h5>3. Recibí el dinero</h5>
+					<p>
+						Una vez aprobado, transferimos el dinero directamente a
+						tu cuenta.
+					</p>
+				</div>
+			</div>
+
+			<!-- NUEVA SECCIÓN: Seguridad y respaldo -->
+			<section class="seguridad-respaldo mb-5" data-aos="fade-up">
+				<h2 class="main-title">Seguridad y transparencia</h2>
+				<p class="text-center mx-auto">
+					En Rapicréditos utilizamos tecnología de cifrado para
+					proteger tus datos. Además, estamos registrados y regulados
+					por organismos oficiales para que tu experiencia sea 100%
+					segura y confiable.
+				</p>
+				<div class="row mt-4 justify-content-center text-center">
+					<div class="col-md-4 mb-3">
+						<i class="bi bi-shield-lock-fill seguridad-icon"></i>
+						<h5 class="mt-2 fw-semibold">
+							Protección de datos personales
+						</h5>
+					</div>
+					<div class="col-md-4 mb-3">
+						<i class="bi bi-bank seguridad-icon"></i>
+						<h5 class="mt-2 fw-semibold">
+							Envíos bancarios certificados
+						</h5>
+					</div>
+					<div class="col-md-4 mb-3">
+						<i class="bi bi-headset seguridad-icon"></i>
+						<h5 class="mt-2 fw-semibold">Atención personalizada</h5>
+					</div>
+				</div>
+			</section>
+
+			<!-- Testimonios (Carrusel) -->
+			<h2 class="main-title" data-aos="fade-down">
+				Lo que dicen nuestros clientes
+			</h2>
+			<div data-aos="fade-up">
+				<div
+					id="carouselTestimonios"
+					class="carousel slide testimonios-carousel mb-5"
+					data-aos="zoom-in"
+					data-bs-ride="carousel"
+					data-bs-interval="4000"
+				>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<blockquote>
+								“Con RapiCréditos pude pagar mis deudas sin
+								salir de casa.”
+								<footer class="blockquote-footer">
+									María G.
+								</footer>
+							</blockquote>
+						</div>
+						<div class="carousel-item">
+							<blockquote>
+								“Excelente atención y tasas razonables. Lo
+								recomiendo.”
+								<footer class="blockquote-footer">
+									Julián R.
+								</footer>
+							</blockquote>
+						</div>
+						<div class="carousel-item">
+							<blockquote>
+								“Pedí un préstamo para mi negocio y me lo
+								aprobaron en horas.”
+								<footer class="blockquote-footer">
+									Lucía T.
+								</footer>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2 class="main-title" id="simulador" data-aos="fade-down">
+				Simulá tu cuota
+			</h2>
+			<p
+				class="text-center mb-4"
+				style="max-width: 600px; margin: 0 auto"
+			>
+				Ingresá el monto que necesitás y la cantidad de cuotas para ver
+				un estimado de tu pago mensual. La tasa de interés aplicada es
+				fija y puede variar según el perfil crediticio.
+			</p>
+
+			<div class="d-flex justify-content-center">
+				<form
+					class="calculadora-form shadow-sm"
+					style="width: 100%; max-width: 500px"
+					data-aos="fade-right"
+					data-aos-delay="100"
+					id="formSimulador"
+				>
+					<div class="mb-3">
+						<label for="monto" class="form-label"
+							>Monto solicitado ($)</label
+						>
+						<input
+							type="number"
+							class="form-control"
+							id="monto"
+							placeholder="Ej: 50000"
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="cuotas" class="form-label"
+							>Cantidad de cuotas</label
+						>
+						<select class="form-select" id="cuotas">
+							<option value="" disabled selected>
+								Elegí cantidad de cuotas
+							</option>
+							<option value="6">6 cuotas</option>
+							<option value="12">12 cuotas</option>
+							<option value="18">18 cuotas</option>
+							<option value="24">24 cuotas</option>
+						</select>
+					</div>
+					<div class="text-center">
+						<button
+							type="submit"
+							class="btn btn-primary"
+							id="calcular-cuota"
+						>
+							Calcular
+						</button>
+					</div>
+					<div
+						id="errorMensaje"
+						class="error-mensaje text-danger mt-3 d-none"
+					></div>
+				</form>
+			</div>
+
+			<div
+				id="resultadoCuota"
+				class="mt-4 bg-white p-3 rounded shadow-sm"
+			>
+				<h5>Detalle del cálculo</h5>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						Monto solicitado: <span id="resMonto"></span>
+					</li>
+					<li class="list-group-item">
+						Cantidad de cuotas: <span id="resCuotas"></span>
+					</li>
+					<li class="list-group-item">
+						Tasa de interés anual: <span id="resTasa"></span>
+					</li>
+					<li class="list-group-item">
+						Cuota mensual estimada: <span id="resCuota"></span>
+					</li>
+					<li class="list-group-item">
+						Total a pagar: <span id="resTotal"></span>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-container">
+				<!-- Enlaces -->
+				<nav
+					class="footer-section footer-links"
+					aria-label="Enlaces del pie de página"
+				>
+					<a href="./public/terminos.html">Términos y Condiciones</a>
+					<a href="#">Ayuda</a>
+					<a href="./public/faqs.html">Preguntas Frecuentes</a>
+				</nav>
+
+				<!-- Derechos -->
+				<div class="footer-section footer-copy">
+					© 2025 RapiCréditos. Todos los derechos reservados.
+				</div>
+
+				<!-- Íconos Sociales -->
+				<div
+					class="footer-section container-icons-social"
+					aria-label="Redes sociales"
+				>
+					<a href="#"
+						><i class="bi bi-facebook" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-twitter-x" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-instagram" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-envelope" aria-hidden="true"></i
+					></a>
+				</div>
+			</div>
+		</footer>
+		<div class="container-boton-Whatsapp">
+			<a
+				href="https://wa.me/+542284555478?text=En%20que%20podemos%20ayudarte?%20..."
+				target="_blank"
+			>
+				<img class="boton" src="../assets/iconow.png" alt="Whatsapp" />
+			</a>
+		</div>
+		<script src="./public/js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				duration: 1000, // duración en ms
+				once: true, // solo una vez, al hacer scroll por primera vez
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Gestión de Clientes</title>
+		<link rel="stylesheet" href="./css/components/interfazAdmin.css" />
+	</head>
+	<body>
+		<div style="text-align: right; margin-bottom: 10px">
+			<button id="verClientesBtn">Ver Clientes</button>
+		</div>
+
+		<section id="seccionRegistro">
+			<h2>Registro de Clientes</h2>
+			<form id="clienteForm">
+				<input type="hidden" id="clienteId" name="clienteId" />
+
+				<div class="form-grid">
+					<div class="form-group">
+						<label for="nombres">Nombre</label>
+						<input
+							type="text"
+							id="nombres"
+							name="nombres"
+							placeholder="Juan"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="apellidos">Apellido</label>
+						<input
+							type="text"
+							id="apellidos"
+							name="apellidos"
+							placeholder="Perez"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="dni">DNI</label>
+						<input
+							type="text"
+							id="dni"
+							name="dni"
+							placeholder="12345678"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="direccion">Dirección</label>
+						<input
+							type="text"
+							id="direccion"
+							name="direccion"
+							placeholder="Moreno"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="numero">Número</label>
+						<input
+							type="text"
+							id="numero"
+							name="numero"
+							placeholder="2020"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="piso">Piso</label>
+						<input
+							type="text"
+							id="piso"
+							name="piso"
+							placeholder="ej: 1°"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="dto">Dto</label>
+						<input
+							type="text"
+							id="dto"
+							name="dto"
+							placeholder="ej: A o 1°"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input
+							type="text"
+							id="telefono"
+							name="telefono"
+							placeholder="2284123456"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="correo">Correo</label>
+						<input
+							type="text"
+							id="correo"
+							name="correo"
+							placeholder="correo@ejemplo.com"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="usuario">Usuario</label>
+						<input
+							type="text"
+							id="usuario"
+							name="usuario"
+							placeholder="usuario123"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="contrasena">Contraseña</label>
+						<input
+							type="password"
+							id="contrasena"
+							name="contrasena"
+							placeholder="********"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="monto">Monto solicitado</label>
+						<input
+							type="number"
+							id="monto"
+							name="monto"
+							placeholder="ej: 200000"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="cuotasIniciales">Cuotas iniciales</label>
+						<input
+							type="number"
+							id="cuotasIniciales"
+							name="cuotasIniciales"
+							placeholder="ej: 48"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="cuotasPagas">Cuotas pagas</label>
+						<input
+							type="number"
+							id="cuotasPagas"
+							name="cuotasPagas"
+							placeholder="ej: 12"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="estadoCuenta">Estado de la cuenta</label>
+						<select id="estadoCuenta" name="estadoCuenta" required>
+							<option value="Al día">Al día</option>
+							<option value="En deuda">En deuda</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-footer">
+					<button type="submit">Guardar Cliente</button>
+				</div>
+			</form>
+		</section>
+
+		<section id="seccionClientes" style="display: none">
+			<div style="text-align: right; margin-bottom: 10px">
+				<button id="volverRegistroBtn">Volver al Registro</button>
+			</div>
+			<div id="tablaContenedor"></div>
+			<div
+				id="paginacion"
+				style="text-align: center; margin-top: 10px"
+			></div>
+		</section>
+
+		<script
+			type="module"
+			src="./js/components/interfazAdmin/main.js"
+		></script>
+	</body>
+</html>

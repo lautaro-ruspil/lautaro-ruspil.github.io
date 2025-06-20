@@ -1,0 +1,53 @@
+/* ====== FAQ HEADER Y TÍTULO ====== */
+main h1 {
+	font-family: "Baloo 2", cursive;
+	color: var(--azul);
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+/* ====== ACORDEÓN (Bootstrap override) ====== */
+.accordion-item {
+	border: 1px solid var(--azul);
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}
+
+.accordion-button {
+	background-color: var(--azul);
+	color: #fff;
+	font-weight: 600;
+}
+/* Flecha blanca */
+.accordion-button::after {
+	filter: invert(1);
+}
+
+/* Estado abierto */
+.accordion-button:not(.collapsed) {
+	background-color: var(--rojo);
+	color: #fff;
+	box-shadow: none;
+}
+
+.accordion-body {
+	background-color: #f9f9ff;
+}
+
+/* Enlaces dentro de FAQs */
+.accordion-body a {
+	color: var(--rojo);
+	text-decoration: none;
+	font-weight: 600;
+}
+.accordion-body a:hover {
+	text-decoration: underline;
+}
+
+/* Contenedor centrado en pantallas grandes */
+@media (min-width: 768px) {
+	main.container {
+		max-width: 800px;
+	}
+}

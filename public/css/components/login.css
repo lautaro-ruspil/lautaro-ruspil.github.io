@@ -1,0 +1,284 @@
+:root {
+	--rojo: #d40750;
+	--azul: #211652;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+body {
+	flex: 1;
+}
+
+/* ========== HEADER ========== */
+header {
+	background-color: var(--azul);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	padding: 0.5rem 0;
+}
+
+/* Contenedor del navbar */
+.navbar > .container-fluid {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* Logo */
+.logo-container {
+	max-width: 220px;
+	width: 100%;
+}
+
+.logo {
+	width: 100%;
+	height: auto;
+	max-height: 100px;
+	object-fit: contain;
+	transition: transform 0.3s ease;
+}
+
+.logo:hover {
+	transform: translateX(8px);
+}
+
+/* Enlaces de navegación */
+.navbar-nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.navbar-nav .nav-link {
+	color: #fff;
+	font-weight: 600;
+	font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
+	letter-spacing: 0.5px;
+	transition: color 0.3s ease;
+	padding: 0.5rem;
+	white-space: nowrap;
+}
+
+.navbar-nav .nav-link:hover {
+	color: var(--rojo);
+}
+
+.navbar .active {
+	border-bottom: 2px solid var(--rojo);
+	cursor: default;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+	border: none;
+	border-radius: 0;
+	box-shadow: none !important;
+	padding: 0.25rem 0.5rem;
+}
+
+/* Icono hamburguesa en blanco */
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Collapse del menú móvil */
+.navbar-collapse {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* Estilos del Contenido Principal */
+
+.login-container {
+	flex-grow: 1;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.login-container div h2 {
+	font-family: "baloo 2", roboto;
+	color: var(--azul);
+}
+
+/* Estilo labels */
+.login-form > div > label {
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	color: var(--azul);
+}
+
+/* Estilo inputs */
+.login-form > div > input {
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+	padding: 0.75rem;
+	font-size: 1rem;
+	transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form > div > input:focus {
+	border-color: var(--azul);
+	box-shadow: 0 0 0 3px rgba(33, 22, 82, 0.2);
+}
+
+/* Botón de Ingresar */
+.login-btn {
+	background-color: var(--rojo);
+	color: #fff;
+	border: none;
+	padding: 0.75rem;
+	font-weight: bold;
+	border-radius: 0.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+	background-color: #a1043f;
+}
+
+/* Botón de Crear cuenta */
+.register-btn {
+	background-color: transparent;
+	color: var(--azul);
+	border: 2px solid var(--azul);
+	padding: 0.75rem;
+	font-weight: bold;
+	border-radius: 0.5rem;
+	transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+	background-color: var(--azul);
+	color: white;
+}
+
+/* Link olvidaste contraseña */
+.forgot-password {
+	color: var(--azul);
+	text-decoration: none;
+	font-size: 0.95rem;
+}
+
+.forgot-password:hover {
+	text-decoration: underline;
+}
+
+/* ========== FOOTER ========== */
+footer.footer {
+	background-color: var(--azul);
+	color: white;
+	padding: 2rem 1rem;
+	font-size: clamp(12px, 1.5vw, 16px);
+	box-sizing: border-box;
+	width: 100%;
+	flex-shrink: 0;
+	margin-top: auto;
+}
+
+/* Contenedor principal */
+.footer-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Secciones del footer */
+.footer-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.2rem;
+}
+
+/* Links del footer */
+.footer-links a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+	color: var(--rojo);
+}
+
+/* ========== ÍCONOS SOCIALES (SOLO ICONOS) ========== */
+.container-icons-social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.2rem;
+}
+
+.container-icons-social a {
+	color: white;
+	font-size: 1.5rem;
+	text-decoration: none;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover general */
+.container-icons-social a:hover {
+	transform: scale(1.15);
+}
+
+/* Hover específicos */
+.container-icons-social .bi-facebook:hover {
+	color: #0866ff;
+}
+
+.container-icons-social .bi-twitter-x:hover {
+	color: #000;
+}
+
+.container-icons-social .bi-instagram:hover {
+	background: linear-gradient(
+		45deg,
+		#feda75,
+		#fa7e1e,
+		#d62976,
+		#962fbf,
+		#4f5bd5
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+.container-icons-social .bi-envelope:hover {
+	color: #b1271b;
+}
+
+/* ========== RESPONSIVE (DESKTOP) ========== */
+@media (min-width: 768px) {
+	.footer-container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+	}
+
+	.footer-section {
+		justify-content: flex-start;
+	}
+
+	.footer-copy {
+		text-align: center;
+	}
+
+	.container-icons-social {
+		justify-content: flex-end;
+	}
+}

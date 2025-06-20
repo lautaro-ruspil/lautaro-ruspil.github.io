@@ -1,0 +1,193 @@
+:root {
+	/* Colores */
+	--rojo: #d40750;
+	--azul: #211652;
+	--gris-claro: #f2f2f2;
+	--texto-oscuro: #222222;
+}
+
+* {
+	/* Estilos generales */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/* Estilos generales del body*/
+	font-family: "Segoe UI", sans-serif;
+	background-color: var(--gris-claro);
+	color: var(--texto-oscuro);
+	padding: 20px;
+}
+
+h2 {
+	/* Estilos del h2 */
+	text-align: center;
+	color: var(--azul);
+	margin-bottom: 20px;
+}
+
+form {
+	background-color: white;
+	border: 2px solid var(--azul);
+	padding: 30px;
+	border-radius: 10px;
+	max-width: 1100px;
+	margin: 0 auto 30px auto;
+	display: grid;
+	grid-template-columns: 1fr; /* Un solo formulario por bloque */
+	gap: 25px;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 20px;
+}
+
+.form-group label {
+	margin-bottom: 6px;
+	font-weight: bold;
+	font-size: 14px;
+	color: var(--azul);
+}
+
+input,
+select {
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fafafa;
+	outline: none;
+}
+
+input:focus,
+select:focus {
+	border: 1px solid var(--azul);
+	box-shadow: 0 0 0 4px rgba(33, 22, 82, 0.2);
+}
+
+/* Quitar flechitas en inputs tipo number (Chrome, Safari, Edge, Opera) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Quitar flechitas en Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.form-footer {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 10px;
+}
+
+form button {
+	padding: 12px 20px;
+	font-size: 15px;
+	background-color: var(--rojo);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+form button:hover {
+	background-color: #b40644;
+}
+
+table {
+	/* Estilos de la tabla */
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	border: 2px solid var(--azul);
+	max-width: 1100px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+thead {
+	/* Estilos de la cabecera de la tabla */
+	background-color: var(--azul);
+	color: white;
+}
+
+th,
+td {
+	/* Estilos de las celdas de la tabla */
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}
+
+tbody tr:nth-child(even) {
+	/* Estilos de las filas de la tabla */
+	background-color: var(--gris-claro);
+}
+
+tbody tr:hover {
+	/* Estilos de las filas de la tabla al pasar el ratón */
+	background-color: #e6e6e6;
+}
+
+button {
+	/* Estilos de los botones generales */
+	padding: 6px 10px;
+	border-radius: 4px;
+	border: none;
+	font-size: 13px;
+}
+
+button:hover {
+	/* Estilos de los botones generales al pasar el ratón */
+	opacity: 0.85;
+}
+
+td button:first-child {
+	/* Estilos de los botones de la celda editar */
+	background-color: var(--azul);
+	color: white;
+	/*margin-right: 5px;*/
+	width: 68px;
+}
+
+td button:last-child {
+	/* Estilos de los botones de la celda eliminar */
+	background-color: var(--rojo);
+	color: white;
+	width: 68px;
+}
+.form-grid {
+	/* Estilos del grid del formulario */
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 20px;
+}
+
+.form-group {
+	/* Estilos de los grupos del formulario */
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group label {
+	/* Estilos de los labels del formulario */
+	margin-bottom: 5px;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.form-footer {
+	/* Estilos del footer del formulario */
+	grid-column: 1 / -1;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}

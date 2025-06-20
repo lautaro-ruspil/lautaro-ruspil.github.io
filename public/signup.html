@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign Up</title>
+		<link href="bootstrap.min.css" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/components/signup.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<!-- HEADER RESPONSIVO -->
+		<header>
+			<nav class="navbar navbar-expand-md navbar-dark container-fluid">
+				<div
+					class="nav-wrapper d-flex w-100 align-items-center justify-content-between px-3"
+				>
+					<!-- Logo -->
+					<!-- LOGO -->
+					<a class="navbar-brand" href="../index.html">
+						<div class="logo-container">
+							<img
+								src="/assets/rapicreditos.png.jpg"
+								alt="Logo RapiCréditos"
+								class="logo img-fluid"
+							/>
+						</div>
+					</a>
+
+					<!-- Boton -->
+					<!-- BOTÓN HAMBURGUESA -->
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#mainNavbar"
+						aria-controls="mainNavbar"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+
+				<!-- ENLACES -->
+				<div
+					class="collapse navbar-collapse justify-content-end px-3"
+					id="mainNavbar"
+				>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./contacto.html"
+								>Contacto</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./login.html"
+								>Inicia sesión</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#"
+								>Registrarse</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./interfazAdmin.html"
+								>Gestion de clientes</a
+							>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Formulario -->
+		<div class="form-container">
+			<h1>Crea una cuenta</h1>
+
+			<!-- Barra de pasos -->
+			<div class="steps-bar">
+				<span class="step-circle active">1</span>
+				<span class="step-circle">2</span>
+				<span class="step-circle">3</span>
+			</div>
+
+			<!-- Paso 1 -->
+			<div class="step active" id="step-1">
+				<h2 class="form-step-title">Datos personales</h2>
+				<form class="d-flex flex-column gap-3 w-100">
+					<div>
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" placeholder="Juan" />
+					</div>
+					<div>
+						<label for="apellido">Apellido</label>
+						<input type="text" id="apellido" placeholder="Pérez" />
+					</div>
+					<div>
+						<label for="telefono">Teléfono</label>
+						<input
+							type="tel"
+							id="telefono"
+							placeholder="2284‑123456"
+						/>
+					</div>
+					<div>
+						<label for="direccion">Dirección</label>
+						<input
+							type="text"
+							id="direccion"
+							placeholder="Calle, número, piso"
+						/>
+					</div>
+					<div>
+						<label for="correo">Correo electrónico</label>
+						<input
+							type="email"
+							id="correo"
+							placeholder="juanperez@gmail.com"
+						/>
+					</div>
+					<div>
+						<label for="contrasenia">Contraseña</label>
+						<input
+							type="password"
+							id="contrasenia"
+							placeholder="juanperez123"
+						/>
+					</div>
+
+					<div class="text-center">
+						<p>
+							¿Ya tienes una cuenta?
+							<a href="./login.html">Inicia sesión</a>
+						</p>
+						<button type="button" class="siguiente">
+							Siguiente
+						</button>
+					</div>
+				</form>
+			</div>
+
+			<!-- Paso 2 -->
+			<div class="step" id="step-2">
+				<h2 class="form-step-title">Verificación</h2>
+
+				<form>
+					<div>
+						<label for="codigo-email" class="form-label"
+							>Código de correo electrónico</label
+						>
+						<input
+							type="number"
+							id="codigo-email"
+							class="form-control"
+							placeholder="Ingresa el código enviado al correo"
+						/>
+					</div>
+
+					<div>
+						<label for="codigo-telefono" class="form-label"
+							>Código de teléfono</label
+						>
+						<input
+							type="number"
+							id="codigo-telefono"
+							class="form-control"
+							placeholder="Ingresa el código enviado al teléfono"
+						/>
+					</div>
+
+					<div class="text-center" style="margin-top: 20px">
+						<p>
+							¿No ha llegado el código?
+							<a href="#">Reenviar</a>
+						</p>
+
+						<div
+							class="buttons d-flex justify-content-center gap-3 flex-wrap"
+						>
+							<button type="button" class="anterior">
+								Anterior
+							</button>
+							<button type="button" class="verificar">
+								Verificar y continuar
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Paso 3 -->
+			<div class="step" id="step-3">
+				<h2 class="form-step-title">Verificación de identidad</h2>
+
+				<form
+					class="d-flex flex-column gap-3 align-items-center w-100"
+					style="max-width: 400px; margin: 0 auto"
+				>
+					<div class="w-100">
+						<p class="image">Foto del DNI (Frente)</p>
+						<label class="upload-wrapper" for="dni-frente">
+							<span>Haz clic para subir imagen</span>
+							<input type="file" id="dni-frente" />
+						</label>
+					</div>
+
+					<div class="w-100">
+						<p class="image">Foto del DNI (Dorso)</p>
+						<label class="upload-wrapper" for="dni-dorso">
+							<span>Haz clic para subir imagen</span>
+							<input type="file" id="dni-dorso" />
+						</label>
+					</div>
+
+					<div class="w-100">
+						<p class="image">Selfie con DNI en mano</p>
+						<label class="upload-wrapper" for="selfie-dni">
+							<span>Haz clic para subir imagen</span>
+							<input type="file" id="selfie-dni" />
+						</label>
+					</div>
+
+					<div
+						class="buttons d-flex justify-content-center gap-3 flex-wrap"
+					>
+						<button type="button" class="anterior">Anterior</button>
+						<button type="submit" class="verificar">
+							Finalizar registro
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-container">
+				<!-- Enlaces -->
+				<nav
+					class="footer-section footer-links"
+					aria-label="Enlaces del pie de página"
+				>
+					<a href="./terminos.html">Términos y Condiciones</a>
+					<a href="#">Ayuda</a>
+					<a href="./faqs.html">Preguntas Frecuentes</a>
+				</nav>
+
+				<!-- Derechos -->
+				<div class="footer-section footer-copy">
+					© 2025 RapiCréditos. Todos los derechos reservados.
+				</div>
+
+				<!-- Íconos Sociales -->
+				<div
+					class="footer-section container-icons-social"
+					aria-label="Redes sociales"
+				>
+					<a href="#"
+						><i class="bi bi-facebook" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-twitter-x" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-instagram" aria-hidden="true"></i
+					></a>
+					<a href="#"
+						><i class="bi bi-envelope" aria-hidden="true"></i
+					></a>
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script src="./js/components/signup.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

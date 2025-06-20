@@ -1,0 +1,540 @@
+:root {
+	--rojo: #d40750;
+	--azul: #211652;
+	--gris-claro: #f8f9fa;
+	--sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+body {
+	flex: 1;
+}
+
+/* ========== HEADER ========== */
+header {
+	background-color: var(--azul);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	padding: 0.5rem 0;
+}
+
+/* Contenedor del navbar */
+.navbar > .container-fluid {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* Logo */
+.logo-container {
+	max-width: 220px;
+	width: 100%;
+}
+
+.logo {
+	width: 100%;
+	height: auto;
+	max-height: 100px;
+	object-fit: contain;
+	transition: transform 0.3s ease;
+}
+
+.logo:hover {
+	transform: translateX(8px);
+}
+
+/* Enlaces de navegación */
+.navbar-nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.navbar-nav .nav-link {
+	color: #fff;
+	font-weight: 600;
+	font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
+	letter-spacing: 0.5px;
+	transition: color 0.3s ease;
+	padding: 0.5rem;
+	white-space: nowrap;
+}
+
+.navbar-nav .nav-link:hover {
+	color: var(--rojo);
+}
+
+.navbar .active {
+	border-bottom: 1px solid var(--rojo);
+	cursor: default;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+	border: none;
+	border-radius: 0;
+	box-shadow: none !important;
+	padding: 0.25rem 0.5rem;
+}
+
+/* Icono hamburguesa en blanco */
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Collapse del menú móvil */
+.navbar-collapse {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.main-title {
+	font-family: "Baloo 2", cursive;
+	color: var(--azul);
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+/* Hero con fondo fijo (parallax) */
+.parallax-bg {
+	background-image: url("/assets/fondo-parallax.jpg"); /* Cambiá por tu imagen */
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	position: relative;
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.parallax-bg .overlay {
+	background-color: rgba(0, 0, 0, 0.55);
+	padding: 8rem 1rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero-content {
+	max-width: 800px;
+}
+
+.hero-content h1 {
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+	font-weight: 700;
+	margin-bottom: 1rem;
+	font-size: clamp(2.25rem, 2vw + 2rem, 3.5rem);
+	line-height: 1.2;
+}
+
+.hero-content p.lead {
+	text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+	font-size: 1.25rem;
+	margin-bottom: 2rem;
+}
+
+.hero-content .btn {
+	background-color: var(--azul, #0d6efd);
+	border: none;
+	font-size: 1.1rem;
+	padding: 0.75rem 2rem;
+	border-radius: 0.5rem;
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-content .btn:hover {
+	background-color: var(--rojo, #dc3545);
+	transform: scale(1.05);
+}
+
+/* ======================= CARDS DE CRÉDITO ======================= */
+.card-credito {
+	border: none; /* limpio borde gris */
+	border-radius: 1rem;
+	box-shadow: var(--sombra);
+	transition: transform 0.35s ease, box-shadow 0.35s ease;
+	cursor: default;
+}
+
+.card-credito:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-credito .card-body {
+	text-align: center;
+}
+
+.card-credito .card-title {
+	color: var(--rojo);
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/* Estilos para los íconos de las cards de créditos */
+.card-credito .card-icon {
+	font-size: 2.5rem; /* Tamaño grande para que destaque */
+	color: #d6336c; /* Color rojo fuerte (puedes cambiar por tu variable o color preferido) */
+	margin-bottom: 1rem; /* Espacio debajo del icono */
+	display: inline-block;
+	transition: color 0.3s ease;
+}
+
+/* ======================= BENEFICIOS ======================= */
+.beneficio-icono {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	color: var(--rojo);
+}
+
+.row.text-center h5 {
+	color: var(--azul);
+	font-weight: 600;
+	margin-top: 0.5rem;
+}
+
+.row.text-center p {
+	font-size: 1rem;
+}
+
+/* Seccion de seguridad */
+
+.seguridad-respaldo {
+	background-color: #f9fafb;
+	padding: 3rem 1rem;
+	border-radius: 12px;
+	box-shadow: 0 2px 10px rgb(0 0 0 / 0.05);
+}
+
+.seguridad-respaldo p {
+	font-family: "Roboto", sans-serif;
+	color: #555;
+	font-size: 1.1rem;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.6;
+}
+
+.seguridad-icon {
+	font-size: 2.5rem;
+	color: var(--azul);
+	transition: color 0.3s ease;
+}
+
+.seguridad-icon:hover {
+	color: var(--rojo);
+	cursor: default;
+}
+
+.seguridad-respaldo h5 {
+	font-family: "Roboto", sans-serif;
+	color: #212529;
+	margin-top: 0.5rem;
+}
+
+/* ======================= CARRUSEL ======================= */
+.testimonios-carousel {
+	max-width: 700px;
+	margin: 0 auto;
+	background-color: #fafafa;
+	padding: 2rem;
+	box-shadow: var(--sombra);
+	border-radius: 0.5rem;
+}
+
+.carousel-item {
+	text-align: center;
+}
+
+.carousel-item blockquote {
+	font-size: 1.2rem;
+	font-style: italic;
+	color: #333;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.carousel-item .blockquote-footer {
+	display: block;
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	color: #777;
+	font-style: italic;
+}
+
+.calculadora-form {
+	background-color: #f5f5f5;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--sombra);
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.calculadora-form label {
+	font-weight: 600;
+	color: var(--azul);
+}
+
+.calculadora-form input,
+.calculadora-form select {
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculadora-form input:focus,
+.calculadora-form select:focus {
+	border: 1px solid var(--azul);
+	box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
+}
+
+#resultadoCuota {
+	display: none;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--azul);
+	text-align: left;
+	max-width: 500px;
+	margin: 1rem auto 0 auto;
+	background-color: #fff;
+	padding: 1rem 1.5rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--sombra);
+}
+
+#resultadoCuota h5 {
+	margin-bottom: 1rem;
+	color: var(--rojo);
+}
+
+#resultadoCuota ul {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+#resultadoCuota li {
+	border: none;
+	padding-left: 0;
+	font-weight: 400;
+	font-size: 1rem;
+	color: #222;
+}
+
+#resultadoCuota li span {
+	float: right;
+	font-weight: 700;
+	color: var(--azul);
+}
+
+#calcular-cuota {
+	background-color: var(--azul);
+	width: 100%;
+
+	padding: 0.75rem;
+	font-size: 1.1rem;
+	border: none;
+}
+
+#calcular-cuota:hover {
+	background-color: var(--rojo);
+	color: white;
+}
+
+#formSimulador .text-danger {
+	font-weight: 600;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 768px) {
+	.main-title {
+		font-size: 2rem;
+	}
+
+	.beneficio-icono {
+		font-size: 2rem;
+	}
+
+	.card-credito .card-text {
+		font-size: 0.95rem;
+	}
+
+	.testimonios-carousel {
+		padding: 1rem;
+	}
+
+	.calculadora-form {
+		padding: 1rem;
+	}
+
+	#resultadoCuotaContainer {
+		padding: 1rem;
+	}
+}
+
+/* Footer */
+/* ========== FOOTER ========== */
+footer.footer {
+	background-color: var(--azul);
+	color: white;
+	padding: 2rem 1rem;
+	font-size: clamp(12px, 1.5vw, 16px);
+	box-sizing: border-box;
+	width: 100%;
+	flex-shrink: 0;
+	margin-top: auto;
+}
+
+/* Contenedor principal */
+.footer-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Secciones del footer */
+.footer-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.2rem;
+}
+
+/* Links del footer */
+.footer-links a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+	color: var(--rojo);
+}
+
+.footer-links a.active {
+	color: var(--rojo);
+	cursor: default;
+}
+
+/* ========== ÍCONOS SOCIALES (SOLO ICONOS) ========== */
+.container-icons-social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.2rem;
+}
+
+.container-icons-social a {
+	color: white;
+	font-size: 1.5rem;
+	text-decoration: none;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover general */
+.container-icons-social a:hover {
+	transform: scale(1.15);
+}
+
+/* Hover específicos */
+.container-icons-social .bi-facebook:hover {
+	color: #0866ff;
+}
+
+.container-icons-social .bi-twitter-x:hover {
+	color: #000;
+}
+
+.container-icons-social .bi-instagram:hover {
+	background: linear-gradient(
+		45deg,
+		#feda75,
+		#fa7e1e,
+		#d62976,
+		#962fbf,
+		#4f5bd5
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+.container-icons-social .bi-envelope:hover {
+	color: #b1271b;
+}
+
+/* ========== RESPONSIVE (DESKTOP) ========== */
+@media (min-width: 768px) {
+	.footer-container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+	}
+
+	.footer-section {
+		justify-content: flex-start;
+	}
+
+	.footer-copy {
+		text-align: center;
+	}
+
+	.container-icons-social {
+		justify-content: flex-end;
+	}
+}
+
+.container-boton-Whatsapp {
+	background-color: #2e6329;
+	border: 1px solid #fff;
+	position: fixed;
+	z-index: 999;
+	border-radius: 50%;
+	bottom: 20px;
+	right: 25px;
+	padding: 15px;
+	transition: ease 0.3s;
+	animation: efecto 1.2s infinite;
+}
+
+.container-boton-Whatsapp:hover {
+	transform: scale(1.2);
+	transition: 0.3s;
+}
+
+.boton {
+	width: 28px;
+	transition: ease 1s;
+}
+
+@keyframes efecto {
+	0% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+	}
+	100% {
+		box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+	}
+}

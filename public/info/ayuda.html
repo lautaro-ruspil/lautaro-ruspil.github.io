@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ayuda | rapicréditos</title>
+		<link rel="stylesheet" href="../css/components/ayuda.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- HEADER dinámico -->
+	<div id="header-placeholder"></div>
+
+		<main class="container mt-5 ayuda-container">
+			<h1 class="main-title">Centro de Ayuda</h1>
+
+			<!-- SOBRE LA EMPRESA -->
+			<section class="mb-5">
+				<h2 class="ayuda-subtitulo">¿Quiénes somos?</h2>
+				<p class="ayuda-texto">
+					En <strong>rapicréditos</strong> brindamos soluciones
+					financieras accesibles, ágiles y seguras. Nuestra plataforma
+					digital permite a personas de todo el país acceder a
+					créditos personales, automotores o para emprendimientos de
+					forma rápida y sin trámites presenciales.
+				</p>
+			</section>
+
+			<section class="mb-5">
+				<h2 class="ayuda-subtitulo">¿Qué ofrecemos?</h2>
+				<p class="ayuda-texto">
+					Ofrecemos préstamos flexibles, tasas competitivas y atención
+					personalizada. Nuestro sistema de evaluación es automático y
+					transparente, lo que te permite saber en minutos si tu
+					crédito está aprobado.
+				</p>
+			</section>
+
+			<section class="mb-5">
+				<h2 class="ayuda-subtitulo">¿Tenemos sucursal física?</h2>
+				<p class="ayuda-texto">
+					Actualmente no contamos con una sucursal física. Todo el
+					proceso se realiza de manera 100% online para brindarte
+					mayor comodidad y eficiencia en la gestión de tu crédito.
+				</p>
+			</section>
+
+			<!-- FAQs DESTACADAS CON RESPUESTA -->
+			<section class="mb-5">
+				<h2 class="ayuda-subtitulo">Preguntas frecuentes</h2>
+				<div class="faq-box">
+					<h5>
+						<i class="bi bi-question-circle-fill"></i> ¿Cuánto
+						demora la aprobación del crédito?
+					</h5>
+					<p>
+						En la mayoría de los casos, la aprobación se realiza en
+						menos de 30 minutos, dependiendo de la validación de tus
+						datos.
+					</p>
+
+					<h5>
+						<i class="bi bi-question-circle-fill"></i> ¿Cuáles son
+						los requisitos?
+					</h5>
+					<p>
+						Ser mayor de 18 años, residir en Argentina, tener DNI
+						vigente y contar con una cuenta bancaria a tu nombre.
+					</p>
+
+					<h5>
+						<i class="bi bi-question-circle-fill"></i> ¿Puedo
+						cancelar el crédito antes de tiempo?
+					</h5>
+					<p>
+						Sí, podés realizar pagos anticipados totales o parciales
+						sin penalizaciones.
+					</p>
+				</div>
+				<a href="../info/faqs.html" class="ver-mas-link"
+					>→ Ver todas las preguntas frecuentes</a
+				>
+			</section>
+
+			<!-- CONTACTO -->
+			<section class="mb-5">
+				<h2 class="ayuda-subtitulo">¿Necesitás contactarnos?</h2>
+				<p class="ayuda-texto">
+					Nuestro equipo está disponible para ayudarte en todo
+					momento. Elegí uno de los siguientes canales:
+				</p>
+				<div class="row g-4 mt-4 contacto-mejorado">
+					<div class="col-md-4">
+						<div class="canal-box">
+							<i class="bi bi-whatsapp canal-icono"></i>
+							<div>
+								<h6>WhatsApp</h6>
+								<a
+									href="https://wa.me/+542284555478"
+									target="_blank"
+									>+54 2284 555478</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="canal-box">
+							<i class="bi bi-envelope-fill canal-icono"></i>
+							<div>
+								<h6>Email</h6>
+								<a href="mailto:soporte@rapicreditos.com"
+									>soporte@rapicreditos.com</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="canal-box">
+							<i
+								class="bi bi-chat-left-text-fill canal-icono"
+							></i>
+							<div>
+								<h6>Formulario</h6>
+								<a href="../info/contacto.html"
+									>Ir a la página de contacto</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- FOOTER dinámico -->
+	<div id="footer-placeholder"></div>
+
+		<!-- Funcionalidad de botón flotante de whatsaap -->
+		<div class="container-boton-Whatsapp">
+			<a
+				href="https://wa.me/+542284555478?text=En%20que%20podemos%20ayudarte?%20..."
+				target="_blank"
+			>
+				<img class="boton" src="/assets/iconow.png" alt="Whatsapp" />
+			</a>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Script para cargar header y footer -->
+	<script src="../js/load-partials.js"></script>
+	</body>
+</html>

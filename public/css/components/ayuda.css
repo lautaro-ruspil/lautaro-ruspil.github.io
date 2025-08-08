@@ -1,0 +1,84 @@
+.ayuda-container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.ayuda-subtitulo {
+	color: var(--azul);
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	font-size: 1.6rem;
+}
+
+.ayuda-texto {
+	font-size: 1.05rem;
+	color: #444;
+	line-height: 1.6;
+}
+
+.faq-box h5 {
+	font-weight: 600;
+	color: var(--azul);
+	margin-top: 1.2rem;
+	font-size: 1.1rem;
+}
+
+.faq-box p {
+	margin-bottom: 0.5rem;
+	color: #333;
+}
+
+.faq-box i {
+	color: var(--rojo);
+	margin-right: 8px;
+}
+
+.ver-mas-link {
+	display: inline-block;
+	margin-top: 1rem;
+	color: var(--azul);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.ver-mas-link:hover {
+	color: var(--rojo);
+}
+
+/* Canales de contacto */
+.contacto-mejorado .canal-box {
+	background-color: #f9f9f9;
+	border-left: 4px solid var(--azul);
+	padding: 1rem;
+	display: flex;
+	gap: 1rem;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+}
+
+.contacto-mejorado .canal-box:hover {
+	background-color: #f1f1f1;
+}
+
+.canal-icono {
+	font-size: 1.8rem;
+	color: var(--rojo);
+	min-width: 30px;
+}
+
+.canal-box h6 {
+	margin: 0;
+	font-size: 1rem;
+	color: var(--azul);
+}
+
+.canal-box a {
+	font-size: 0.95rem;
+	color: var(--azul);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.canal-box a:hover {
+	color: var(--rojo);
+}

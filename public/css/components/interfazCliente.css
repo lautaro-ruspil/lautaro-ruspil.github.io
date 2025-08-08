@@ -1,0 +1,144 @@
+/* Panel del Cliente - Título */
+.panel-title {
+	font-family: "Baloo 2", cursive;
+	font-size: 2.2rem;
+	color: var(--azul);
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+/* Resumen tarjetas */
+.resumen-card {
+	border: 1px solid #dee2e6;
+	border-radius: 0.75rem;
+	transition: transform 0.2s ease;
+	background-color: #fff;
+}
+.resumen-card:hover {
+	transform: translateY(-5px);
+}
+.icon-resumen {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+.text-rojo {
+	color: var(--rojo);
+}
+.text-azul {
+	color: var(--azul);
+}
+
+/* NAV PILLS */
+.nav-pills .nav-link {
+	border-radius: 0.5rem;
+	padding: 0.6rem 1.2rem;
+	color: var(--azul);
+	font-weight: 500;
+}
+.nav-pills .nav-link.active {
+	background-color: var(--azul);
+	color: #fff;
+}
+
+/* Tarjetas interiores */
+.card-header {
+	font-weight: 600;
+	font-size: 1rem;
+}
+.card-body p {
+	margin-bottom: 0.6rem;
+}
+.card-body button {
+	min-height: 45px;
+}
+.btn-rojo {
+	border: 1px solid var(--azul);
+	color: var(--azul);
+}
+.btn-rojo:hover {
+	background-color: var(--azul);
+	color: white;
+}
+.btn-outline-azul {
+	border: 1px solid var(--azul);
+	color: var(--azul);
+}
+.btn-outline-azul:hover {
+	background-color: var(--azul);
+	color: white;
+}
+
+/* Tabla de cuotas */
+#tablaCuotas {
+	width: 100%;
+}
+#tablaCuotas th,
+#tablaCuotas td {
+	vertical-align: middle;
+	padding: 0.75rem;
+}
+
+/* Mis datos - perfil */
+#datosCliente p {
+	margin: 0;
+	padding: 8px 12px;
+	background-color: #f8f9fa;
+	border-radius: 6px;
+	border: 1px solid #dee2e6;
+}
+
+#datosCliente .col-md-6 {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+#datosCliente strong {
+	color: var(--azul);
+	width: 160px;
+	display: inline-block;
+}
+#datosCliente span.valor {
+	color: #333;
+}
+#datosCliente hr {
+	border-top: 1px dashed var(--rojo);
+	margin: 1.5rem 0;
+}
+.estado-ok {
+	color: #198754;
+	font-weight: 700;
+}
+.estado-pend {
+	color: #fd7e14;
+	font-weight: 700;
+}
+.estado-mora {
+	color: #dc3545;
+	font-weight: 700;
+}
+
+/* Soporte */
+#tabSoporte p {
+	margin-bottom: 1rem;
+}
+#tabSoporte a {
+	color: var(--azul);
+	text-decoration: none;
+}
+#tabSoporte a:hover {
+	text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.icon-resumen {
+		font-size: 2rem;
+	}
+	.panel-title {
+		font-size: 1.7rem;
+	}
+	#datosCliente strong {
+		width: 120px;
+	}
+}

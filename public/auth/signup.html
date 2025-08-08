@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro | rapicréditos</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/components/signup.css" />
+    </head>
+    <body>
+        <!-- HEADER dinámico -->
+        <div id="header-placeholder"></div>
+
+        <!-- Formulario -->
+        <main class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <h1 class="text-center mb-4">Crea una cuenta</h1>
+
+                    <!-- Barra de pasos -->
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <span class="step-circle active">1</span>
+                        <span class="step-circle">2</span>
+                        <span class="step-circle">3</span>
+                    </div>
+
+                    <!-- Paso 1: Datos Personales -->
+                    <div class="step active" id="step-1">
+                        <h2 class="form-step-title">Datos personales</h2>
+                        <p class="form-note">
+                            <span class="required">*</span> Campos obligatorios
+                        </p>
+                        <form
+                            class="row g-3"
+                            id="formPaso1"
+                            action="http://localhost:3000/cliente"
+                            method="POST"
+                            enctype="multipart/form-data"
+                        >
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">
+                                    Nombres <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    class="form-control"
+                                    placeholder="Juan"
+                                    name="nombreCliente"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="apellido" class="form-label">
+                                    Apellidos <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="apellido"
+                                    class="form-control"
+                                    placeholder="Pérez"
+                                    name="apellidoCliente"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dni" class="form-label">
+                                    DNI <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="dni"
+                                    class="form-control"
+                                    placeholder="12345678"
+                                    name="dniCliente"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">
+                                    Teléfono <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    class="form-control"
+                                    placeholder="2284123456"
+                                    name="telefonoCliente"
+                                />
+                            </div>
+                            <div class="col-md-8">
+                                <label for="direccion" class="form-label">
+                                    Dirección <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="direccion"
+                                    class="form-control"
+                                    placeholder="Hornos"
+                                    name="direccionCliente"
+                                />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="numero" class="form-label">
+                                    Número <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="number"
+                                    id="numero"
+                                    class="form-control"
+                                    placeholder="2020"
+                                    name="direccionNumeroCliente"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="piso" class="form-label"
+                                    >Piso</label
+                                >
+                                <input
+                                    type="text"
+                                    id="piso"
+                                    class="form-control"
+                                    name="piso"
+                                    placeholder="3"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dpto" class="form-label"
+                                    >Dpto</label
+                                >
+                                <input
+                                    type="text"
+                                    id="dpto"
+                                    class="form-control"
+                                    placeholder="A"
+                                    name="dpto"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="correo" class="form-label">
+                                    Correo electrónico
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="correo"
+                                    class="form-control"
+                                    placeholder="juanperez@gmail.com"
+                                    name="correoCliente"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contrasenia" class="form-label">
+                                    Contraseña <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    id="contrasenia"
+                                    class="form-control"
+                                    placeholder="************"
+                                    name="contraseniaCliente"
+                                />
+                            </div>
+                            <div class="text-center mt-4">
+                                <p>
+                                    ¿Ya tienes una cuenta?
+                                    <a href="./login.html">Inicia sesión</a>
+                                </p>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary siguiente"
+                                >
+                                    Siguiente
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Paso 2: Verificación -->
+                    <div class="step" id="step-2">
+                        <h2 class="form-step-title">Verificación</h2>
+                        <form id="verificacionForm" class="row g-3">
+                            <div class="col-12">
+                                <label
+                                    for="metodo-verificacion"
+                                    class="form-label"
+                                >
+                                    ¿Cómo querés recibir el código?
+                                </label>
+                                <select
+                                    id="metodo-verificacion"
+                                    class="form-select"
+                                >
+                                    <option value="" disabled selected>
+                                        Elegí una opción
+                                    </option>
+                                    <option value="email">
+                                        Correo electrónico
+                                    </option>
+                                    <option value="sms">Mensaje SMS</option>
+                                </select>
+                            </div>
+                            <div
+                                class="col-12"
+                                id="contenedor-codigo"
+                                style="display: none"
+                            >
+                                <label
+                                    for="codigo"
+                                    class="form-label"
+                                    id="label-codigo"
+                                    >Código</label
+                                >
+                                <input
+                                    type="text"
+                                    id="codigo"
+                                    class="form-control"
+                                />
+                            </div>
+                            <div
+                                class="reenviarTexto text-center"
+                                id="reenviarTexto"
+                                style="display: none"
+                            >
+                                ¿No llegó el código? <a href="#">Reenviar</a>
+                            </div>
+                            <div class="d-flex justify-content-between buttons">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary anterior"
+                                >
+                                    Anterior
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-primary verificar"
+                                >
+                                    Verificar y continuar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="step" id="step-3">
+                        <h2 class="form-step-title">
+                            Verificación de identidad
+                        </h2>
+                        <p class="image-note">
+                            Asegúrate de subir imágenes
+                            <strong>nítidas</strong> y legibles para completar
+                            tu verificación correctamente.
+                        </p>
+                        <form
+                            class="d-flex flex-column gap-3 align-items-center w-100"
+                            id="formPaso3"
+                            style="max-width: 400px; margin: 0 auto"
+                            action="http://localhost:3000/cliente"
+                            method="POST"
+                            enctype="multipart/form-data"
+                        >
+                            <!-- DNI Frente -->
+                            <div class="w-100">
+                                <p class="image">Foto del DNI (Frente)</p>
+                                <label class="upload-wrapper" for="dni-frente">
+                                    <span>Haz clic para subir imagen</span>
+                                    <input
+                                        type="file"
+                                        id="dni-frente"
+                                        name="fotoDniFrente"
+                                    />
+                                </label>
+                                <div
+                                    id="error-dni-frente"
+                                    class="error-mensaje w-100 text-center"
+                                ></div>
+                            </div>
+
+                            <!-- DNI Dorso -->
+                            <div class="w-100">
+                                <p class="image">Foto del DNI (Dorso)</p>
+                                <label class="upload-wrapper" for="dni-dorso">
+                                    <span>Haz clic para subir imagen</span>
+                                    <input
+                                        type="file"
+                                        id="dni-dorso"
+                                        name="fotoDniDorso"
+                                    />
+                                </label>
+                                <div
+                                    id="error-dni-dorso"
+                                    class="error-mensaje w-100 text-center"
+                                ></div>
+                            </div>
+
+                            <!-- Selfie -->
+                            <div class="w-100">
+                                <p class="image">Selfie con DNI en mano</p>
+                                <label class="upload-wrapper" for="selfie-dni">
+                                    <span>Haz clic para subir imagen</span>
+                                    <input
+                                        type="file"
+                                        id="selfie-dni"
+                                        name="fotoDniSelfie"
+                                    />
+                                </label>
+                                <div
+                                    id="error-selfie-dni"
+                                    class="error-mensaje w-100 text-center"
+                                ></div>
+                            </div>
+
+                            <!-- Recibo sueldo -->
+                            <div class="w-100">
+                                <p class="image">Recibo de sueldo</p>
+                                <label
+                                    class="upload-wrapper"
+                                    for="recibo-sueldo"
+                                >
+                                    <span>Haz clic para subir imagen</span>
+                                    <input
+                                        type="file"
+                                        id="recibo-sueldo"
+                                        name="fotoReciboSueldo"
+                                        accept="image/*"
+                                    />
+                                </label>
+                                <div
+                                    id="error-recibo-sueldo"
+                                    class="error-mensaje w-100 text-center"
+                                ></div>
+                                <div
+                                    id="preview-recibo"
+                                    style="
+                                        display: none;
+                                        margin-top: 10px;
+                                        text-align: center;
+                                    "
+                                >
+                                    <img
+                                        id="img-recibo"
+                                        src=""
+                                        alt="Recibo Sueldo"
+                                        style="
+                                            max-width: 100%;
+                                            max-height: 300px;
+                                            margin-bottom: 10px;
+                                        "
+                                    />
+                                    <div
+                                        class="d-flex justify-content-center gap-2"
+                                    >
+                                        <button
+                                            type="button"
+                                            id="btn-cambiar-recibo"
+                                            class="btn btn-sm btn-secondary"
+                                        >
+                                            Cambiar
+                                        </button>
+                                        <button
+                                            type="button"
+                                            id="btn-eliminar-recibo"
+                                            class="btn btn-sm btn-danger"
+                                        >
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CBU -->
+                            <div class="w-100">
+                                <label for="cbu" class="form-label mt-3"
+                                    >CBU (22 dígitos)</label
+                                >
+                                <input
+                                    type="text"
+                                    id="cbu"
+                                    class="form-control"
+                                    maxlength="22"
+                                    placeholder="0001234567891234567890"
+                                    name="cbu"
+                                />
+                                <div
+                                    id="error-cbu"
+                                    class="error-mensaje w-100 text-center"
+                                ></div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div
+                                class="buttons d-flex justify-content-center gap-3 flex-wrap"
+                            >
+                                <button type="button" class="anterior">
+                                    Anterior
+                                </button>
+                                <button type="submit" class="verificar">
+                                    Finalizar registro
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- MODAL REGISTRO EXITOSO -->
+        <div
+            class="modal fade"
+            id="modalRegistroExitoso"
+            tabindex="-1"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-center p-4">
+                    <div class="icono-exito mb-3">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <h5 class="mb-3">¡Registro exitoso!</h5>
+                    <p class="mb-0">Tu cuenta ha sido creada correctamente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER dinámico -->
+        <div id="footer-placeholder"></div>
+
+        <!-- Funcionalidad de botón flotante de whatsaap -->
+        <div class="container-boton-Whatsapp">
+            <a
+                href="https://wa.me/+542284555478?text=En%20que%20podemos%20ayudarte?%20..."
+                target="_blank"
+            >
+                <img class="boton" src="/assets/iconow.png" alt="Whatsapp" />
+            </a>
+        </div>
+    </body>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="../js/components/signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para cargar header y footer -->
+    <script src="../js/load-partials.js"></script>
+</html>

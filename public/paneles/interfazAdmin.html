@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Panel Administración | Rapicréditos</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-utilities.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/components/interfazAdmin.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark container-fluid">
+                <div
+                    class="nav-wrapper d-flex w-100 align-items-center justify-content-between px-3"
+                >
+                    <a class="navbar-brand" href="../index.html">
+                        <div class="logo-container">
+                            <img
+                                src="/assets/rapicreditos.png"
+                                alt="Logo RapiCréditos"
+                                class="logo img-fluid"
+                            />
+                        </div>
+                    </a>
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div
+                    class="collapse navbar-collapse justify-content-end px-3"
+                    id="mainNavbar"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link nav-sistema active"
+                                data-target="Clientes"
+                                href="#"
+                                >Clientes</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link nav-sistema"
+                                data-target="Creditos"
+                                href="#"
+                                >Créditos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link nav-sistema"
+                                data-target="Pagos"
+                                href="#"
+                                >Pagos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link nav-sistema"
+                                data-target="Reportes"
+                                href="#"
+                                >Reportes</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link nav-sistema"
+                                data-target="Simulador"
+                                href="#"
+                                >Simulador</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow-1 p-4">
+            <!-- Seccion Registro / Edicion de Clientes -->
+            <section id="seccionRegistro" class="seccionSistema">
+                <h2>Registrar - Editar Cliente</h2>
+                <p class="form-note">* Campos obligatorios</p>
+
+                <!-- Formulario de Registro de clientes -->
+                <form id="clienteForm" class="row g-3" novalidate>
+                    <input type="hidden" id="clienteId" />
+
+                    <div class="col-12 col-md-6">
+                        <label for="nombres" class="form-label"
+                            >Nombres <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="nombres"
+                            class="form-control"
+                            placeholder="Juan"
+                        />
+                        <div class="error-mensaje" id="error-nombres"></div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="apellidos" class="form-label"
+                            >Apellidos <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="apellidos"
+                            class="form-control"
+                            placeholder="Pérez"
+                        />
+                        <div class="error-mensaje" id="error-apellidos"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="dni" class="form-label"
+                            >DNI <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="dni"
+                            class="form-control"
+                            placeholder="12345678"
+                        />
+                        <div class="error-mensaje" id="error-dni"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="telefono" class="form-label"
+                            >Teléfono <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="telefono"
+                            class="form-control"
+                            placeholder="2284123456"
+                        />
+                        <div class="error-mensaje" id="error-telefono"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="direccion" class="form-label"
+                            >Dirección <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="direccion"
+                            class="form-control"
+                            placeholder="hornos"
+                        />
+                        <div class="error-mensaje" id="error-direccion"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="numero" class="form-label"
+                            >Número <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="numero"
+                            class="form-control"
+                            placeholder="2020"
+                        />
+                        <div class="error-mensaje" id="error-numero"></div>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <label for="piso" class="form-label">Piso</label>
+                        <input
+                            type="text"
+                            id="piso"
+                            class="form-control"
+                            placeholder="3"
+                        />
+                        <div class="error-mensaje" id="error-piso"></div>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <label for="dpto" class="form-label">Dpto</label>
+                        <input
+                            type="text"
+                            id="dpto"
+                            class="form-control"
+                            placeholder="A"
+                        />
+                        <div class="error-mensaje" id="error-dpto"></div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label for="correo" class="form-label"
+                            >Correo electrónico <span class="required">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="correo"
+                            class="form-control"
+                            placeholder="juan@gmail.com"
+                        />
+                        <div class="error-mensaje" id="error-correo"></div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="contrasenia" class="form-label"
+                            >Contraseña <span class="required">*</span></label
+                        >
+                        <input
+                            type="password"
+                            id="contrasenia"
+                            class="form-control"
+                            placeholder="***********"
+                        />
+                        <div class="error-mensaje" id="error-contrasenia"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="monto" class="form-label"
+                            >Monto <span class="required">*</span></label
+                        >
+                        <input
+                            type="number"
+                            id="monto"
+                            class="form-control"
+                            placeholder="50000"
+                        />
+                        <div class="error-mensaje" id="error-monto"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="cuotasIniciales" class="form-label"
+                            >Cuotas Iniciales
+                            <span class="required">*</span></label
+                        >
+                        <input
+                            type="number"
+                            id="cuotasIniciales"
+                            class="form-control"
+                            placeholder="18"
+                        />
+                        <div
+                            class="error-mensaje"
+                            id="error-cuotasIniciales"
+                        ></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="cuotasPagas" class="form-label"
+                            >Cuotas Pagas <span class="required">*</span></label
+                        >
+                        <input
+                            type="number"
+                            id="cuotasPagas"
+                            class="form-control"
+                            placeholder="3"
+                        />
+                        <div class="error-mensaje" id="error-cuotasPagas"></div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="estadoCuenta" class="form-label"
+                            >Estado Cuenta
+                            <span class="required">*</span></label
+                        >
+                        <select id="estadoCuenta" class="form-select">
+                            <option value="" disabled selected>
+                                Seleccione una opcion
+                            </option>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                            <option value="Suspendido">Suspendido</option>
+                        </select>
+                        <div
+                            class="error-mensaje"
+                            id="error-estadoCuenta"
+                        ></div>
+                    </div>
+
+                    <!-- Contenedor de botones -->
+                    <div class="col-12 d-flex gap-2 flex-wrap">
+                        <button type="submit" class="btn btn-primary">
+                            Guardar Cliente
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="btnCancelarRegistro"
+                        >
+                            Cancelar
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-info"
+                            id="btnVerClientes"
+                        >
+                            Ver Clientes
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Seccion Lista de Clientes -->
+            <section
+                id="seccionClientes"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3 gap-2"
+                >
+                    <h2>Lista de Clientes</h2>
+                    <!-- Contenedor de botones  -->
+
+                    <button
+                        id="btnRegistrarCliente"
+                        class="btn btn-success"
+                        type="button"
+                    >
+                        Registrar Cliente
+                    </button>
+                </div>
+
+                <div
+                    class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"
+                >
+                    <button
+                        id="btnExportarClientes"
+                        class="btn btn-outline-primary btn-sm"
+                    >
+                        Exportar Clientes CSV
+                    </button>
+                </div>
+
+                <!-- Tabla responsive -->
+                <div id="tablaContenedor">
+                    <!-- La tabla dinámica será insertada aquí por JavaScript -->
+                </div>
+
+                <!-- Paginación -->
+
+                <div id="paginacion" class="mt-3">
+                    <!-- Contenido generado dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Sección Créditos -->
+            <section
+                id="seccionCreditos"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <h2>Créditos por Cliente</h2>
+                <div class="mb-3 col-12 col-md-6">
+                    <label for="clienteCredito" class="form-label"
+                        >Seleccione Cliente</label
+                    >
+                    <select id="clienteCredito" class="form-select"></select>
+                </div>
+
+                <div id="detalleCliente" class="mt-4"></div>
+            </section>
+
+            <!-- Sección Pagos -->
+            <section
+                id="seccionPagos"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <h2>Pagos</h2>
+                <div class="card p-3 mb-4 shadow">
+                    <h4>Registrar Pago</h4>
+                    <form id="formPago" class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <label for="pagoCliente" class="form-label"
+                                >Cliente</label
+                            >
+                            <select
+                                id="pagoCliente"
+                                class="form-select"
+                                required
+                            ></select>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="pagoFecha" class="form-label"
+                                >Fecha</label
+                            >
+                            <input
+                                type="date"
+                                id="pagoFecha"
+                                class="form-control"
+                                required
+                            />
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="pagoMonto" class="form-label"
+                                >Monto</label
+                            >
+                            <input
+                                type="number"
+                                id="pagoMonto"
+                                class="form-control"
+                                min="0"
+                                step="0.01"
+                                required
+                            />
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="pagoMedio" class="form-label"
+                                >Medio de Pago</label
+                            >
+                            <select id="pagoMedio" class="form-select" required>
+                                <option value="">Seleccionar</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Transferencia">
+                                    Transferencia
+                                </option>
+                                <option value="Tarjeta">Tarjeta</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="pagoObservacion" class="form-label"
+                                >Observaciones</label
+                            >
+                            <input
+                                type="text"
+                                id="pagoObservacion"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                Registrar Pago
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card p-4 shadow">
+                    <h4 class="text-center mb-3 fw-bold">
+                        Historial de Pagos del Cliente
+                    </h4>
+
+                    <div class="d-grid mb-3">
+                        <button
+                            id="btnExportarPagos"
+                            class="btn btn-outline-success"
+                        >
+                            Exportar Pagos CSV
+                        </button>
+                    </div>
+
+                    <div id="historialPagosContenedor" class="table-responsive">
+                        <!-- Se llena dinámicamente -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Reportes -->
+            <section
+                id="seccionReportes"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <h2>Reportes</h2>
+
+                <div class="card p-3 mb-4 shadow">
+                    <h4>Estado General de la Cartera</h4>
+                    <ul
+                        id="estadoGeneral"
+                        class="list-group list-group-flush"
+                    ></ul>
+                </div>
+
+                <div class="card p-3 mb-4 shadow">
+                    <h4>Reporte de Ingresos</h4>
+                    <div id="tablaIngresos"></div>
+                </div>
+
+                <div class="card p-3 shadow">
+                    <h4>Top 5 Clientes con más Pagos</h4>
+                    <ol
+                        id="topClientes"
+                        class="list-group list-group-numbered"
+                    ></ol>
+                </div>
+
+                <div class="card p-3 mt-4 shadow">
+                    <h4>Clientes en Mora (más de 30 días sin pagar)</h4>
+                    <div id="clientesMora"></div>
+                </div>
+            </section>
+
+            <section
+                id="seccionSimulador"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <div class="card p-4 shadow">
+                    <h2>Simulador de Créditos</h2>
+                    <form id="formSimulador" class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <label for="simMonto" class="form-label"
+                                >Monto ($)</label
+                            >
+                            <input
+                                type="number"
+                                id="simMonto"
+                                class="form-control"
+                                required
+                                min="1000"
+                                step="100"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="simCuotas" class="form-label"
+                                >Cuotas</label
+                            >
+                            <input
+                                type="number"
+                                id="simCuotas"
+                                class="form-control"
+                                required
+                                min="1"
+                                max="60"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="simInteres" class="form-label"
+                                >Interés mensual (%)</label
+                            >
+                            <input
+                                type="number"
+                                id="simInteres"
+                                class="form-control"
+                                required
+                                min="0"
+                                step="0.1"
+                            />
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                Simular
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-4" id="resultadoSimulador"></div>
+                </div>
+            </section>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            type="module"
+            src="../js/components/interfazAdmin/main.js"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+.login-container {
+	flex-grow: 1;
+	/* padding vertical responsivo */
+	padding-block: clamp(2rem, 5vw, 3rem);
+}
+
+/* Título */
+.login-container div h2 {
+	font-family: "Baloo 2", Roboto, sans-serif;
+	color: var(--azul);
+	font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+/* ───────── TARJETA (COLUMN) ───────── */
+/* Evita que la columna sea demasiado ancha o demasiado angosta */
+.login-card {
+	max-width: 600px; /* como el formulario de contacto */
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: clamp(
+		1rem,
+		5vw,
+		2rem
+	); /* más margen lateral en pantallas chicas */
+	box-sizing: border-box;
+}
+
+/* ───────── LABELS ───────── */
+.login-form > div > label {
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	color: var(--azul);
+	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+/* ───────── INPUTS (correo y password) ───────── */
+.login-form > div > input {
+	font-family: "Roboto", sans-serif;
+	padding: clamp(0.5rem, 1vw, 0.8rem);
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+	transition: border 0.3s ease, box-shadow 0.3s ease;
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.login-form > div > input:focus {
+	border: 1px solid var(--azul);
+	box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
+}
+
+/* Estilo para el ícono del ojo dentro del input */
+.position-relative {
+	position: relative;
+}
+
+.toggle-password {
+	position: absolute;
+	top: 55%;
+	right: 0.75rem;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #666;
+	user-select: none;
+	font-size: 1.25rem;
+	z-index: 10;
+}
+
+/* Botón Ingresar */
+.login-btn {
+	background-color: var(--azul);
+	color: #fff;
+	border: none;
+	padding: clamp(0.55rem, 1.2vw, 0.8rem);
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 600;
+	border-radius: 0.5rem;
+	transition: background-color 0.3s ease;
+	width: 100%; /* para que coincida con los inputs */
+	max-width: 100%;
+}
+
+.login-btn:hover {
+	background-color: var(--rojo);
+	background-color: var(--rojo);
+}
+
+/* Botón Crear Cuenta */
+.register-btn {
+	background-color: transparent;
+	color: var(--azul);
+	border: 2px solid var(--azul);
+	padding: clamp(0.55rem, 1.2vw, 0.8rem);
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 600;
+	border-radius: 0.5rem;
+	transition: all 0.3s ease;
+	width: 100%;
+	max-width: 100%;
+}
+
+.register-btn:hover {
+	background-color: var(--rojo);
+	color: white;
+	background-color: var(--azul);
+	color: #fff;
+}
+
+/* Enlace "¿Olvidaste tu contraseña?" */
+.forgot-password {
+	color: var(--azul);
+	text-decoration: none;
+	font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+	margin-bottom: 1.5rem;
+}
+
+.forgot-password:hover {
+	text-decoration: underline;
+}
+
+.error-mensaje {
+	color: #d93025;
+	font-size: 0.9rem;
+	margin-top: 0.25rem;
+	min-height: 1.2em;
+}
+
+/* Centrar contenido dentro del modal */
+#modalCarga .modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: var(--gris-claro);
+	border: 2px solid var(--azul);
+	border-radius: 12px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	padding: 2rem;
+}
+
+/* Spinner centrado y con color personalizado */
+#modalCarga .spinner-border {
+	color: var(--rojo); /* este reemplaza el azul predeterminado */
+	width: 3.5rem;
+	height: 3.5rem;
+	margin-bottom: 1rem;
+}
+
+#modalCarga p {
+	color: var(--azul);
+	font-family: "Roboto", sans-serif;
+	font-size: 1.1rem;
+	margin-top: 1rem;
+}

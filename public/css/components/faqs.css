@@ -1,0 +1,58 @@
+/* ====== FAQ HEADER Y TÍTULO ====== */
+main h1 {
+	font-family: "Baloo 2", cursive;
+	color: var(--azul);
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+/* ====== ACORDEÓN (Bootstrap override) ====== */
+.accordion-item {
+	border: 1px solid var(--azul);
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}
+
+.accordion-button {
+	background-color: #c3c3c3;
+	color: var(--azul);
+	font-weight: 600;
+}
+/* Estado cerrado flecha Azul var(--azul) */
+.accordion-button::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231d2c6b' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+/* Estado abierto Flecha blanca */
+.accordion-button:not(.collapsed)::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+/* Estado abierto del botón*/
+.accordion-button:not(.collapsed) {
+	background-color: var(--azul);
+	color: #fff;
+	box-shadow: none;
+}
+
+.accordion-body {
+	background-color: #f9f9ff;
+}
+
+/* Enlaces dentro de FAQs */
+.accordion-body a {
+	color: var(--rojo);
+	text-decoration: none;
+	font-weight: 600;
+}
+.accordion-body a:hover {
+	text-decoration: underline;
+}
+
+/* Contenedor centrado en pantallas grandes */
+@media (min-width: 768px) {
+	main.container {
+		max-width: 800px;
+	}
+}

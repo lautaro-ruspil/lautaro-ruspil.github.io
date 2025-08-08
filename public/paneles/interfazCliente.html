@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panel Cliente | rapicréditos</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/components/interfazCliente.css" />
+	</head>
+	<body>
+		<!-- HEADER dinámico -->
+	<div id="header-placeholder"></div>
+
+		<main class="container-xxl py-5">
+			<h2 class="panel-title">Panel de Cliente</h2>
+
+			<!-- ───── QUICK SUMMARY ───── -->
+			<div class="row g-4 mb-4">
+				<div class="col-lg-4">
+					<div class="card resumen-card shadow-sm h-100">
+						<div
+							class="card-body d-flex flex-column justify-content-center align-items-center"
+						>
+							<i
+								class="bi bi-cash-stack icon-resumen text-rojo"
+							></i>
+							<h6 class="mb-1">Próxima cuota</h6>
+							<p class="m-0 fw-bold" id="proxCuota">
+								$ 
+							</p>
+							<small id="proxFecha">dd/mm/aaaa</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card resumen-card shadow-sm h-100">
+						<div
+							class="card-body d-flex flex-column justify-content-center align-items-center"
+						>
+							<i
+								class="bi bi-calendar-check icon-resumen text-azul"
+							></i>
+							<h6 class="mb-1">Cuotas pagas</h6>
+							<p class="m-0 fw-bold" id="cuotasPagasCard">
+								0 / 0
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card resumen-card shadow-sm h-100">
+						<div
+							class="card-body d-flex flex-column justify-content-center align-items-center"
+						>
+							<i
+								class="bi bi-bar-chart-line icon-resumen text-rojo"
+							></i>
+							<h6 class="mb-1">Estado</h6>
+							<p class="m-0 fw-bold" id="estadoCuentaCard">
+								Al día
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ───── NAV PILLS ───── -->
+			<ul class="nav nav-pills mb-4" id="tabsCliente" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button
+						class="nav-link active"
+						data-bs-toggle="pill"
+						data-bs-target="#tabResumen"
+					>
+						Resumen
+					</button>
+				</li>
+				<li class="nav-item">
+					<button
+						class="nav-link"
+						data-bs-toggle="pill"
+						data-bs-target="#tabCuotas"
+					>
+						Cuotas
+					</button>
+				</li>
+				<li class="nav-item">
+					<button
+						class="nav-link"
+						data-bs-toggle="pill"
+						data-bs-target="#tabPerfil"
+					>
+						Mi perfil
+					</button>
+				</li>
+				<li class="nav-item">
+					<button
+						class="nav-link"
+						data-bs-toggle="pill"
+						data-bs-target="#tabSoporte"
+					>
+						Soporte
+					</button>
+				</li>
+			</ul>
+
+			<div class="tab-content">
+				<!-- ========== RESUMEN ========= -->
+				<div class="tab-pane fade show active" id="tabResumen">
+					<div class="row g-4">
+						<!-- Acciones rápidas -->
+						<div class="col-lg-6">
+							<div class="card shadow-sm h-100">
+								<div class="card-header bg-azul text-white">
+									<i class="bi bi-lightning me-2"></i>Acciones
+									rápidas
+								</div>
+								<div class="card-body d-grid gap-3">
+									<button
+										class="btn btn-rojo"
+										id="btnPagarAhora"
+									>
+										<i class="bi bi-credit-card me-2"></i
+										>Pagar ahora
+									</button>
+									<button
+										class="btn btn-outline-azul"
+										id="btnDescargarPlan"
+									>
+										<i class="bi bi-download me-2"></i
+										>Descargar plan (PDF)
+									</button>
+									<button
+										class="btn btn-outline-azul"
+										id="btnSolicitarRefi"
+									>
+										<i class="bi bi-arrow-repeat me-2"></i
+										>Solicitar refinanciación
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- Información de crédito -->
+						<div class="col-lg-6">
+							<div class="card shadow-sm h-100">
+								<div class="card-header bg-rojo text-white">
+									<i class="bi bi-info-circle me-2"></i
+									>Detalles del crédito
+								</div>
+								<div class="card-body">
+									<p>
+										<strong>Monto otorgado:</strong>
+										<span id="montoOtorgado">$0,00</span>
+									</p>
+									<p>
+										<strong>Tasa:</strong>
+										<span id="tasaCredito">0 %</span>
+									</p>
+									<p>
+										<strong>Plazo:</strong>
+										<span id="plazoCredito">-- meses</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ========== CUOTAS ========= -->
+				<div class="tab-pane fade" id="tabCuotas">
+					<div class="card shadow-sm">
+						<div class="card-header bg-azul text-white">
+							<i class="bi bi-list-columns-reverse me-2"></i
+							>Detalle de cuotas
+						</div>
+						<div class="card-body table-responsive">
+							<!-- tu JS insertará una tabla aquí -->
+							<table
+								class="table table-sm align-middle"
+								id="tablaCuotas"
+							></table>
+						</div>
+					</div>
+				</div>
+
+				<!-- ========== PERFIL ========= -->
+				<div class="tab-pane fade" id="tabPerfil">
+					<div class="card shadow-sm">
+						<div class="card-header bg-azul text-white">
+							Mis datos
+						</div>
+						<div class="card-body">
+							<div id="datosCliente" class="row g-3"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ========== SOPORTE ========= -->
+				<div class="tab-pane fade" id="tabSoporte">
+					<div class="card shadow-sm">
+						<div class="card-header bg-rojo text-white">
+							<i class="bi bi-headset me-2"></i>Soporte
+						</div>
+						<div class="card-body">
+							<p>Horario de atención: L‑V 9 a 18 h.</p>
+							<p>
+								<i class="bi bi-whatsapp text-success me-2"></i
+								><a
+									href="https://wa.me/+542284555478"
+									target="_blank"
+									>WhatsApp Soporte</a
+								>
+							</p>
+							<p>
+								<i
+									class="bi bi-envelope-fill text-danger me-2"
+								></i
+								><a href="mailto:soporte@rapicreditos.com"
+									>soporte@rapicreditos.com</a
+								>
+							</p>
+							<p>
+								<i
+									class="bi bi-chat-left-text-fill text-primary me-2"
+								></i
+								><a href="../info/contacto.html"
+									>Formulario de contacto</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- FOOTER dinámico -->
+	<div id="footer-placeholder"></div>
+
+		<div class="container-boton-Whatsapp">
+			<a
+				href="https://wa.me/+542284555478?text=En%20que%20podemos%20ayudarte?%20..."
+				target="_blank"
+			>
+				<img class="boton" src="/assets/iconow.png" alt="Whatsapp" />
+			</a>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script
+			type="module"
+			src="../js/components/interfazCliente.js"
+		></script>
+		<!-- Script para cargar header y footer -->
+	<script src="../js/load-partials.js"></script>
+	</body>
+</html>

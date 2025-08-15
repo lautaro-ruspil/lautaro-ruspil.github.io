@@ -73,7 +73,7 @@
                                     name="apellidoCliente"
                                 />
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="dni" class="form-label">
                                     DNI <span class="required">*</span>
                                 </label>
@@ -85,7 +85,23 @@
                                     name="dniCliente"
                                 />
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <label
+                                    for="dniNumeroTramite"
+                                    class="form-label"
+                                >
+                                    DNI Nro. de Trámite
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="dniNumeroTramite"
+                                    class="form-control"
+                                    placeholder="12345678901"
+                                    name="dniNroTramiteCliente"
+                                />
+                            </div>
+                            <div class="col-md-4">
                                 <label for="telefono" class="form-label">
                                     Teléfono <span class="required">*</span>
                                 </label>
@@ -97,7 +113,7 @@
                                     name="telefonoCliente"
                                 />
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <label for="direccion" class="form-label">
                                     Dirección <span class="required">*</span>
                                 </label>
@@ -109,9 +125,10 @@
                                     name="direccionCliente"
                                 />
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <label for="numero" class="form-label">
-                                    Número <span class="required">*</span>
+                                    N° dir.
+                                    <span class="required">*</span>
                                 </label>
                                 <input
                                     type="number"
@@ -121,7 +138,7 @@
                                     name="direccionNumeroCliente"
                                 />
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <label for="piso" class="form-label"
                                     >Piso</label
                                 >
@@ -133,7 +150,7 @@
                                     placeholder="3"
                                 />
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <label for="dpto" class="form-label"
                                     >Dpto</label
                                 >
@@ -375,25 +392,6 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- CBU -->
-                            <div class="w-100">
-                                <label for="cbu" class="form-label mt-3"
-                                    >CBU (22 dígitos)</label
-                                >
-                                <input
-                                    type="text"
-                                    id="cbu"
-                                    class="form-control"
-                                    maxlength="22"
-                                    placeholder="0001234567891234567890"
-                                    name="cbu"
-                                />
-                                <div
-                                    id="error-cbu"
-                                    class="error-mensaje w-100 text-center"
-                                ></div>
                             </div>
 
                             <!-- Botones -->

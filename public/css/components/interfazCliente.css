@@ -1,144 +1,148 @@
-/* Panel del Cliente - Título */
+/* Mantengo tu base y agrego estilos necesarios para las nuevas features */
+
+/* Títulos principales */
 .panel-title {
-	font-family: "Baloo 2", cursive;
-	font-size: 2.2rem;
-	color: var(--azul);
-	margin-bottom: 2rem;
-	text-align: center;
+    font-family: "Baloo 2", cursive;
+    font-size: 1.8rem;
+    color: var(--azul);
+    font-weight: 600;
 }
 
-/* Resumen tarjetas */
+/* Tarjetas resumen */
 .resumen-card {
-	border: 1px solid #dee2e6;
-	border-radius: 0.75rem;
-	transition: transform 0.2s ease;
-	background-color: #fff;
+    box-shadow: var(--sombra);
+    border-radius: 0.75rem;
+    transition: transform 0.2s ease;
 }
 .resumen-card:hover {
-	transform: translateY(-5px);
+    transform: translateY(-3px);
 }
-.icon-resumen {
-	font-size: 2.5rem;
-	margin-bottom: 0.5rem;
+.resumen-card .card-body h6 {
+    font-weight: bold;
+    color: var(--azul);
 }
 .text-rojo {
-	color: var(--rojo);
+    color: var(--rojo);
 }
 .text-azul {
-	color: var(--azul);
+    color: var(--azul);
+}
+.bg-rojo {
+    background-color: var(--rojo);
+}
+.bg-azul {
+    background-color: var(--azul);
 }
 
-/* NAV PILLS */
-.nav-pills .nav-link {
-	border-radius: 0.5rem;
-	padding: 0.6rem 1.2rem;
-	color: var(--azul);
-	font-weight: 500;
-}
-.nav-pills .nav-link.active {
-	background-color: var(--azul);
-	color: #fff;
-}
-
-/* Tarjetas interiores */
-.card-header {
-	font-weight: 600;
-	font-size: 1rem;
-}
-.card-body p {
-	margin-bottom: 0.6rem;
-}
-.card-body button {
-	min-height: 45px;
-}
+/* Botones personalizados */
 .btn-rojo {
-	border: 1px solid var(--azul);
-	color: var(--azul);
+    background-color: var(--rojo);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
 }
 .btn-rojo:hover {
-	background-color: var(--azul);
-	color: white;
+    background-color: #b30642;
 }
+
 .btn-outline-azul {
-	border: 1px solid var(--azul);
-	color: var(--azul);
+    border: 2px solid var(--azul);
+    color: var(--azul);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
 }
 .btn-outline-azul:hover {
-	background-color: var(--azul);
-	color: white;
+    background-color: var(--azul);
+    color: #fff;
 }
 
-/* Tabla de cuotas */
-#tablaCuotas {
-	width: 100%;
+/* Tablas */
+.table th {
+    background-color: var(--azul);
+    color: white;
+    border: none;
 }
-#tablaCuotas th,
-#tablaCuotas td {
-	vertical-align: middle;
-	padding: 0.75rem;
-}
-
-/* Mis datos - perfil */
-#datosCliente p {
-	margin: 0;
-	padding: 8px 12px;
-	background-color: #f8f9fa;
-	border-radius: 6px;
-	border: 1px solid #dee2e6;
+.table td {
+    vertical-align: middle;
 }
 
-#datosCliente .col-md-6 {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
+/* Botón comprobante */
+.btn-comprobante {
+    border-radius: 0.35rem;
 }
 
-#datosCliente strong {
-	color: var(--azul);
-	width: 160px;
-	display: inline-block;
-}
-#datosCliente span.valor {
-	color: #333;
-}
-#datosCliente hr {
-	border-top: 1px dashed var(--rojo);
-	margin: 1.5rem 0;
-}
-.estado-ok {
-	color: #198754;
-	font-weight: 700;
-}
-.estado-pend {
-	color: #fd7e14;
-	font-weight: 700;
-}
-.estado-mora {
-	color: #dc3545;
-	font-weight: 700;
+/* Tarjetas de secciones */
+.card-header {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-/* Soporte */
-#tabSoporte p {
-	margin-bottom: 1rem;
-}
-#tabSoporte a {
-	color: var(--azul);
-	text-decoration: none;
-}
-#tabSoporte a:hover {
-	text-decoration: underline;
+/* Progreso */
+.progress {
+    border-radius: 0.5rem;
 }
 
-/* Responsive */
+.card-body {
+    font-size: 18px;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: var(--azul);
+}
+
+.card-body a:hover {
+    color: var(--rojo);
+}
+
+/* Efecto urgente para el botón pagar ahora */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+.btn-urgente {
+    animation: pulse 1.5s infinite;
+}
+
+/* Hover de filas para indicar que son clickeables */
+#tablaCuotas tbody tr:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+}
+
+/* Alert styling pequeño ajuste */
+#alertaCliente {
+    font-weight: 600;
+}
+
+/* Canvas centrado en dispositivos pequeños */
+#graficoProgreso {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+/* Responsividad extra */
 @media (max-width: 768px) {
-	.icon-resumen {
-		font-size: 2rem;
-	}
-	.panel-title {
-		font-size: 1.7rem;
-	}
-	#datosCliente strong {
-		width: 120px;
-	}
+    .panel-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .card-body p {
+        font-size: 0.9rem;
+    }
+    #graficoProgreso {
+        max-width: 110px;
+        max-height: 110px;
+    }
 }

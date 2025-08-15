@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Usamos ruta absoluta basada en la raíz del sitio
-    fetch("../../public/partials/header.html")
+    fetch("../../../public/partials/header.html")
         .then((res) => res.text())
         .then((data) => {
             document.getElementById("header-placeholder").innerHTML = data;
             activarLinkActual();
         });
 
-    fetch("../../public/partials/footer.html")
+    fetch("../../../public/partials/footer.html")
         .then((res) => res.text())
         .then((data) => {
             document.getElementById("footer-placeholder").innerHTML = data;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .split("/")
             .pop()
             .toLowerCase();
-        const esInicio = filename === "" || filename === "index.html";
+        const esInicio = filename === "" || filename === "Index.html";
 
         requestAnimationFrame(() => {
             const links = document.querySelectorAll(".nav-link");

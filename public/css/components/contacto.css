@@ -1,14 +1,14 @@
 /* Fondo parallax */
-.parallax-background {
-	background-image: url("/assets/rapicreditos.png");
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
-	padding: 60px 15px;
-	position: relative;
-}
+/* .parallax-background {
+    background-image: url("/assets/rapicreditos.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 15px;
+    position: relative;
+} */
 
-.parallax-background::before {
+/* .parallax-background::before {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -18,195 +18,215 @@
 		230,
 		0.95
 	); /* capa blanca semi-transparente */
-	z-index: 0;
+/*z-index: 0;
 }
+*/
 
 /* Contenedor principal del formulario */
 .container-form-contacto {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	background-color: white;
-	border-radius: 12px;
-	box-shadow: var(--sombra);
-	position: relative;
-	z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    position: relative;
+    z-index: 1;
 }
 
 /* Título del formulario */
 .titulo-formulario {
-	text-align: center;
-	font-family: "Baloo 2", cursive;
-	color: var(--azul);
-	margin-bottom: 1.5rem;
-	font-size: clamp(1.8rem, 5vw, 3.2rem);
+    text-align: center;
+    font-family: "Baloo 2", cursive;
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
 }
+
+/* Texto de " * " (labels)  */
+.required {
+    color: var(--rojo);
+    font-weight: bold;
+}
+
+/* Texto de " * campos obligatorios " */
+
+.form-note {
+    font-size: clamp(1.2rem, 1.6vw, 1.1rem);
+    color: var(--rojo);
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    width: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
 
 /* Formulario */
 .formulario-contacto {
-	display: grid;
-	gap: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
 }
 
 /* Campo individual */
 .campo {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Etiquetas */
 .campo label {
-	font-weight: 600;
-	margin-bottom: 0.5rem;
-	color: var(--azul);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--azul);
 }
 
 /* Inputs y textarea */
 .campo input,
 .campo textarea {
-	font-family: "Roboto", sans-serif;
-	padding: clamp(0.5rem, 1vw, 0.8rem);
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-	transition: border 0.3s ease, box-shadow 0.3s ease;
-	outline: none;
-	width: 100%;
-	box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Focus inputs y textarea */
 .campo input:focus,
 .campo textarea:focus {
-	border: 1px solid var(--azul);
-	box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
+    border: 1px solid var(--azul);
+    box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
 }
 
 /* Contenedor del botón */
 .boton-enviar {
-	text-align: center;
+    text-align: center;
 }
 
 /* Botón enviar */
 .boton-enviar button {
-	background-color: var(--azul);
-	color: white;
-	padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1.5rem, 3vw, 2.5rem);
-	font-size: clamp(1rem, 2vw, 1.2rem);
-	border: none;
-	border-radius: 8px;
-	cursor: pointer;
-	font-weight: 600;
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	min-width: 120px;
-	width: auto;
+    background-color: var(--azul);
+    color: white;
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    width: auto;
 }
 
 .boton-enviar button:hover {
-	background-color: var(--rojo);
-	transform: translateY(-2px);
+    background-color: var(--rojo);
+    transform: translateY(-2px);
 }
 
 /* Mensajes de error */
 .error-mensaje {
-	color: red;
-	font-size: 0.9rem;
-	margin-top: 4px;
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
 }
 
 .required {
-	color: var(--rojo);
-	font-weight: bold;
+    color: var(--rojo);
+    font-weight: bold;
 }
 
 /* === Modal Personalizado para Confirmación === */
 #modalConfirmacion .modal-content {
-	background-color: #f0f4fb; /* azul muy claro para fondo */
-	color: #1a2638; /* texto azul oscuro suave */
-	border-radius: 1rem;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-	border: 1px solid var(--azul);
-	animation: slideUp 0.4s ease-out;
+    background-color: #f0f4fb; /* azul muy claro para fondo */
+    color: #1a2638; /* texto azul oscuro suave */
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--azul);
+    animation: slideUp 0.4s ease-out;
 }
 
 #modalConfirmacion .modal-header {
-	border-bottom: none;
-	background-color: transparent;
-	color: var(--rojo);
-	font-family: "Baloo 2", cursive;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem 1.5rem;
+    border-bottom: none;
+    background-color: transparent;
+    color: var(--rojo);
+    font-family: "Baloo 2", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
 }
 
 #modalConfirmacion .modal-title {
-	font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #modalConfirmacion .modal-body {
-	font-size: clamp(1rem, 2vw, 1.2rem);
-	color: var(--azul);
-	font-family: "Roboto", sans-serif;
-	padding: 1rem 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--azul);
+    font-family: "Roboto", sans-serif;
+    padding: 1rem 1.5rem;
 }
 
 #modalConfirmacion .modal-footer {
-	border-top: none;
-	background-color: transparent;
-	padding: 1rem 1.5rem;
-	display: flex;
-	justify-content: flex-end;
+    border-top: none;
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #modalConfirmacion .btn-light {
-	background-color: var(--rojo);
-	color: white;
-	border-radius: 6px;
-	font-weight: 600;
-	padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
-	transition: background-color 0.3s ease;
-	box-shadow: var(--sombra);
-	min-width: 100px;
-	width: auto;
+    background-color: var(--rojo);
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+    transition: background-color 0.3s ease;
+    box-shadow: var(--sombra);
+    min-width: 100px;
+    width: auto;
 }
 
 #modalConfirmacion .btn-light:hover {
-	background-color: var(--azul);
+    background-color: var(--azul);
 }
 
 /* Animación */
 @keyframes slideUp {
-	from {
-		transform: translateY(30px);
-		opacity: 0;
-	}
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
-	.parallax-background {
-		background-attachment: scroll; /* desactiva efecto parallax */
-		background-position: center;
-		background-size: cover;
-	}
+    .parallax-background {
+        background-attachment: scroll; /* desactiva efecto parallax */
+        background-position: center;
+        background-size: cover;
+    }
 
-	.parallax-background::before {
-		background-color: rgba(
-			255,
-			255,
-			255,
-			0.95
-		); /* casi blanco en móviles para mejor legibilidad */
-	}
+    .parallax-background::before {
+        background-color: rgba(
+            255,
+            255,
+            255,
+            0.95
+        ); /* casi blanco en móviles para mejor legibilidad */
+    }
 }

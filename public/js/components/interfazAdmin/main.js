@@ -8,8 +8,8 @@ import { configurarFormularioCliente } from "./clientes.js";
 
 // Créditos
 import {
-	cargarClientesEnSelect,
-	configurarDetalleClienteCredito,
+    cargarClientesEnSelect,
+    configurarDetalleClienteCredito,
 } from "./creditos.js";
 
 // Pagos
@@ -24,21 +24,26 @@ import { inicializarSimulador } from "./simulador.js";
 // Exportación de datos
 import { inicializarExportaciones } from "./exportar.js";
 
-// (Opcional) Almacenamiento local 
+import { obtenerClientesBaseDatos } from "./getClientes.js";
+import { mostrarSeccionPostulantes } from "./ui.js";
+
+// (Opcional) Almacenamiento local
 // import { cargarDesdeLocalStorage } from "./data.js";
 
 // ===== Inicialización General de la App =====
 
 function inicializarApp() {
-	// cargarDesdeLocalStorage(); // Cargar datos persistentes
-	configurarNav(); // Menú de navegación
-	configurarFormularioCliente(); // Formulario de clientes
-	cargarClientesEnSelect(); // Menú desplegable de clientes
-	configurarDetalleClienteCredito(); // Vista detalle del crédito
-	inicializarPagos(); // Funcionalidad de pagos
-	inicializarReportes(); // Sección de reportes
-	inicializarSimulador(); // Simulador de créditos/cuotas
-	inicializarExportaciones(); // Exportar datos
+    // cargarDesdeLocalStorage(); // Cargar datos persistentes
+    configurarNav(); // Menú de navegación
+    configurarFormularioCliente(); // Formulario de clientes
+    cargarClientesEnSelect(); // Menú desplegable de clientes
+    configurarDetalleClienteCredito(); // Vista detalle del crédito
+    inicializarPagos(); // Funcionalidad de pagos
+    inicializarReportes(); // Sección de reportes
+    inicializarSimulador(); // Simulador de créditos/cuotas
+    inicializarExportaciones(); // Exportar datos
+    mostrarSeccionPostulantes();
+    obtenerClientesBaseDatos();
 }
 
 // ===== Arranque cuando el DOM está listo =====

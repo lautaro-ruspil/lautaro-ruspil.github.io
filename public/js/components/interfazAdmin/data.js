@@ -1,12 +1,29 @@
 // Función que obtiene la lista de clientes desde el almacenamiento local del navegador
-export function getClientes() {
-	const clientes = localStorage.getItem("clientes"); // Intenta obtener la cadena guardada bajo la clave "clientes"
-	return clientes ? JSON.parse(clientes) : []; // Si existe, la convierte de texto a objeto/array; si no, devuelve un array vacío
+export async function getClientes() {
+    try {
+        const res = await fetch("http://localhost:3000/cliente");
+        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error("Error al obtener clientes del backend:", err);
+        return [];
+    }
+}
+
+export async function getPostulantes() {
+    try {
+        const res = await fetch("http://localhost:3000/postulante");
+        if (!res.ok) throw new Error(`Error Http: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error("Error al obtener clientes del backend:", err);
+        return [];
+    }
 }
 
 // Función que guarda una lista de clientes en el almacenamiento local
 export function guardarClientes(clientes) {
-	localStorage.setItem("clientes", JSON.stringify(clientes)); // Convierte el array/objeto en texto JSON y lo guarda
+    localStorage.setItem("clientes", JSON.stringify(clientes)); // Convierte el array/objeto en texto JSON y lo guarda
 }
 
 // // Función que se encarga de cargar los datos desde el localStorage

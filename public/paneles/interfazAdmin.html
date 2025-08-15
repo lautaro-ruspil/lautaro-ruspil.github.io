@@ -60,6 +60,14 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a
+                                class="nav-link nav-sistema"
+                                data-target="Postulantes"
+                                href="#"
+                                >Postulantes</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
                                 class="nav-link nav-sistema active"
                                 data-target="Clientes"
                                 href="#"
@@ -113,7 +121,7 @@
                 <form id="clienteForm" class="row g-3" novalidate>
                     <input type="hidden" id="clienteId" />
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                         <label for="nombres" class="form-label"
                             >Nombres <span class="required">*</span></label
                         >
@@ -125,7 +133,7 @@
                         />
                         <div class="error-mensaje" id="error-nombres"></div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                         <label for="apellidos" class="form-label"
                             >Apellidos <span class="required">*</span></label
                         >
@@ -150,6 +158,19 @@
                         <div class="error-mensaje" id="error-dni"></div>
                     </div>
                     <div class="col-12 col-md-4">
+                        <label for="dni-nro-tramite" class="form-label"
+                            >Nro de Trámite del DNI
+                            <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="dni-nro-tramite"
+                            class="form-control"
+                            placeholder="12345678911"
+                        />
+                        <div class="error-mensaje" id="error-dni"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
                         <label for="telefono" class="form-label"
                             >Teléfono <span class="required">*</span></label
                         >
@@ -160,6 +181,18 @@
                             placeholder="2284123456"
                         />
                         <div class="error-mensaje" id="error-telefono"></div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="correo" class="form-label"
+                            >Correo electrónico <span class="required">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="correo"
+                            class="form-control"
+                            placeholder="juan@gmail.com"
+                        />
+                        <div class="error-mensaje" id="error-correo"></div>
                     </div>
                     <div class="col-12 col-md-4">
                         <label for="direccion" class="form-label"
@@ -206,20 +239,7 @@
                         <div class="error-mensaje" id="error-dpto"></div>
                     </div>
 
-                    <div class="col-12 col-md-4">
-                        <label for="correo" class="form-label"
-                            >Correo electrónico <span class="required">*</span>
-                        </label>
-                        <input
-                            type="email"
-                            id="correo"
-                            class="form-control"
-                            placeholder="juan@gmail.com"
-                        />
-                        <div class="error-mensaje" id="error-correo"></div>
-                    </div>
-
-                    <div class="col-12 col-md-6">
+                    <!-- <div class="col-12 col-md-6">
                         <label for="contrasenia" class="form-label"
                             >Contraseña <span class="required">*</span></label
                         >
@@ -230,6 +250,22 @@
                             placeholder="***********"
                         />
                         <div class="error-mensaje" id="error-contrasenia"></div>
+                    </div> -->
+                    <div class="col-12 col-md-4">
+                        <label for="tipo_credito" class="form-label"
+                            >Tipo de Crédito
+                            <span class="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="tipo_credito"
+                            class="form-control"
+                            placeholder="Ej: Crédito Personal"
+                        />
+                        <div
+                            class="error-mensaje"
+                            id="error-tipo-credito"
+                        ></div>
                     </div>
                     <div class="col-12 col-md-4">
                         <label for="monto" class="form-label"
@@ -244,22 +280,21 @@
                         <div class="error-mensaje" id="error-monto"></div>
                     </div>
                     <div class="col-12 col-md-4">
-                        <label for="cuotasIniciales" class="form-label"
-                            >Cuotas Iniciales
-                            <span class="required">*</span></label
+                        <label for="cuotas_totales" class="form-label"
+                            >Total Cuotas <span class="required">*</span></label
                         >
                         <input
                             type="number"
-                            id="cuotasIniciales"
+                            id="cuotas_totales"
                             class="form-control"
                             placeholder="18"
                         />
                         <div
                             class="error-mensaje"
-                            id="error-cuotasIniciales"
+                            id="error-cuotas_totales"
                         ></div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <!-- <div class="col-12 col-md-4">
                         <label for="cuotasPagas" class="form-label"
                             >Cuotas Pagas <span class="required">*</span></label
                         >
@@ -270,6 +305,70 @@
                             placeholder="3"
                         />
                         <div class="error-mensaje" id="error-cuotasPagas"></div>
+                    </div> -->
+                    <div class="col-12 col-md-3">
+                        <label for="foto_dni_frente_img" class="form-label"
+                            >Foto DNI Frente</label
+                        >
+                        <img
+                            id="foto_dni_frente_img"
+                            src=""
+                            alt="Foto DNI Frente"
+                            style="
+                                width: 100%;
+                                max-height: 150px;
+                                object-fit: contain;
+                                border: 1px solid #ccc;
+                            "
+                        />
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for="foto_dni_dorso_img" class="form-label"
+                            >Foto DNI Dorso</label
+                        >
+                        <img
+                            id="foto_dni_dorso_img"
+                            src=""
+                            alt="Foto DNI Dorso"
+                            style="
+                                width: 100%;
+                                max-height: 150px;
+                                object-fit: contain;
+                                border: 1px solid #ccc;
+                            "
+                        />
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for="foto_dni_selfie_img" class="form-label"
+                            >Foto DNI Selfie</label
+                        >
+                        <img
+                            id="foto_dni_selfie_img"
+                            src=""
+                            alt="Foto DNI Selfie"
+                            style="
+                                width: 100%;
+                                max-height: 150px;
+                                object-fit: contain;
+                                border: 1px solid #ccc;
+                            "
+                        />
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for="foto_recibo_sueldo_img" class="form-label"
+                            >Foto Recibo Sueldo</label
+                        >
+                        <img
+                            id="foto_recibo_sueldo_img"
+                            src=""
+                            alt="Foto Recibo Sueldo"
+                            style="
+                                width: 100%;
+                                max-height: 150px;
+                                object-fit: contain;
+                                border: 1px solid #ccc;
+                            "
+                        />
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="estadoCuenta" class="form-label"
@@ -311,6 +410,16 @@
                         </button>
                     </div>
                 </form>
+            </section>
+
+            <!-- Seccion Lista de Postulantes -->
+            <section
+                id="seccionPostulantes"
+                class="seccionSistema"
+                style="display: none"
+            >
+                <h2>Lista de Postulantes</h2>
+                <div id="tablaPostulantesContenedor"></div>
             </section>
 
             <!-- Seccion Lista de Clientes -->
@@ -562,7 +671,7 @@
                 </div>
             </section>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script
             type="module"

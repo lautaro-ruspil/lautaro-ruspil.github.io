@@ -1,169 +1,179 @@
 /* MAIN CONTENEDOR */
 main.flex-grow-1 {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 1rem 1.5rem 3rem;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 /* TÍTULOS */
 .seccionSistema h2,
 .seccionSistema h4 {
-	color: var(--azul);
-	font-weight: 700;
-	margin-bottom: 1rem;
-	text-align: center;
-	font-family: "baloo 2";
-	font-size: clamp(1.8rem, 4vw + 0.5rem, 2.8rem);
+    color: var(--azul);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: "baloo 2";
+    font-size: clamp(1.8rem, 4vw + 0.5rem, 2.8rem);
 }
 
 /* Formularios */
 form.row.g-3 {
-	margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 label.form-label {
-	font-weight: 600;
-	color: var(--azul);
-	margin-bottom: 0.35rem;
-	display: block;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 600;
+    color: var(--azul);
+    margin-bottom: 0.35rem;
+    display: block;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 input.form-control,
 select.form-select {
-	font-family: "Roboto", sans-serif;
-	padding: clamp(0.5rem, 1vw, 0.8rem);
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-	transition: border 0.3s ease, box-shadow 0.3s ease;
-	outline: none;
-	width: 100%;
-	box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input.form-control:focus,
 select.form-select:focus {
-	border: 1px solid var(--azul);
-	box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
+    border: 1px solid var(--azul);
+    box-shadow: 0 0 0 2px rgba(33, 22, 82, 0.2);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type="number"] {
-	-moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 .required {
-	color: var(--rojo);
-	font-weight: bold;
+    color: var(--rojo);
+    font-weight: bold;
 }
 
 .form-note {
-	font-size: clamp(0.9rem, 1.6vw, 1.1rem);
-	color: var(--rojo);
-	text-align: center;
-	margin-top: 10px;
-	width: 100%;
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    color: var(--rojo);
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .error-mensaje {
-	color: #d93025; /* rojo error */
-	font-size: 0.9rem;
-	margin-top: 0.25rem;
-	min-height: 1.2em; /* para que no cambie el layout cuando aparece */
+    color: #d93025; /* rojo error */
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    min-height: 1.2em; /* para que no cambie el layout cuando aparece */
 }
 
 /* Botones */
 button.btn {
-	font-weight: 600;
-	border-radius: 6px;
-	padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1rem, 2.5vw, 1.5rem);
-	transition: background-color 0.3s ease;
-	cursor: pointer;
-	user-select: none;
-	border: none;
-	box-shadow: 0 3px 6px rgb(33 22 82 / 0.2);
-	font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 600;
+    border-radius: 6px;
+    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1rem, 2.5vw, 1.5rem);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    box-shadow: 0 3px 6px rgb(33 22 82 / 0.2);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+button.btn-ver {
+    background-color: #c3c3c3;
+    color: var(--azul);
+}
+
+button.btn-ver:hover {
+    background-color: var(--azul);
+    color: #c3c3c3;
 }
 
 button.btn-primary {
-	background-color: var(--azul);
-	color: #fff;
+    background-color: var(--azul);
+    color: #fff;
 }
 
 button.btn-primary:hover,
 button.btn-primary:focus:active {
-	background-color: #cecece;
-	color: var(--azul);
+    background-color: #cecece;
+    color: var(--azul);
 }
 
 button.btn-secondary {
-	background-color: var(--rojo);
-	color: #fff;
-	box-shadow: none;
+    background-color: var(--rojo);
+    color: #fff;
+    box-shadow: none;
 }
 
 button.btn-secondary:hover,
 button.btn-secondary:focus:active {
-	background-color: #b00000;
-	color: #fff;
+    background-color: #b00000;
+    color: #fff;
 }
 
 button.btn-success {
-	background-color: var(--azul);
-	color: #fff;
-	box-shadow: none;
+    background-color: var(--azul);
+    color: #fff;
+    box-shadow: none;
 }
 
 button.btn-success:hover,
 button.btn-success:focus:active {
-	background-color: #c3c3c3;
-	color: var(--azul);
+    background-color: #c3c3c3;
+    color: var(--azul);
 }
 
 button.btn-outline-primary {
-	color: var(--azul);
-	background-color: #c3c3c3;
-	padding: 0.3rem 1rem;
+    color: var(--azul);
+    background-color: #c3c3c3;
+    padding: 0.3rem 1rem;
 }
 
 button.btn-outline-primary:hover,
 button.btn-outline-primary:focus:active {
-	background-color: var(--azul);
-	color: #fff;
+    background-color: var(--azul);
+    color: #fff;
 }
 
 button.btn-info {
-	background-color: #c3c3c3;
-	color: var(--azul);
+    background-color: #c3c3c3;
+    color: var(--azul);
 }
 
 button.btn-info:hover,
 button.btn-info:focus:active {
-	background-color: var(--azul);
-	color: #fff;
+    background-color: var(--azul);
+    color: #fff;
 }
 
 button.btn-outline-success {
-	background-color: #c3c3c3;
-	color: var(--azul);
-	padding: 0.3rem 1rem;
-	border: 1px solid var(--azul);
+    background-color: #c3c3c3;
+    color: var(--azul);
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--azul);
 }
 
 button.btn-outline-success:hover,
 button.btn-outline-success:focus:active {
-	background-color: var(--azul);
-	color: #fff;
-	border: none;
+    background-color: var(--azul);
+    color: #fff;
+    border: none;
 }
 
 /* Contenedores para tablas */
@@ -171,244 +181,244 @@ button.btn-outline-success:focus:active {
 #historialPagosContenedor,
 #tablaIngresos,
 #clientesMora {
-	width: 100%;
-	overflow-x: auto;
-	border-radius: 8px;
-	margin-top: 1rem;
-	-webkit-overflow-scrolling: touch;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* TABLAS */
 table {
-	border-collapse: collapse;
-	width: 100%;
-	font-size: clamp(0.8rem, 1.2vw, 0.95rem);
-	min-width: 600px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+    min-width: 600px;
 }
 
 thead {
-	background-color: var(--azul);
-	color: var(--texto-blanco);
-	font-weight: 700;
+    background-color: var(--azul);
+    color: var(--texto-blanco);
+    font-weight: 700;
 }
 
 th,
 td {
-	border: 1px solid #ddd;
-	padding: 10px 12px;
-	text-align: center;
-	vertical-align: middle;
-	white-space: normal;
-	word-break: break-word;
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: normal;
+    word-break: break-word;
 }
 
 tbody tr:nth-child(even) {
-	background-color: var(--gris-claro);
+    background-color: var(--gris-claro);
 }
 
 tbody tr:hover {
-	background-color: var(--gris-hover);
-	cursor: pointer;
+    background-color: var(--gris-hover);
+    cursor: pointer;
 }
 
 .btn-editar,
 .btn-eliminar {
-	padding: 6px 10px;
-	font-size: clamp(0.75rem, 1.3vw, 0.85rem);
-	border-radius: 6px;
-	border: none;
-	cursor: pointer;
-	min-width: 68px;
-	transition: opacity 0.3s ease;
-	user-select: none;
+    padding: 6px 10px;
+    font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    min-width: 68px;
+    transition: opacity 0.3s ease;
+    user-select: none;
 }
 
 button.btn-editar {
-	background-color: var(--azul);
-	color: #fff;
+    background-color: var(--azul);
+    color: #fff;
 }
 
 button.btn-editar:hover,
 button.btn-editar:focus:active {
-	background-color: #c3c3c3;
-	color: var(--azul);
+    background-color: #c3c3c3;
+    color: var(--azul);
 }
 
 button.btn-eliminar {
-	background-color: var(--rojo);
-	color: #fff;
+    background-color: var(--rojo);
+    color: #fff;
 }
 
 button.btn-eliminar:hover,
 button.btn-eliminar:focus:active {
-	background-color: #b00000;
-	color: #fff;
+    background-color: #b00000;
+    color: #fff;
 }
 
 /* Listas */
 #estadoGeneral,
 #topClientes {
-	max-width: 600px;
-	margin: 0 auto;
-	padding-left: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 0;
 }
 
 #estadoGeneral li,
 #topClientes li {
-	padding: 8px 12px;
-	border-bottom: 1px solid var(--gris-borde);
-	color: var(--azul);
-	font-weight: 600;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--gris-borde);
+    color: var(--azul);
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 #topClientes li {
-	background-color: var(--gris-claro);
-	border-radius: 6px;
-	margin-bottom: 8px;
+    background-color: var(--gris-claro);
+    border-radius: 6px;
+    margin-bottom: 8px;
 }
 
 .card {
-	background: white;
-	border-radius: 12px;
-	padding: 1.5rem 2rem;
-	box-shadow: 0 2px 15px rgb(33 22 82 / 0.1);
-	border: 2px solid var(--azul);
-	margin-bottom: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 15px rgb(33 22 82 / 0.1);
+    border: 2px solid var(--azul);
+    margin-bottom: 1.5rem;
 }
 
 /* Responsive */
 @media (max-width: 991.98px) {
-	main.flex-grow-1 {
-		padding: 1rem 1rem 2rem;
-	}
-	.seccionSistema {
-		padding: 1rem 1.2rem;
-	}
-	table {
-		min-width: 100%;
-	}
+    main.flex-grow-1 {
+        padding: 1rem 1rem 2rem;
+    }
+    .seccionSistema {
+        padding: 1rem 1.2rem;
+    }
+    table {
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
-	main.flex-grow-1 {
-		padding: 0.75rem 1rem 1.5rem;
-	}
+    main.flex-grow-1 {
+        padding: 0.75rem 1rem 1.5rem;
+    }
 
-	.seccionSistema {
-		padding: 1rem 1rem;
-	}
+    .seccionSistema {
+        padding: 1rem 1rem;
+    }
 
-	form.row.g-3 > div[class*="col-"] {
-		width: 100%;
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
+    form.row.g-3 > div[class*="col-"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
-	table,
-	thead,
-	tbody,
-	th,
-	td,
-	tr {
-		display: block;
-	}
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
 
-	thead tr {
-		display: none;
-	}
+    thead tr {
+        display: none;
+    }
 
-	tbody tr {
-		margin-bottom: 1rem;
-		border: 2px solid var(--azul);
-		border-radius: 12px;
-		padding: 1rem;
-	}
+    tbody tr {
+        margin-bottom: 1rem;
+        border: 2px solid var(--azul);
+        border-radius: 12px;
+        padding: 1rem;
+    }
 
-	tbody tr td {
-		border: none;
-		position: relative;
-		padding-left: 50%;
-		text-align: left;
-		white-space: normal;
-	}
+    tbody tr td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        white-space: normal;
+    }
 
-	tbody tr td::before {
-		position: absolute;
-		top: 12px;
-		left: 15px;
-		width: 45%;
-		padding-right: 10px;
-		white-space: nowrap;
-		font-weight: 700;
-		color: var(--azul);
-		font-size: clamp(0.85rem, 1.8vw, 1rem);
-	}
+    tbody tr td::before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        color: var(--azul);
+        font-size: clamp(0.85rem, 1.8vw, 1rem);
+    }
 
-	tbody tr td:nth-child(1)::before {
-		content: "Nombres";
-	}
-	tbody tr td:nth-child(2)::before {
-		content: "Apellidos";
-	}
-	tbody tr td:nth-child(3)::before {
-		content: "DNI";
-	}
-	tbody tr td:nth-child(4)::before {
-		content: "Teléfono";
-	}
-	tbody tr td:nth-child(5)::before {
-		content: "Correo";
-	}
-	tbody tr td:nth-child(6)::before {
-		content: "Monto";
-	}
-	tbody tr td:nth-child(7)::before {
-		content: "Estado";
-	}
-	tbody tr td:nth-child(8)::before {
-		content: "Acciones";
-	}
+    tbody tr td:nth-child(1)::before {
+        content: "Nombres";
+    }
+    tbody tr td:nth-child(2)::before {
+        content: "Apellidos";
+    }
+    tbody tr td:nth-child(3)::before {
+        content: "DNI";
+    }
+    tbody tr td:nth-child(4)::before {
+        content: "Teléfono";
+    }
+    tbody tr td:nth-child(5)::before {
+        content: "Correo";
+    }
+    tbody tr td:nth-child(6)::before {
+        content: "Monto";
+    }
+    tbody tr td:nth-child(7)::before {
+        content: "Estado";
+    }
+    tbody tr td:nth-child(8)::before {
+        content: "Acciones";
+    }
 
-	.btn-editar,
-	.btn-eliminar {
-		width: 100%;
-		margin-bottom: 0.5rem;
-	}
+    .btn-editar,
+    .btn-eliminar {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 }
 
 #paginacion {
-	width: 100%;
-	overflow-x: auto;
-	margin-top: 1rem;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
 }
 
 #paginacion ul.pagination {
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 #paginacion > ul.pagination > li.page-item > a.page-link {
-	color: var(--azul);
-	background-color: #c3c3c3;
-	border-radius: 6px; /* opcional para mejor look */
-	border: none;
+    color: var(--azul);
+    background-color: #c3c3c3;
+    border-radius: 6px; /* opcional para mejor look */
+    border: none;
 }
 
 #paginacion > ul.pagination > li.page-item > a.page-link:hover {
-	background-color: #a8a8a8;
+    background-color: #a8a8a8;
 }
 
 #paginacion > ul.pagination > li.page-item.active > a.page-link {
-	background-color: var(--azul);
-	color: #fff;
-	font-weight: 700;
+    background-color: var(--azul);
+    color: #fff;
+    font-weight: 700;
 }
 
 #btnExportarClientes,
 #btnExportarPagos {
-	margin-bottom: 1rem;
-	font-weight: 600;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }

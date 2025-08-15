@@ -15,6 +15,10 @@ const campos = {
     nombres: { input: document.getElementById("nombre"), error: null },
     apellidos: { input: document.getElementById("apellido"), error: null },
     dni: { input: document.getElementById("dni"), error: null },
+    dniNroTramite: {
+        input: document.getElementById("dniNumeroTramite"),
+        error: null,
+    },
     telefono: { input: document.getElementById("telefono"), error: null },
     correo: { input: document.getElementById("correo"), error: null },
     direccion: { input: document.getElementById("direccion"), error: null },
@@ -34,7 +38,6 @@ const campos = {
         input: document.getElementById("recibo-sueldo"),
         error: null,
     },
-    cbu: { input: document.getElementById("cbu"), error: null },
 };
 
 // Asignar errores y eventos
@@ -116,6 +119,7 @@ function validarPaso1() {
         "nombres",
         "apellidos",
         "dni",
+        "dniNroTramite",
         "telefono",
         "correo",
         "direccion",
@@ -165,6 +169,17 @@ function validarPaso1() {
         valido = false;
     }
 
+    // Validacion de Nro de Trámite DNI
+    const dniNroTramiteVal = campos.dniNroTramite.input.value.trim();
+    if (
+        dniNroTramiteVal &&
+        (!soloNumeros.test(dniNroTramiteVal) || dniNroTramiteVal.length !== 11)
+    ) {
+        campos.dniNroTramite.error.textContent =
+            "El número de trámite debe contener solo números y tener exactamente 11 dígitos.";
+        valido = false;
+    }
+
     // Validación de teléfono
     const telVal = campos.telefono.input.value.trim();
     if (telVal && (!soloNumeros.test(telVal) || telVal.length !== 10)) {
@@ -189,25 +204,25 @@ function validarPaso1() {
         valido = false;
     }
 
-    // // Validación opcional de piso
-    // const pisoVal = campos.piso.input.value.trim();
-    // if (pisoVal && (!soloLetras.test(pisoVal) || parseInt(pisoVal) <= 0)) {
-    //     campos.piso.error.textContent =
-    //         "El piso debe contener solo números positivos.";
-    //     valido = false;
-    // } else {
-    //     campos.piso.error.textContent = "";
-    // }
+    //  Validación opcional de piso
+    const pisoVal = campos.piso.input.value.trim();
+    if (pisoVal && (!soloLetras.test(pisoVal) || parseInt(pisoVal) <= 0)) {
+        campos.piso.error.textContent =
+            "El piso debe contener solo números positivos.";
+        valido = false;
+    } else {
+        campos.piso.error.textContent = "";
+    }
 
-    // // Validación opcional de departamento
-    // const dptoVal = campos.dpto.input.value.trim();
-    // if (dptoVal && !dptoValido.test(dptoVal)) {
-    //     campos.dpto.error.textContent =
-    //         "El departamento debe ser alfanumérico sin espacios.";
-    //     valido = false;
-    // } else {
-    //     campos.dpto.error.textContent = "";
-    // }
+    // Validación opcional de departamento
+    const dptoVal = campos.dpto.input.value.trim();
+    if (dptoVal && !dptoValido.test(dptoVal)) {
+        campos.dpto.error.textContent =
+            "El departamento debe ser alfanumérico sin espacios.";
+        valido = false;
+    } else {
+        campos.dpto.error.textContent = "";
+    }
 
     // Validación de correo electrónico
     const emailVal = campos.correo.input.value.trim();
@@ -355,9 +370,6 @@ setTimeout(() => {
 const formularioPaso1 = document.querySelector("#formPaso1");
 const formularioPaso3 = document.querySelector("#formPaso3");
 
-console.log(formularioPaso1);
-console.log(formularioPaso3);
-
 if (formularioPaso3) {
     formularioPaso3.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -395,7 +407,7 @@ if (formularioPaso3) {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/cliente", {
+            const response = await fetch("http://localhost:3000/persona", {
                 method: "POST",
                 body: formData,
             });
@@ -408,11 +420,11 @@ if (formularioPaso3) {
             }
 
             const result = await response.json();
-            console.log("Cliente creado:", result);
-            alert("Cliente creado correctamente");
+            console.log("usuario creado:", result);
+            alert("Usuario creado correctamente");
         } catch (err) {
             console.error(err);
-            alert("Error al crear el cliente");
+            alert("Error al crear el usuario");
         }
     });
 } else {

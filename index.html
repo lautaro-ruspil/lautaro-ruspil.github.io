@@ -16,16 +16,17 @@
         />
         <!-- CDN de icons Bootstrap -->
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
             rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         />
+
         <!-- CDN de AOS -->
         <link
             href="https://unpkg.com/aos@2.3.4/dist/aos.css"
             rel="stylesheet"
         />
         <!-- Link CSS -->
-        <link rel="stylesheet" href="./public/css/style.css" />
+        <link rel="stylesheet" href="/public/css/style.css" />
     </head>
 
     <body>
@@ -50,62 +51,116 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main class="container mt-5">
             <h2 class="main-title" data-aos="fade-down">
-                Conocé nuestros créditos
+                Conocé nuestro Crédito Personal
             </h2>
 
-            <!-- Sección de Card Creditos -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-                <!-- Tarjeta 1 -->
-                <div class="col" data-aos="fade-up">
-                    <div class="card card-credito h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-person card-icon"></i>
-                            <h5 class="card-title">Crédito Personal</h5>
-                            <p class="card-text">
-                                Obtené hasta $1.000.000 en cuotas fijas.
+            <div
+                id="creditoPersonalCarousel"
+                class="carousel slide mb-5"
+                data-aos="fade-right"
+                data-bs-ride="carousel"
+                data-bs-interval="3000"
+            >
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#creditoPersonalCarousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#creditoPersonalCarousel"
+                        data-bs-slide-to="1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#creditoPersonalCarousel"
+                        data-bs-slide-to="2"
+                    ></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div
+                        class="carousel-item active"
+                        style="background-image: url('assets/fondo1.jpg')"
+                    >
+                        <div class="overlay-credito">
+                            <i class="bi bi-cash-stack icono-slide"></i>
+                            <h3>Hasta $1.000.000</h3>
+                            <p>
+                                Obtené tu crédito con
+                                <strong>cuotas fijas</strong> y tasas
+                                competitivas.
                             </p>
                             <a
-                                href="./public/paginasCreditos/creditoPersonal.html"
-                                class="stretched-link"
-                            ></a>
+                                href="./paginasCreditos/creditoPersonal.html"
+                                class="btn btn-slide"
+                                >Más información</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div
+                        class="carousel-item"
+                        style="background-image: url('assets/fondo2.jpg')"
+                    >
+                        <div class="overlay-credito">
+                            <i class="bi bi-list-check icono-slide"></i>
+                            <h3>Requisitos simples</h3>
+                            <p>
+                                DNI, comprobante de ingresos y ser mayor de 18
+                                años.
+                            </p>
+                            <a
+                                href="./paginasCreditos/creditoPersonal.html#requisitos"
+                                class="btn btn-slide"
+                                >Ver requisitos</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div
+                        class="carousel-item"
+                        style="background-image: url('assets/fondo3.jpg')"
+                    >
+                        <div class="overlay-credito">
+                            <i class="bi bi-lightning-charge icono-slide"></i>
+                            <h3>Aprobación rápida</h3>
+                            <p>
+                                Recibí el dinero en tu cuenta en menos de 24
+                                horas.
+                            </p>
+                            <a
+                                href="./paginasCreditos/creditoPersonal.html#como-solicitar"
+                                class="btn btn-slide"
+                                >Solicitalo ahora</a
+                            >
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card card-credito h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-car-front card-icon"></i>
-                            <h5 class="card-title">Crédito Automotor</h5>
-                            <p class="card-text">
-                                Financiá tu próximo auto con tasas competitivas.
-                            </p>
-                            <a
-                                href="./public/paginasCreditos/creditoAutomotor.html"
-                                class="stretched-link"
-                            ></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3 -->
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card card-credito h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-briefcase card-icon"></i>
-                            <h5 class="card-title">Crédito Emprendedor</h5>
-                            <p class="card-text">
-                                Impulsá tu negocio con respaldo financiero
-                                inmediato.
-                            </p>
-                            <a
-                                href="./public/paginasCreditos/creditoPyme.html"
-                                class="stretched-link"
-                            ></a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Controles -->
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#creditoPersonalCarousel"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#creditoPersonalCarousel"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
 
             <!-- Beneficios -->
@@ -186,10 +241,10 @@
             <div data-aos="fade-up">
                 <div
                     id="carouselTestimonios"
-                    class="carousel slide testimonios-carousel mb-5"
+                    class="carousel slide testimonios-carousel"
                     data-aos="zoom-in"
                     data-bs-ride="carousel"
-                    data-bs-interval="4000"
+                    data-bs-interval="3000"
                 >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -224,7 +279,7 @@
             </div>
 
             <!-- Seccion de Simulá tu Cuota -->
-            <h2 class="main-title" id="simulador" data-aos="fade-down">
+            <h2 class="main-title mt-5" id="simulador" data-aos="fade-down">
                 Simulá tu Préstamo
             </h2>
             <p
@@ -236,58 +291,61 @@
                 fija y puede variar según el perfil crediticio.
             </p>
 
-            <div class="d-flex justify-content-center">
-                <form
-                    class="calculadora-form shadow-sm"
-                    style="width: 100%; max-width: 500px"
-                    data-aos="fade-right"
-                    data-aos-delay="100"
-                    id="formSimulador"
-                >
-                    <div class="mb-3">
-                        <label for="monto" class="form-label"
-                            >Monto solicitado ($)</label
-                        >
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="monto"
-                            placeholder="Ej: 50000"
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label for="cuotas" class="form-label"
-                            >Cantidad de cuotas</label
-                        >
-                        <select class="form-select" id="cuotas">
-                            <option value="" disabled selected>
-                                Elegí cantidad de cuotas
-                            </option>
-                            <option value="6">6 cuotas</option>
-                            <option value="12">12 cuotas</option>
-                            <option value="18">18 cuotas</option>
-                            <option value="24">24 cuotas</option>
-                        </select>
-                    </div>
-                    <div class="text-center">
-                        <button
-                            type="submit"
-                            class="btn btn-primary"
-                            id="calcular-cuota"
-                        >
-                            Calcular
-                        </button>
-                    </div>
-                    <div
-                        id="errorMensaje"
-                        class="error-mensaje text-danger mt-3 d-none"
-                    ></div>
-                </form>
-            </div>
+            <!-- Aviso de simulación -->
+            <p id="avisoSimulacion" class="text-center mb-3"></p>
 
+            <!-- Formulario simulador -->
+            <form
+                id="formSimulador"
+                class="calculadora-form shadow-sm"
+                style="max-width: 500px; margin: auto"
+                data-aos="fade-right"
+            >
+                <div class="mb-3">
+                    <label for="monto" class="form-label"
+                        >Monto solicitado ($)</label
+                    >
+                    <input
+                        type="number"
+                        id="monto"
+                        class="form-control"
+                        placeholder="Ej: 50000"
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="cuotas" class="form-label"
+                        >Cantidad de cuotas</label
+                    >
+                    <select id="cuotas" class="form-select">
+                        <option value="" disabled selected>
+                            Elegí la cantidad de cuotas
+                        </option>
+                        <option value="6">6 cuotas</option>
+                        <option value="12">12 cuotas</option>
+                        <option value="18">18 cuotas</option>
+                        <option value="24">24 cuotas</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="calcular-cuota"
+                    >
+                        Calcular
+                    </button>
+                </div>
+
+                <div id="errorMensaje" class="text-danger mt-3 d-none"></div>
+            </form>
+
+            <!-- Resultados -->
             <div
                 id="resultadoCuota"
                 class="mt-4 bg-white p-3 rounded shadow-sm"
+                style="display: none"
             >
                 <h5>Detalle del cálculo</h5>
                 <ul class="list-group list-group-flush">
@@ -319,10 +377,10 @@
                 href="https://wa.me/+542284555478?text=En%20que%20podemos%20ayudarte?%20..."
                 target="_blank"
             >
-                <img class="boton" src="./assets/iconow.png" alt="Whatsapp" />
+                <img class="boton" src="../assets/iconow.png" alt="Whatsapp" />
             </a>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- //<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
         <script src="./js/simulador.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Script e Inicializacion de AOS -->
@@ -334,6 +392,6 @@
             });
         </script>
         <!-- Script para cargar header y footer -->
-        <script src="./public/js/load-partials.js"></script>
+        <script src="../public/js/load-partials.js"></script>
     </body>
 </html>

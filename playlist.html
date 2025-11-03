@@ -141,26 +141,33 @@
 
             // Renderizar canción debajo del iframe
             function mostrarCancion(track) {
-                const div = document.createElement("div");
-                div.classList.add("extra-track");
-
-                const albumImg = track.album.images[1]?.url || "";
                 const audioUrl = track.preview_url;
+                const trackId = track.id; // Obtenemos el ID de la canción
+                const embedSrc = `http://googleusercontent.com/spotify.com/7${trackId}`;
 
                 div.innerHTML = `
-    <div class="extra-track-content">
-      <img src="${albumImg}" alt="${track.name}" class="extra-track-img">
-      <div class="extra-track-info">
-        <strong>${track.name}</strong><br>
-        <small>${track.artists.map((a) => a.name).join(", ")}</small>
-        ${
-            audioUrl
-                ? `<audio controls src="${audioUrl}" class="extra-player"></audio>`
-                : `<em>🎵 Sin preview disponible</em>`
-        }
-      </div>
+    <div class="extra-track-info" style="flex-grow: 1;">
+      <strong>${track.name}</strong><br>
+      <small>${track.artists.map((a) => a.name).join(", ")}</small>
+      ${
+          // Si hay URL de preview, muestra el <audio> (30s)
+          audioUrl
+              ? `<audio controls src="${audioUrl}" class="extra-player" style="width: 100%; margin-top: 5px;"></audio>`
+              : // Si NO hay preview, muestra el widget EMBED completo
+                `<em style="color: #ccc; display: block; margin-bottom: 5px;">🎵 Sin preview (30s) disponible. Escuchá la canción completa:</em>
+                 <iframe 
+                    style="border-radius:12px" 
+                    src="${embedSrc}" 
+                    width="100%" 
+                    height="80" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                 </iframe>`
+      }
     </div>
-  `;
+    `;
 
                 extraSongsContainer.appendChild(div);
                 extraSongsContainer.scrollIntoView({

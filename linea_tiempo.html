@@ -1,176 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Línea de Tiempo - Bajo el Mar: Más allá del algoritmo</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./styles.css" />
-        <link rel="stylesheet" href="./styles/linea_tiempo.css" />
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Línea de Tiempo - Bajo el Mar: Más allá del algoritmo</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
+			rel="stylesheet"
+		/>
 
-    <body>
-        <header>
-            <div class="container-header">
-                <a href="./index.html" class="logo">
-                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="./index.html">Inicio</a></li>
-                        <li>
-                            <a href="./biodiversidad.html">Biodiversidad</a>
-                        </li>
-                        <li><a href="./galeria.html">Galería</a></li>
-                        <li><a href="./multimedia.html">Multimedia</a></li>
-                        <li><a href="./playlist.html">Playlist</a></li>
-                        <li>
-                            <a href="./linea_tiempo.html" class="active"
-                                >Línea de Tiempo</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+		<!-- Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+			crossorigin="anonymous"
+		/>
 
-        <section id="linea-tiempo">
-            <h2>Etapas del Proyecto “Bajo el Mar Argentino”</h2>
-            <p>
-                Un recorrido de las distintas fases de la expedición científica
-                al Cañón de Mar del Plata, desde su preparación hasta la
-                divulgación de los resultados.
-            </p>
+		<!-- Estilos propios -->
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="./styles/linea_tiempo.css" />
+	</head>
 
-            <div class="timeline">
-                <!-- Marzo - Abril -->
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Marzo – Abril</h3>
-                        <h4>Preparación científica y logística</h4>
-                        <p>
-                            Se definen los objetivos junto al
-                            <strong>Schmidt Ocean Institute</strong> y se
-                            selecciona el
-                            <strong>Cañón de Mar del Plata</strong> como zona de
-                            estudio. Se organiza un equipo interdisciplinario
-                            (biología marina, geología, oceanografía y
-                            biotecnología).
-                        </p>
-                        <blockquote>
-                            “Venimos planificando esta expedición hace meses; no
-                            es solo bajar un robot, sino coordinar un equipo
-                            enorme.”
-                        </blockquote>
-                    </div>
-                </div>
+	<body>
+		<header>
+			<div class="container-header">
+				<a href="./index.html" class="logo">
+					<h1>Bajo el Mar: Más allá del algoritmo</h1>
+				</a>
+				<nav>
+					<ul>
+						<li><a href="./index.html">Inicio</a></li>
+						<li>
+							<a href="./biodiversidad.html">Biodiversidad</a>
+						</li>
+						<li><a href="./galeria.html">Galería</a></li>
+						<li><a href="./multimedia.html">Multimedia</a></li>
+						<li><a href="./playlist.html">Playlist</a></li>
+						<li>
+							<a href="./linea_tiempo.html" class="active"
+								>Línea de Tiempo</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
-                <!-- Mayo - Junio -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Mayo – Junio</h3>
-                        <h4>Entrenamiento y ajustes tecnológicos</h4>
-                        <p>
-                            Se prueban sensores, cámaras y el ROV
-                            <strong>SuBastian</strong>, que descenderá hasta
-                            casi 4.000 metros de profundidad. Se realiza
-                            formación para operar instrumentos a distancia.
-                        </p>
-                        <blockquote>
-                            “La tecnología es fundamental: sin ella no podríamos
-                            ver ni recolectar muestras en lugares tan extremos.”
-                        </blockquote>
-                    </div>
-                </div>
+		<section id="linea-tiempo">
+			<h2>Etapas del Proyecto “Bajo el Mar Argentino”</h2>
+			<p>
+				Un recorrido de las distintas fases de la expedición científica
+				al Cañón de Mar del Plata, desde su preparación hasta la
+				divulgación de los resultados.
+			</p>
 
-                <!-- Julio -->
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Julio</h3>
-                        <h4>Inicio de la campaña en el mar</h4>
-                        <p>
-                            El buque <strong>R/V Falkor (too)</strong> zarpa
-                            desde Mar del Plata. Comienzan las primeras
-                            inmersiones con transmisión en vivo.
-                        </p>
-                        <blockquote>
-                            “Ver en tiempo real el fondo del mar argentino fue
-                            algo histórico.”
-                        </blockquote>
-                    </div>
-                </div>
+			<div class="timeline">
+				<!-- Marzo - Abril -->
+				<div class="timeline-item left">
+					<div class="timeline-content">
+						<h3>Marzo – Abril</h3>
+						<h4>Preparación científica y logística</h4>
+						<p>
+							Se definen los objetivos junto al
+							<strong>Schmidt Ocean Institute</strong> y se
+							selecciona el
+							<strong>Cañón de Mar del Plata</strong> como zona de
+							estudio. Se organiza un equipo interdisciplinario
+							(biología marina, geología, oceanografía y
+							biotecnología).
+						</p>
+						<blockquote>
+							“Venimos planificando esta expedición hace meses; no
+							es solo bajar un robot, sino coordinar un equipo
+							enorme.”
+						</blockquote>
+					</div>
+				</div>
 
-                <!-- Agosto -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Agosto</h3>
-                        <h4>Exploración profunda y hallazgos</h4>
-                        <p>
-                            Se observan hábitats nunca antes registrados,
-                            posibles nuevas especies y evidencia de
-                            contaminación humana. Los científicos trabajan en
-                            rotaciones diarias.
-                        </p>
-                        <blockquote>
-                            “Nos sorprendió la biodiversidad, pero también los
-                            rastros de la actividad humana incluso a 3.900 m.”
-                        </blockquote>
-                    </div>
-                </div>
+				<!-- Mayo - Junio -->
+				<div class="timeline-item right">
+					<div class="timeline-content">
+						<h3>Mayo – Junio</h3>
+						<h4>Entrenamiento y ajustes tecnológicos</h4>
+						<p>
+							Se prueban sensores, cámaras y el ROV
+							<strong>SuBastian</strong>, que descenderá hasta
+							casi 4.000 metros de profundidad. Se realiza
+							formación para operar instrumentos a distancia.
+						</p>
+						<blockquote>
+							“La tecnología es fundamental: sin ella no podríamos
+							ver ni recolectar muestras en lugares tan extremos.”
+						</blockquote>
+					</div>
+				</div>
 
-                <!-- Septiembre -->
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Septiembre</h3>
-                        <h4>Análisis de muestras y datos</h4>
-                        <p>
-                            En laboratorios del <strong>CONICET</strong> y
-                            universidades, se analizan muestras de agua, ADN
-                            ambiental (<strong>eDNA</strong>) y organismos
-                            recolectados.
-                        </p>
-                        <blockquote>
-                            “Recién ahora empezamos a dimensionar todo lo que
-                            encontramos.”
-                        </blockquote>
-                    </div>
-                </div>
+				<!-- Julio -->
+				<div class="timeline-item left">
+					<div class="timeline-content">
+						<h3>Julio</h3>
+						<h4>Inicio de la campaña en el mar</h4>
+						<p>
+							El buque <strong>R/V Falkor (too)</strong> zarpa
+							desde Mar del Plata. Comienzan las primeras
+							inmersiones con transmisión en vivo.
+						</p>
+						<blockquote>
+							“Ver en tiempo real el fondo del mar argentino fue
+							algo histórico.”
+						</blockquote>
+					</div>
+				</div>
 
-                <!-- Octubre - Noviembre -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Octubre – Noviembre</h3>
-                        <h4>Divulgación y proyecciones</h4>
-                        <p>
-                            Publicación de resultados preliminares, charlas
-                            abiertas y propuestas de nuevas campañas.
-                            Reconocimiento a los investigadores por parte del
-                            Senado.
-                        </p>
-                        <blockquote>
-                            “Lo importante es que esto muestra lo que la ciencia
-                            argentina puede lograr con apoyo y cooperación
-                            internacional.”
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </section>
+				<!-- Agosto -->
+				<div class="timeline-item right">
+					<div class="timeline-content">
+						<h3>Agosto</h3>
+						<h4>Exploración profunda y hallazgos</h4>
+						<p>
+							Se observan hábitats nunca antes registrados,
+							posibles nuevas especies y evidencia de
+							contaminación humana. Los científicos trabajan en
+							rotaciones diarias.
+						</p>
+						<blockquote>
+							“Nos sorprendió la biodiversidad, pero también los
+							rastros de la actividad humana incluso a 3.900 m.”
+						</blockquote>
+					</div>
+				</div>
 
-        <footer>
-            <p>
-                © 2025 Proyecto interdisciplinario CTS | Diseño y desarrollo:
-                Estudiantes de Analista en Sistemas
-            </p>
-        </footer>
-    </body>
+				<!-- Septiembre -->
+				<div class="timeline-item left">
+					<div class="timeline-content">
+						<h3>Septiembre</h3>
+						<h4>Análisis de muestras y datos</h4>
+						<p>
+							En laboratorios del <strong>CONICET</strong> y
+							universidades, se analizan muestras de agua, ADN
+							ambiental (<strong>eDNA</strong>) y organismos
+							recolectados.
+						</p>
+						<blockquote>
+							“Recién ahora empezamos a dimensionar todo lo que
+							encontramos.”
+						</blockquote>
+					</div>
+				</div>
+
+				<!-- Octubre - Noviembre -->
+				<div class="timeline-item right">
+					<div class="timeline-content">
+						<h3>Octubre – Noviembre</h3>
+						<h4>Divulgación y proyecciones</h4>
+						<p>
+							Publicación de resultados preliminares, charlas
+							abiertas y propuestas de nuevas campañas.
+							Reconocimiento a los investigadores por parte del
+							Senado.
+						</p>
+						<blockquote>
+							“Lo importante es que esto muestra lo que la ciencia
+							argentina puede lograr con apoyo y cooperación
+							internacional.”
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<p>
+				© 2025 Proyecto interdisciplinario CTS | Diseño y desarrollo:
+				Estudiantes de Analista en Sistemas
+			</p>
+		</footer>
+	</body>
 </html>

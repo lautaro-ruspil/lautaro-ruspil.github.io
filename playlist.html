@@ -147,14 +147,14 @@
 				const spotifyUrl = track.external_urls.spotify;
 
 				div.innerHTML = `
-        <div class="extra-track-card">
+        <div class="extra-track-bar">
             <img src="${albumImg}" alt="${track.name}" class="extra-track-img">
             <div class="extra-track-info">
-                <h4>${track.name}</h4>
-                <p>${track.artists.map((a) => a.name).join(", ")}</p>
+                <strong>${track.name}</strong><br>
+                <small>${track.artists.map((a) => a.name).join(", ")}</small>
             </div>
-            <a href="${spotifyUrl}" target="_blank" class="spotify-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" class="spotify-icon">
+            <a href="${spotifyUrl}" target="_blank" class="spotify-open-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" class="spotify-icon" alt="">
                 Abrir en Spotify
             </a>
         </div>

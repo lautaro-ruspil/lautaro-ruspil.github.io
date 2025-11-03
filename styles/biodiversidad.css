@@ -1,0 +1,36 @@
+header {
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
+    background-color: #0061a8; 
+    color: white; 
+} 
+
+.section-biodiversidad {
+    margin-top: 80px;
+    color: #c7dfe4; 
+    background-color: #043d6f; 
+    padding-bottom: 2rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} 
+ 
+.intro-biodiversidad { 
+    background: linear-gradient(90deg, #0096e0, #0061a8); 
+    color: white; 
+    padding: 3rem 2rem; 
+    border-radius: 0 0 10px 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center; 
+} 
+
+
+.blox {
+  background-color: var(--gris_perla);
+  color: var(--azul_grisaceo);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(2, 18, 79, 0.1);
+  padding: 2.5rem 3rem;
+  margin: 2rem auto;
+  max-width: 900px;
+}

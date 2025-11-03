@@ -1,191 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bajo el Mar - Más allá del algoritmo</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bajo el Mar - Más allá del algoritmo</title>
 
-        <!-- Fuentes y Bootstrap -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&family=Prata&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
+		<!-- Fuentes y Bootstrap -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&family=Prata&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
 
-        <!-- Estilos locales -->
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="./styles/playlist.css" />
-    </head>
-    <body>
-        <header>
-            <div class="container-header">
-                <a href="./index.html" class="logo">
-                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="./index.html">Inicio</a></li>
-                        <li>
-                            <a href="./biodiversidad.html">Biodiversidad</a>
-                        </li>
-                        <li><a href="./galeria.html">Galería</a></li>
-                        <li><a href="./multimedia.html">Multimedia</a></li>
-                        <li>
-                            <a href="./playlist.html" class="active"
-                                >Playlist</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./linea_tiempo.html">Línea de Tiempo</a>
-                        </li>
-                    </ul>
-                </nav>
+		<!-- Estilos locales -->
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./styles/playlist.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container-header">
+				<a href="./index.html" class="logo">
+					<h1>Bajo el Mar: Más allá del algoritmo</h1>
+				</a>
+				<nav>
+					<ul>
+						<li><a href="./index.html">Inicio</a></li>
+						<li>
+							<a href="./biodiversidad.html">Biodiversidad</a>
+						</li>
+						<li><a href="./galeria.html">Galería</a></li>
+						<li><a href="./multimedia.html">Multimedia</a></li>
+						<li>
+							<a href="./playlist.html" class="active"
+								>Playlist</a
+							>
+						</li>
+						<li>
+							<a href="./linea_tiempo.html">Línea de Tiempo</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<!-- Playlist principal -->
+			<section id="playlist">
+				<h2>🎧 Bajo el Mar: la ciencia también suena</h2>
+				<p>
+					Esta playlist del CONICET nos invita a pensar la ciencia
+					desde la sensibilidad y el territorio. Cada tema evoca los
+					ecos del Mar Argentino y las voces que lo habitan.
+				</p>
+
+				<div id="spotify-container" style="position: relative">
+					<div id="spotify-loader">🎧 Cargando playlist...</div>
+					<iframe
+						id="spotify-frame"
+						src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTHYJcmKZlMP"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+						style="border-radius: 12px"
+					></iframe>
+					<div id="extra-songs"></div>
+					<!-- Aquí agregaremos las canciones -->
+				</div>
+
+				<p class="playlist-relacion">
+					🌊 Relacioná esta experiencia con la
+					<a href="./linea_tiempo.html">línea de tiempo</a>
+					para seguir el recorrido de la expedición científica.
+				</p>
+			</section>
+
+			<!-- Playlist colaborativa -->
+			<section id="playlist-colaborativa" class="mt-5">
+				<h3>🎶 Sumá tu canción al mar</h3>
+				<p>
+					Proponé un tema que te evoque la ciencia, el mar o la
+					exploración. Las canciones se suman simbólicamente a esta
+					corriente colectiva.
+				</p>
+
+				<form id="form-playlist">
+					<input
+						type="text"
+						id="nombre-cancion"
+						placeholder="Nombre de la canción"
+						required
+					/>
+					<input
+						type="text"
+						id="artista"
+						placeholder="Artista o banda"
+						required
+					/>
+					<button type="submit">Agregar</button>
+				</form>
+
+				<ul id="lista-canciones"></ul>
+			</section>
+		</main>
+
+		<footer>
+			<p>
+				© 2025 Proyecto interdisciplinario CTS | Estudiantes Analistas
+				de Sistemas
+			</p>
+		</footer>
+
+		<!-- Scripts -->
+		<script>
+			const form = document.getElementById("form-playlist");
+			const extraSongsContainer = document.getElementById("extra-songs");
+			const token = localStorage.getItem("spotify_token");
+
+			if (!token) {
+				alert("⚠️ Primero iniciá sesión con Spotify.");
+			}
+
+			// Buscar canción en Spotify
+			async function buscarCancion(nombre, artista) {
+				const query = encodeURIComponent(`${nombre} ${artista}`);
+				const url = `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1`;
+				const response = await fetch(url, {
+					headers: { Authorization: `Bearer ${token}` },
+				});
+				const data = await response.json();
+				return data.tracks?.items?.[0] || null;
+			}
+
+			// Renderizar canción debajo del iframe
+			function mostrarCancion(track) {
+				const div = document.createElement("div");
+				div.classList.add("extra-track");
+
+				const albumImg = track.album.images[1]?.url || "";
+				const spotifyUrl = track.external_urls.spotify;
+
+				div.innerHTML = `
+        <div class="extra-track-card">
+            <img src="${albumImg}" alt="${track.name}" class="extra-track-img">
+            <div class="extra-track-info">
+                <h4>${track.name}</h4>
+                <p>${track.artists.map((a) => a.name).join(", ")}</p>
             </div>
-        </header>
+            <a href="${spotifyUrl}" target="_blank" class="spotify-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" class="spotify-icon">
+                Abrir en Spotify
+            </a>
+        </div>
+    `;
 
-        <main>
-            <!-- Playlist principal -->
-            <section id="playlist">
-                <h2>🎧 Bajo el Mar: la ciencia también suena</h2>
-                <p>
-                    Esta playlist del CONICET nos invita a pensar la ciencia
-                    desde la sensibilidad y el territorio. Cada tema evoca los
-                    ecos del Mar Argentino y las voces que lo habitan.
-                </p>
+				extraSongsContainer.appendChild(div);
+				extraSongsContainer.scrollIntoView({
+					behavior: "smooth",
+					block: "end",
+				});
+			}
 
-                <div id="spotify-container" style="position: relative">
-                    <div id="spotify-loader">🎧 Cargando playlist...</div>
-                    <iframe
-                        id="spotify-frame"
-                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTHYJcmKZlMP"
-                        width="100%"
-                        height="380"
-                        frameborder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"
-                        style="border-radius: 12px"
-                    ></iframe>
-                    <div id="extra-songs"></div>
-                    <!-- Aquí agregaremos las canciones -->
-                </div>
+			// Manejo del formulario
+			form.addEventListener("submit", async (e) => {
+				e.preventDefault();
+				const nombre = document
+					.getElementById("nombre-cancion")
+					.value.trim();
+				const artista = document.getElementById("artista").value.trim();
+				if (!nombre || !artista) return;
 
-                <p class="playlist-relacion">
-                    🌊 Relacioná esta experiencia con la
-                    <a href="./linea_tiempo.html">línea de tiempo</a>
-                    para seguir el recorrido de la expedición científica.
-                </p>
-            </section>
+				const track = await buscarCancion(nombre, artista);
 
-            <!-- Playlist colaborativa -->
-            <section id="playlist-colaborativa" class="mt-5">
-                <h3>🎶 Sumá tu canción al mar</h3>
-                <p>
-                    Proponé un tema que te evoque la ciencia, el mar o la
-                    exploración. Las canciones se suman simbólicamente a esta
-                    corriente colectiva.
-                </p>
-
-                <form id="form-playlist">
-                    <input
-                        type="text"
-                        id="nombre-cancion"
-                        placeholder="Nombre de la canción"
-                        required
-                    />
-                    <input
-                        type="text"
-                        id="artista"
-                        placeholder="Artista o banda"
-                        required
-                    />
-                    <button type="submit">Agregar</button>
-                </form>
-
-                <ul id="lista-canciones"></ul>
-            </section>
-        </main>
-
-        <footer>
-            <p>
-                © 2025 Proyecto interdisciplinario CTS | Estudiantes Analistas
-                de Sistemas
-            </p>
-        </footer>
-
-        <!-- Scripts -->
-        <script>
-            const form = document.getElementById("form-playlist");
-            const extraSongsContainer = document.getElementById("extra-songs");
-            const token = localStorage.getItem("spotify_token");
-
-            if (!token) {
-                alert("⚠️ Primero iniciá sesión con Spotify.");
-            }
-
-            // Buscar canción en Spotify
-            async function buscarCancion(nombre, artista) {
-                const query = encodeURIComponent(`${nombre} ${artista}`);
-                const url = `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1`;
-                const response = await fetch(url, {
-                    headers: { Authorization: `Bearer ${token}` },
-                });
-                const data = await response.json();
-                return data.tracks?.items?.[0] || null;
-            }
-
-            // Renderizar canción debajo del iframe
-            function mostrarCancion(track) {
-                const div = document.createElement("div");
-                div.classList.add("extra-track");
-
-                const albumImg = track.album.images[1]?.url || "";
-                const audioUrl = track.preview_url;
-
-                div.innerHTML = `
-    <div class="extra-track-content">
-      <img src="${albumImg}" alt="${track.name}" class="extra-track-img">
-      <div class="extra-track-info">
-        <strong>${track.name}</strong><br>
-        <small>${track.artists.map((a) => a.name).join(", ")}</small>
-        ${
-            audioUrl
-                ? `<audio controls src="${audioUrl}" class="extra-player"></audio>`
-                : `<em>🎵 Sin preview disponible</em>`
-        }
-      </div>
-    </div>
-  `;
-
-                extraSongsContainer.appendChild(div);
-                extraSongsContainer.scrollIntoView({
-                    behavior: "smooth",
-                    block: "end",
-                });
-            }
-
-            // Manejo del formulario
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const nombre = document
-                    .getElementById("nombre-cancion")
-                    .value.trim();
-                const artista = document.getElementById("artista").value.trim();
-                if (!nombre || !artista) return;
-
-                const track = await buscarCancion(nombre, artista);
-
-                if (track) {
-                    mostrarCancion(track);
-                    form.reset();
-                } else {
-                    alert("❌ No se encontró esa canción en Spotify.");
-                }
-            });
-        </script>
-    </body>
+				if (track) {
+					mostrarCancion(track);
+					form.reset();
+				} else {
+					alert("❌ No se encontró esa canción en Spotify.");
+				}
+			});
+		</script>
+	</body>
 </html>

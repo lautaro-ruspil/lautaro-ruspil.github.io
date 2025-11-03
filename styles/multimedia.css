@@ -1,9 +1,5 @@
-header h1 {
-    font-size: 40px;
-}
-
-header p {
-    font-size: 20px;
+.logo {
+    font-family: "Poppins", "Segoe UI", sans-serif;
 }
 
 hr {
@@ -13,6 +9,16 @@ hr {
     width: 95%;
     margin: 20px auto;
     opacity: 1;
+}
+
+section {
+    padding: 3em 1.5em;
+    text-align: center;
+}
+
+section h2 {
+    color: var(--azul_oceano_profundo);
+    margin-bottom: 1em;
 }
 
 section p {
@@ -57,14 +63,4 @@ button {
 
 button:hover {
     background-color: var(--coral_biologico);
-}
-
-section {
-    padding: 3em 1.5em;
-    text-align: center;
-}
-
-section h2 {
-    color: var(--azul_oceano_profundo);
-    margin-bottom: 1em;
 }

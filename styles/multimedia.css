@@ -9,7 +9,7 @@ header p {
 hr {
     border: none;
     height: 1px;
-    background-color: var(--coral_biologico);
+    background-color: var(--azul_grisaceo);
     width: 95%;
     margin: 20px auto;
 }
@@ -21,7 +21,8 @@ section p {
     margin: 0 auto 20px auto;
 }
 
-video, audio {
+video,
+audio {
     border: 3px solid var(--verde_algal);
     border-radius: 10px;
     box-shadow: 0 4px 10px black;
@@ -30,13 +31,14 @@ video, audio {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-video:hover, audio:hover {
+video:hover,
+audio:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.8);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
 }
 
 a {
     text-decoration: none;
     color: var(--azul_grisaceo);
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }

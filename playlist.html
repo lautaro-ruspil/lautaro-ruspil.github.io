@@ -119,6 +119,7 @@
 
         <!-- Scripts -->
         <script>
+            // Variables y funciones buscarCancion (se mantienen igual)...
             const form = document.getElementById("form-playlist");
             const extraSongsContainer = document.getElementById("extra-songs");
             const token = localStorage.getItem("spotify_token");
@@ -127,10 +128,9 @@
                 alert("⚠️ Primero iniciá sesión con Spotify.");
             }
 
-            // Buscar canción en Spotify
+            // Buscar canción en Spotify (Mantenida)
             async function buscarCancion(nombre, artista) {
                 const query = encodeURIComponent(`${nombre} ${artista}`);
-                // Nota: Mantengo tu URL con el proxy, asumiendo que es la correcta en tu entorno.
                 const url = `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1`;
                 const response = await fetch(url, {
                     headers: { Authorization: `Bearer ${token}` },
@@ -140,43 +140,42 @@
                 return data.tracks?.items?.[0] || null;
             }
 
-            // Renderizar canción debajo del iframe (CORREGIDA)
+            // Renderizar canción debajo del iframe (MODIFICADA)
             function mostrarCancion(track) {
-                // SOLUCIÓN: Declarar la variable 'div' que faltaba
+                // 1. Declaración de la variable 'div' (CORREGIDO DE NUEVO)
                 const div = document.createElement("div");
                 div.classList.add("extra-track");
 
                 const albumImg = track.album.images[1]?.url || "";
-                const audioUrl = track.preview_url;
-                const trackId = track.id;
-                const embedSrc = `https://open.spotify.com/embed/track/$${trackId}`;
+                // 2. Obtenemos el enlace directo de Spotify, que SIEMPRE existe.
+                const spotifyLink = track.external_urls.spotify;
 
-                // Contenedor principal para la estructura de la canción
+                // 3. Estructura HTML con el botón
                 div.innerHTML = `
-            <div style="display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #333;">
+            <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #333; background-color: #282828; border-radius: 8px; margin-bottom: 10px;">
               <img src="${albumImg}" alt="${
                     track.name
-                }" style="width: 60px; height: 60px; margin-right: 15px;">
-              <div class="extra-track-info" style="flex-grow: 1;">
+                }" style="width: 60px; height: 60px; margin-right: 15px; border-radius: 4px;">
+              <div class="extra-track-info" style="flex-grow: 1; color: white;">
                 <strong>${track.name}</strong><br>
-                <small>${track.artists.map((a) => a.name).join(", ")}</small>
-                ${
-                    // Si hay URL de preview, muestra el <audio> (30s)
-                    audioUrl
-                        ? `<audio controls src="${audioUrl}" class="extra-player" style="width: 100%; margin-top: 5px;"></audio>`
-                        : // Si NO hay preview, muestra el widget EMBED completo
-                          `<em style="color: #ccc; display: block; margin-bottom: 5px;">🎵 Sin preview (30s) disponible. Escuchá la canción completa:</em>
-                           <iframe 
-                              style="border-radius:12px" 
-                              src="${embedSrc}" 
-                              width="100%" 
-                              height="80" 
-                              frameBorder="0" 
-                              allowfullscreen="" 
-                              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                              loading="lazy">
-                           </iframe>`
-                }
+                <small style="color: #b3b3b3;">${track.artists
+                    .map((a) => a.name)
+                    .join(", ")}</small>
+                
+                <a href="${spotifyLink}" target="_blank" 
+                   style="
+                        display: inline-block; 
+                        margin-top: 8px; 
+                        padding: 6px 12px; 
+                        background-color: #1DB954; 
+                        color: white; 
+                        text-decoration: none; 
+                        border-radius: 25px; 
+                        font-size: 14px; 
+                        font-weight: 600;
+                   ">
+                   🎧 Abrir en Spotify
+                </a>
               </div>
             </div>
         `;
@@ -188,7 +187,7 @@
                 });
             }
 
-            // Manejo del formulario
+            // Manejo del formulario (Se mantiene igual)...
             form.addEventListener("submit", async (e) => {
                 e.preventDefault();
                 const nombre = document

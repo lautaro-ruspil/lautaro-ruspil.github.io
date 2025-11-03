@@ -1,0 +1,197 @@
+/* ====== LÍNEA DE TIEMPO ====== */
+#linea-tiempo {
+    background: linear-gradient(180deg, #002b57 0%, #004c8c 100%);
+    color: white;
+    padding: 5em 2em;
+    text-align: center;
+    min-height: 100vh;
+}
+
+#linea-tiempo h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--celeste_conicet);
+    margin-bottom: 1em;
+}
+
+#linea-tiempo p {
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin: 0 auto 3em;
+    line-height: 1.8;
+    color: #eaf6ff;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2em 0;
+    z-index: 0; /* contexto base */
+}
+
+/* Línea central */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: var(--celeste_conicet);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    opacity: 0.9;
+    z-index: 1; /* detrás de los puntos */
+}
+
+/* ====== ÍTEMS ====== */
+.timeline-item {
+    padding: 2.5em 0;
+    position: relative;
+    width: 50%;
+    animation: fadeUp 0.8s ease both;
+    z-index: 2; /* crea un nuevo contexto de apilamiento */
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+/* ====== CONTENIDO ====== */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 1.5em 2em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    position: relative;
+    width: 85%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    margin-top: 10px; /* separación vertical */
+}
+
+.timeline-content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== ESPACIADO LATERAL EQUILIBRADO ====== */
+.timeline-item.left .timeline-content {
+    margin-left: 8%;
+}
+
+.timeline-item.right .timeline-content {
+    margin-left: 7%; /* empuja un poco hacia adentro */
+}
+
+/* ====== NODOS ====== */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 60px;
+    right: -11px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff6b6b 30%, #ffb3b3 90%);
+    border: 3px solid #fff;
+    box-shadow: 0 0 14px rgba(255, 107, 107, 0.9);
+    z-index: 999; /* ahora sí, siempre encima de la línea */
+}
+
+.timeline-item.right::before {
+    left: -11px;
+    right: auto;
+}
+
+/* ====== TEXTO ====== */
+.timeline-content h3 {
+    color: var(--celeste_conicet);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.3em;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.8em;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #dceeff;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.timeline-content blockquote {
+    font-style: italic;
+    color: #fff;
+    border-left: 3px solid var(--celeste_conicet);
+    margin-top: 1em;
+    padding-left: 1em;
+    opacity: 0.9;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+        right: auto;
+    }
+
+    .timeline-content {
+        width: 90%;
+        margin: 0 0 0 2em;
+    }
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.timeline-item:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.timeline-item:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.timeline-item:nth-child(6) {
+    animation-delay: 1s;
+}

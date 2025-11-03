@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galería - Bajo el mar, más allá del algoritmo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./styles/galeria.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-header">
+                <a href="./index.html" class="logo">
+                    <h1>Bajo el Mar : Más allá del algoritmo</h1>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li>
+                            <a href="./biodiversidad.html">Biodiversidad</a>
+                        </li>
+                        <li>
+                            <a href="./galeria.html" class="active">Galería</a>
+                        </li>
+                        <li><a href="./multimedia.html">Multimedia</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ====== SECCIÓN DE GALERÍA ====== -->
+        <section id="figuritas">
+            <h2>Especies del Mar Argentino</h2>
+            <p>
+                Explorá las especies que habitan nuestro mar y descubrí cómo
+                cada una forma parte de un ecosistema único. Cada figurita está
+                inspirada en los recursos del archivo transmedia del CONICET.
+            </p>
+
+            <div class="container-galeria">
+                <div
+                    id="carouselFiguritas"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                    data-bs-interval="5000"
+                >
+                    <div
+                        class="carousel-indicators"
+                        id="carousel-indicators"
+                    ></div>
+
+                    <div
+                        class="carousel-inner"
+                        id="carousel-inner-content"
+                    ></div>
+
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselFiguritas"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselFiguritas"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+                <!-- Aca se van a renderizar las card de las figuritas -->
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                © 2025 Proyecto interdisciplinario CTS | Diseño y desarrollo:
+                Estudiantes de Analista en Sistemas
+            </p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/script.js"></script>
+    </body>
+</html>

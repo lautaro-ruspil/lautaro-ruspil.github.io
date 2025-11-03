@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bajo el Mar - Más allá del algoritmo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-header">
+                <a href="./index.html" class="logo">
+                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
+                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="./index.html" class="active">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="./biodiversidad.html">Biodiversidad</a>
+                        </li>
+                        <li><a href="./galeria.html">Galería</a></li>
+                        <li><a href="./multimedia.html">Multimedia</a></li>
+                        <li><a href="./playlist.html">Playlist</a></li>
+                            <a href="./linea_tiempo.html">Línea de Tiempo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ====== PRESENTACIÓN ====== -->
+        <section id="presentacion">
+            <video autoplay muted loop id="videoFondo">
+                <source src="./assets/videoInicio.mp4" type="video/mp4" />
+            </video>
+
+            <div class="overlay"></div>
+
+            <div class="contenido">
+                <h2>UNA MIRADA CRÍTICA SOBRE LA CIENCIA Y LA TECNOLOGÍA</h2>
+                <p>
+                    <strong>Bajo el mar, más allá del algoritmo</strong> es un
+                    proyecto interdisciplinario que articula saberes técnicos
+                    del campo del Análisis de Sistemas con perspectivas de
+                    Ciencia, Tecnología y Sociedad (CTS), ESI y Culturas
+                    Digitales. <br /><br />
+                    Inspirado en el archivo transmedia del CONICET sobre el Mar
+                    Argentino, invita a reflexionar sobre cómo la tecnología
+                    produce sentidos, emociones y narrativas colectivas.
+                </p>
+
+                <blockquote>
+                    “La tecnología no es un instrumento neutro, sino una
+                    construcción social.”
+                    <span>— Raymond Williams (1992)</span>
+                </blockquote>
+
+                <a href="./galeria.html" class="btn">Explorá la experiencia</a>
+            </div>
+        </section>
+
+        <section id="spotify-section" class="text-center my-5">
+            <h2>🎧 Conectá con Spotify</h2>
+            <p>Iniciá sesión para descubrir la playlist “Bajo el Mar”.</p>
+            <button id="login" class="btn btn-success">Iniciar sesión con Spotify</button>
+        </section>
+
+        <footer>
+            <p>
+                © 2025 Proyecto interdisciplinario CTS | Estuadiantes Analistas
+                de Sistemas
+            </p>
+        </footer>
+    </body>
+        <script>
+    const clientId = '5c33b10c84a54669964ad19c1f99894a';
+    const redirectUri = 'https://lautaro-ruspil.github.io/';
+    const scope = 'user-read-private user-read-email playlist-read-private';
+
+    document.getElementById('login').addEventListener('click', () => {
+        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
+        window.location.href = authUrl;
+    });
+
+    window.addEventListener('load', () => {
+        const hash = window.location.hash;
+        if (hash) {
+        const token = new URLSearchParams(hash.substring(1)).get('access_token');
+        if (token) {
+            console.log('Token de acceso:', token);
+            // Guardar el token en localStorage para usarlo después
+            localStorage.setItem('spotify_token', token);
+        }
+        }
+    });
+    </script>
+</html>

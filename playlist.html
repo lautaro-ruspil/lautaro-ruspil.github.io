@@ -143,34 +143,75 @@
 
         <!-- Scripts -->
         <script>
-            // Playlist colaborativa
+            // === Variables base ===
             const form = document.getElementById("form-playlist");
             const lista = document.getElementById("lista-canciones");
-            let contador = 26;
+            let contador = 1;
 
-            form.addEventListener("submit", (e) => {
+            // === Token de Spotify ===
+            const token = localStorage.getItem("spotify_token");
+
+            if (!token) {
+                alert("⚠️ Debes iniciar sesión con Spotify primero.");
+            }
+
+            // === Función para buscar canción en Spotify ===
+            async function buscarCancion(nombre, artista) {
+                const query = encodeURIComponent(`${nombre} ${artista}`);
+                const url = `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1`;
+
+                const response = await fetch(url, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+
+                const data = await response.json();
+
+                // Si encuentra canciones
+                if (data.tracks && data.tracks.items.length > 0) {
+                    return data.tracks.items[0];
+                } else {
+                    return null;
+                }
+            }
+
+            // === Manejar envío del formulario ===
+            form.addEventListener("submit", async (e) => {
                 e.preventDefault();
                 const nombre = document
                     .getElementById("nombre-cancion")
                     .value.trim();
                 const artista = document.getElementById("artista").value.trim();
 
-                if (nombre && artista) {
+                if (!nombre || !artista) return;
+
+                const track = await buscarCancion(nombre, artista);
+
+                if (track) {
                     const li = document.createElement("li");
                     li.innerHTML = `
-                    <span class="numero">${contador}</span>
-                    <div class="info">
-                        <strong>${nombre}</strong><br>
-                        <small>${artista}</small>
-                    </div>
-                `;
+      <span class="numero">${contador}</span>
+      <div class="info">
+        <img src="${
+            track.album.images[2]?.url || ""
+        }" alt="Cover" width="40" height="40" style="border-radius:5px;margin-right:8px;">
+        <div style="display:inline-block;vertical-align:top">
+          <strong>${track.name}</strong><br>
+          <small>${track.artists.map((a) => a.name).join(", ")}</small>
+        </div>
+        <a href="${
+            track.external_urls.spotify
+        }" target="_blank" style="margin-left:10px;">🎧</a>
+      </div>
+    `;
                     lista.appendChild(li);
                     contador++;
                     form.reset();
+                } else {
+                    alert("❌ No se encontró esa canción en Spotify.");
                 }
             });
 
-            // Spotify loader y fallback
+            // === Loader y fallback del iframe principal ===
             const iframe = document.getElementById("spotify-frame");
             const loader = document.getElementById("spotify-loader");
             const fallback = document.getElementById("spotify-fallback");

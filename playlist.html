@@ -164,13 +164,12 @@
                 return data.tracks?.items?.[0] || null;
             }
 
-            // Renderizar canción debajo del iframe
             function mostrarCancion(track) {
                 const div = document.createElement("div");
                 div.classList.add("extra-track");
 
                 const albumImg = track.album.images[1]?.url || "";
-                const audioUrl = track.preview_url;
+                const audioUrl = track.preview_url; // preview de 30 segundos
 
                 div.innerHTML = `
     <div class="extra-track-content">
@@ -178,11 +177,13 @@
       <div class="extra-track-info">
         <strong>${track.name}</strong><br>
         <small>${track.artists.map((a) => a.name).join(", ")}</small>
-        ${
-            audioUrl
-                ? `<audio controls src="${audioUrl}" class="extra-player"></audio>`
-                : `<em>🎵 Sin preview disponible</em>`
-        }
+        <div class="extra-audio">
+          ${
+              audioUrl
+                  ? `<audio controls src="${audioUrl}" class="extra-player"></audio>`
+                  : `<em style="color:#ccc;">🎧 No hay preview disponible</em>`
+          }
+        </div>
       </div>
     </div>
   `;

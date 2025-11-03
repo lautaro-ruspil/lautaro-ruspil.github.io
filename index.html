@@ -93,25 +93,70 @@
         </footer>
     </body>
         <script>
-    const clientId = '5c33b10c84a54669964ad19c1f99894a';
-    const redirectUri = 'https://lautaro-ruspil.github.io';
-    const scope = 'user-read-private user-read-email playlist-read-private';
+        const clientId = '5c33b10c84a54669964ad19c1f99894a';
+const redirectUri = 'https://lautaro-ruspil.github.io';
+const scope = 'user-read-private user-read-email playlist-read-private';
 
-    document.getElementById('login').addEventListener('click', () => {
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
-        window.location.href = authUrl;
+// 🔐 Función para generar el código PKCE
+function generateCodeVerifier(length) {
+  let text = '';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
+
+async function generateCodeChallenge(codeVerifier) {
+  const data = new TextEncoder().encode(codeVerifier);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return btoa(String.fromCharCode(...new Uint8Array(digest)))
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+}
+
+document.getElementById('login').addEventListener('click', async () => {
+  const codeVerifier = generateCodeVerifier(128);
+  const codeChallenge = await generateCodeChallenge(codeVerifier);
+
+  localStorage.setItem('code_verifier', codeVerifier);
+
+  const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(
+    redirectUri
+  )}&scope=${encodeURIComponent(scope)}&code_challenge_method=S256&code_challenge=${codeChallenge}`;
+
+  window.location.href = authUrl;
+});
+
+// 🎯 Cuando vuelve Spotify con el "code" en la URL
+window.addEventListener('load', async () => {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+
+  if (code) {
+    const codeVerifier = localStorage.getItem('code_verifier');
+
+    const body = new URLSearchParams({
+      client_id: clientId,
+      grant_type: 'authorization_code',
+      code,
+      redirect_uri: redirectUri,
+      code_verifier: codeVerifier
     });
 
-    window.addEventListener('load', () => {
-        const hash = window.location.hash;
-        if (hash) {
-        const token = new URLSearchParams(hash.substring(1)).get('access_token');
-        if (token) {
-            console.log('Token de acceso:', token);
-            // Guardar el token en localStorage para usarlo después
-            localStorage.setItem('spotify_token', token);
-        }
-        }
+    const response = await fetch('https://accounts.spotify.com/api/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body
     });
+
+    const data = await response.json();
+    console.log('Token recibido:', data.access_token);
+    localStorage.setItem('spotify_token', data.access_token);
+  }
+});
+
+   
     </script>
 </html>

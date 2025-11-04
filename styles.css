@@ -7,81 +7,52 @@
     --verde_algal: #3ba99c;
 }
 
-/* ====== BASE ====== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ===== BASE ===== */
 body {
     font-family: "Poppins", "Segoe UI", sans-serif;
     background-color: var(--gris_perla);
     color: var(--azul_grisaceo);
     line-height: 1.7;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ====== HEADER ====== */
+/* ===== HEADER ===== */
 header {
     background: linear-gradient(
         90deg,
         var(--celeste_conicet),
         var(--azul_oceano_profundo)
     );
-    color: white;
-    padding: 1.5em 2em;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    overflow: visible; /* ✅ evita recortes */
 }
 
-.container-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
+/* Marca y navegación */
+.navbar-brand {
+    color: white !important;
     font-weight: 700;
-    color: white;
-    text-decoration: none;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
+    font-size: clamp(1rem, 2vw, 1.3rem); /* ✅ se adapta mejor */
 }
 
-.logo {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2.8em;
-    align-items: center;
-    margin: 0;
-}
-
-nav a {
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
+/* ===== LINKS NAV ===== */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: clamp(1rem, 1vw, 1.1rem); /* ✅ texto adaptable */
     letter-spacing: 1px;
-    text-decoration: none;
-    padding: 0.3em 0;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap; /* evita que se divida en dos líneas */
+    display: inline-block;
+    white-space: nowrap; /* ✅ evita cortes */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-nav a::after {
+/* Subrayado animado */
+.navbar-nav .nav-link::after {
     content: "";
     position: absolute;
     bottom: -4px;
@@ -92,60 +63,102 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--coral_biologico);
+.navbar-nav .nav-link:hover {
+    color: var(--coral_biologico) !important;
 }
 
-nav a:hover::after {
+.navbar-nav .nav-link:hover::after {
     width: 100%;
 }
 
-/* ====== LINK ACTIVO ====== */
-nav a.active {
-    color: var(--coral_biologico);
-    cursor: default;
+/* ===== LINK ACTIVO ===== */
+.navbar-nav .nav-link.active {
+    color: var(--coral_biologico) !important;
+    background: none !important;
+    border-bottom: 2px solid var(--coral_biologico);
 }
 
-nav a.active::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--coral_biologico);
+/* ===== ESPACIADO ENTRE LINKS ===== */
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex;
+        gap: 2.5rem; /* ✅ más espacio entre los links */
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0; /* controlado con gap */
+    }
+
+    .container {
+        max-width: 95%; /* ✅ header más espacioso */
+    }
 }
 
-/* ====== BOTONES ====== */
-.btn {
-    display: inline-block;
-    background-color: var(--celeste_conicet);
-    color: white;
-    font-weight: 600;
-    padding: 0.8em 1.6em;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 166, 251, 0.3);
+/* ===== BOTÓN HAMBURGUESA ===== */
+.navbar-toggler {
+    border: none !important; /* ✅ sin borde */
+    background: transparent !important;
+    padding: 0.5rem 0.7rem; /* ✅ mejor toque y alineación */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn:hover {
-    background-color: var(--azul_oceano_profundo);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0, 100, 150, 0.3);
+.navbar-toggler-icon {
+    width: 1.7rem; /* ✅ tamaño mayor y centrado */
+    height: 1.7rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ====== SECCIÓN DE PRESENTACIÓN ====== */
+/* Evita sombreado al hacer clic */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+/* ===== MENÚ DESPLEGABLE (MÓVIL) ===== */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 1.5rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .navbar-nav .nav-link {
+        display: inline-block;
+        text-align: center;
+        padding: 0.7rem 0;
+        border-bottom: none;
+    }
+
+    .navbar-nav .nav-link::after {
+        bottom: 0;
+        height: 2px;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: var(--coral_biologico) !important;
+        border-bottom: none;
+    }
+}
+
+/* ===== VIDEO DE FONDO ===== */
 #presentacion {
     position: relative;
     text-align: center;
     color: white;
     padding: 6em 2em;
     min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
@@ -159,27 +172,23 @@ nav a.active::after {
     z-index: -2;
 }
 
-#presentacion .overlay {
+.overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
     z-index: -1;
 }
 
-#presentacion .contenido {
-    max-width: 850px;
-    z-index: 1;
-}
-
+/* ===== TEXTO ADAPTABLE ===== */
 #presentacion h2 {
-    font-size: 2.6rem;
+    font-size: clamp(1.6rem, 4vw, 2.6rem); /* ✅ adaptable */
     font-weight: 700;
     color: var(--celeste_conicet);
     margin-bottom: 1em;
 }
 
 #presentacion p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.2vw, 1.1rem); /* ✅ adaptable */
     line-height: 1.8;
     color: #f1f6fa;
     margin-bottom: 2em;
@@ -200,45 +209,60 @@ blockquote span {
     margin-top: 0.5em;
 }
 
-/* ====== FOOTER ====== */
+/* ===== BOTONES ===== */
+.btn,
+.btn-spotify {
+    font-weight: 600;
+    padding: 0.8em 1.6em;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 166, 251, 0.3);
+    display: inline-block;
+}
+
+/* Botón principal */
+.btn {
+    background-color: var(--celeste_conicet);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 166, 251, 0.3);
+}
+
+.btn:hover {
+    background-color: var(--azul_oceano_profundo);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 100, 150, 0.3);
+}
+
+/* Botón Spotify con mismo tamaño y animación */
+.btn-spotify {
+    background-color: #1db954; /* ✅ color Spotify */
+    color: white;
+    box-shadow: 0 4px 10px rgba(29, 185, 84, 0.4);
+    border: none;
+}
+
+.btn-spotify:hover {
+    background-color: #169c44;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(29, 185, 84, 0.3);
+}
+
+/* ===== FOOTER ===== */
 footer {
     background-color: var(--azul_oceano_profundo);
     color: white;
-    text-align: center;
-    padding: 2em 1em;
-    font-size: 0.9em;
     border-top: 5px solid var(--celeste_conicet);
-    margin-top: 4em;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* ====== RESPONSIVE ====== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .container-header {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1em;
-    }
-
     #presentacion {
         padding: 4em 1.5em;
     }
 
     #presentacion h2 {
-        font-size: 1.8rem;
-    }
-
-    .logo h1 {
-        font-size: 1.4rem;
-        text-align: center;
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
     }
 
     blockquote {

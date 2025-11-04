@@ -4,157 +4,247 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bajo el Mar - Más allá del algoritmo</title>
+
+        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
-        rel="stylesheet"
-    />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous"
-    />
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
 
-    <!-- Estilos propios -->
-    <link rel="stylesheet" href="./styles.css" />
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
-        <header>
-            <div class="container-header">
-                <a href="./index.html" class="logo">
-                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="./index.html" class="active">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./biodiversidad.html">Biodiversidad</a>
-                        </li>
-                        <li><a href="./galeria.html">Galería</a></li>
-                        <li><a href="./multimedia.html">Multimedia</a></li>
-                        <li><a href="./playlist.html">Playlist</a></li>
-                            <a href="./linea_tiempo.html">Línea de Tiempo</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <!-- ===== HEADER ===== -->
+        <header class="py-3 sticky-top shadow">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a
+                        href="./index.html"
+                        class="navbar-brand text-white fw-bold"
+                    >
+                        Bajo el Mar: Más allá del algoritmo
+                    </a>
+
+                    <!-- Botón hamburguesa -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse justify-content-end"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link active"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./biodiversidad.html" class="nav-link"
+                                    >Biodiversidad</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./galeria.html" class="nav-link"
+                                    >Galería</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./multimedia.html" class="nav-link"
+                                    >Multimedia</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./playlist.html" class="nav-link"
+                                    >Playlist</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./linea_tiempo.html" class="nav-link"
+                                    >Línea de Tiempo</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
 
-        <!-- ====== PRESENTACIÓN ====== -->
-        <section id="presentacion">
+        <!-- ===== PRESENTACIÓN ===== -->
+        <section
+            id="presentacion"
+            class="d-flex align-items-center text-center"
+        >
             <video autoplay muted loop id="videoFondo">
                 <source src="./assets/videoInicio.mp4" type="video/mp4" />
             </video>
 
             <div class="overlay"></div>
 
-            <div class="contenido">
-                <h2>UNA MIRADA CRÍTICA SOBRE LA CIENCIA Y LA TECNOLOGÍA</h2>
-                <p>
-                    <strong>Bajo el mar, más allá del algoritmo</strong> es un
-                    proyecto interdisciplinario que articula saberes técnicos
-                    del campo del Análisis de Sistemas con perspectivas de
-                    Ciencia, Tecnología y Sociedad (CTS), ESI y Culturas
-                    Digitales. <br /><br />
-                    Inspirado en el archivo transmedia del CONICET sobre el Mar
-                    Argentino, invita a reflexionar sobre cómo la tecnología
-                    produce sentidos, emociones y narrativas colectivas.
-                </p>
+            <div class="container position-relative contenido">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>
+                            UNA MIRADA CRÍTICA SOBRE LA CIENCIA Y LA TECNOLOGÍA
+                        </h2>
+                        <p>
+                            <strong>Bajo el mar, más allá del algoritmo</strong>
+                            es un proyecto interdisciplinario que articula
+                            saberes técnicos del campo del Análisis de Sistemas
+                            con perspectivas de Ciencia, Tecnología y Sociedad
+                            (CTS), ESI y Culturas Digitales. <br /><br />
+                            Inspirado en el archivo transmedia del CONICET sobre
+                            el Mar Argentino, invita a reflexionar sobre cómo la
+                            tecnología produce sentidos, emociones y narrativas
+                            colectivas.
+                        </p>
 
-                <blockquote>
-                    “La tecnología no es un instrumento neutro, sino una
-                    construcción social.”
-                    <span>— Raymond Williams (1992)</span>
-                </blockquote>
+                        <blockquote>
+                            “La tecnología no es un instrumento neutro, sino una
+                            construcción social.”
+                            <span>— Raymond Williams (1992)</span>
+                        </blockquote>
 
-                <a href="./galeria.html" class="btn">Explorá la experiencia</a>
+                        <a href="./galeria.html" class="btn"
+                            >Explorá la experiencia</a
+                        >
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- ===== SPOTIFY ===== -->
         <section id="spotify-section" class="text-center my-5">
-            <h2>🎧 Conectá con Spotify</h2>
-            <p>Iniciá sesión para descubrir la playlist “Bajo el Mar”.</p>
-            <button id="login" class="btn btn-success">Iniciar sesión con Spotify</button>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2>🎧 Conectá con Spotify</h2>
+                        <p>
+                            Iniciá sesión para descubrir la playlist “Bajo el
+                            Mar”.
+                        </p>
+                        <button id="login" class="btn-spotify">
+                            Iniciar sesión con Spotify
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <footer>
-            <p>
-                © 2025 Proyecto interdisciplinario CTS | Estuadiantes Analistas
-                de Sistemas
-            </p>
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-4">
+            <div class="container">
+                <p>
+                    © 2025 Proyecto interdisciplinario CTS | Estudiantes
+                    Analistas de Sistemas
+                </p>
+            </div>
         </footer>
-    </body>
+
+        <!-- Scripts -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"
+        ></script>
+
         <script>
-        const clientId = '5c33b10c84a54669964ad19c1f99894a';
-const redirectUri = 'https://lautaro-ruspil.github.io';
-const scope = 'user-read-private user-read-email playlist-read-private playlist-modify-public';
+            const clientId = "5c33b10c84a54669964ad19c1f99894a";
+            const redirectUri = "https://lautaro-ruspil.github.io";
+            const scope =
+                "user-read-private user-read-email playlist-read-private playlist-modify-public";
 
-// 🔐 Función para generar el código PKCE
-function generateCodeVerifier(length) {
-  let text = '';
-  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-}
+            function generateCodeVerifier(length) {
+                let text = "";
+                const possible =
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                for (let i = 0; i < length; i++) {
+                    text += possible.charAt(
+                        Math.floor(Math.random() * possible.length)
+                    );
+                }
+                return text;
+            }
 
-async function generateCodeChallenge(codeVerifier) {
-  const data = new TextEncoder().encode(codeVerifier);
-  const digest = await crypto.subtle.digest('SHA-256', data);
-  return btoa(String.fromCharCode(...new Uint8Array(digest)))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
-}
+            async function generateCodeChallenge(codeVerifier) {
+                const data = new TextEncoder().encode(codeVerifier);
+                const digest = await crypto.subtle.digest("SHA-256", data);
+                return btoa(String.fromCharCode(...new Uint8Array(digest)))
+                    .replace(/\+/g, "-")
+                    .replace(/\//g, "_")
+                    .replace(/=+$/, "");
+            }
 
-document.getElementById('login').addEventListener('click', async () => {
-  const codeVerifier = generateCodeVerifier(128);
-  const codeChallenge = await generateCodeChallenge(codeVerifier);
+            document
+                .getElementById("login")
+                .addEventListener("click", async () => {
+                    const codeVerifier = generateCodeVerifier(128);
+                    const codeChallenge = await generateCodeChallenge(
+                        codeVerifier
+                    );
 
-  localStorage.setItem('code_verifier', codeVerifier);
+                    localStorage.setItem("code_verifier", codeVerifier);
 
-  const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(
-    redirectUri
-  )}&scope=${encodeURIComponent(scope)}&code_challenge_method=S256&code_challenge=${codeChallenge}`;
+                    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(
+                        redirectUri
+                    )}&scope=${encodeURIComponent(
+                        scope
+                    )}&code_challenge_method=S256&code_challenge=${codeChallenge}`;
 
-  window.location.href = authUrl;
-});
+                    window.location.href = authUrl;
+                });
 
-// 🎯 Cuando vuelve Spotify con el "code" en la URL
-window.addEventListener('load', async () => {
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get('code');
+            window.addEventListener("load", async () => {
+                const params = new URLSearchParams(window.location.search);
+                const code = params.get("code");
 
-  if (code) {
-    const codeVerifier = localStorage.getItem('code_verifier');
+                if (code) {
+                    const codeVerifier = localStorage.getItem("code_verifier");
 
-    const body = new URLSearchParams({
-      client_id: clientId,
-      grant_type: 'authorization_code',
-      code,
-      redirect_uri: redirectUri,
-      code_verifier: codeVerifier
-    });
+                    const body = new URLSearchParams({
+                        client_id: clientId,
+                        grant_type: "authorization_code",
+                        code,
+                        redirect_uri: redirectUri,
+                        code_verifier: codeVerifier,
+                    });
 
-    const response = await fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body
-    });
+                    const response = await fetch(
+                        "https://accounts.spotify.com/api/token",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type":
+                                    "application/x-www-form-urlencoded",
+                            },
+                            body,
+                        }
+                    );
 
-    const data = await response.json();
-    console.log('Token recibido:', data.access_token);
-    localStorage.setItem('spotify_token', data.access_token);
-  }
-});
-
-   
-    </script>
+                    const data = await response.json();
+                    console.log("Token recibido:", data.access_token);
+                    localStorage.setItem("spotify_token", data.access_token);
+                }
+            });
+        </script>
+    </body>
 </html>

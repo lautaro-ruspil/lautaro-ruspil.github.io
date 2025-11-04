@@ -1,122 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Multimedia - CONICET</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
-			rel="stylesheet"
-		/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multimedia - CONICET</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
+            rel="stylesheet"
+        />
 
-		<!-- Bootstrap -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-			crossorigin="anonymous"
-		/>
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
 
-		<!-- Estilos propios -->
-		<link rel="stylesheet" href="./styles.css" />
-		<link rel="stylesheet" href="./styles/multimedia.css" />
-	</head>
-	<body>
-		<header>
-            <div class="container-header">
-                <a href="./index.html" class="logo">
-                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="./index.html" >Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./biodiversidad.html">Biodiversidad</a>
-                        </li>
-                        <li><a href="./galeria.html">Galería</a></li>
-                        <li><a href="./multimedia.html" class="active">Multimedia</a></li>
-                        <li><a href="./playlist.html">Playlist</a></li>
-                            <a href="./linea_tiempo.html">Línea de Tiempo</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./styles/multimedia.css" />
+    </head>
+    <body>
+        <header class="py-3 sticky-top shadow">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a
+                        href="./index.html"
+                        class="navbar-brand text-white fw-bold"
+                    >
+                        Bajo el Mar: Más allá del algoritmo
+                    </a>
+
+                    <!-- Botón hamburguesa -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse justify-content-end"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./biodiversidad.html" class="nav-link"
+                                    >Biodiversidad</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./galeria.html" class="nav-link"
+                                    >Galería</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    href="./multimedia.html"
+                                    class="nav-link active"
+                                    >Multimedia</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./playlist.html" class="nav-link"
+                                    >Playlist</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./linea_tiempo.html" class="nav-link"
+                                    >Línea de Tiempo</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
-		<section>
-			<p>
-				En esta sección vas a encontrar contenido audiovisual creado por
-				nuestro grupo para acercarte a la biodiversidad marina del Mar
-				Argentino. A través de imágenes, sonidos y reflexiones buscamos
-				mostrar cómo funciona este ecosistema y por qué es tan
-				importante conservarlo. El mar es mucho más que un paisaje: es
-				un espacio lleno de vida, historias y conexiones invisibles que
-				sostienen la salud del planeta. Esperamos que este material te
-				inspire a conocerlo y <strong>protegerlo</strong>.
-			</p>
-		</section>
 
-		<hr />
+        <section>
+            <p>
+                En esta sección vas a encontrar contenido audiovisual creado por
+                nuestro grupo para acercarte a la biodiversidad marina del Mar
+                Argentino. A través de imágenes, sonidos y reflexiones buscamos
+                mostrar cómo funciona este ecosistema y por qué es tan
+                importante conservarlo. El mar es mucho más que un paisaje: es
+                un espacio lleno de vida, historias y conexiones invisibles que
+                sostienen la salud del planeta. Esperamos que este material te
+                inspire a conocerlo y <strong>protegerlo</strong>.
+            </p>
+        </section>
 
-		<section>
-			<h2>Video: “La biodiversidad del Mar Argentino”</h2>
-			<p>
-				Este breve video recopila imágenes y clips que muestran la
-				belleza del mar y algunas de sus especies más representativas.
-				Desde ballenas y lobos marinos hasta bancos de peces y aves
-				costeras, cada escena refleja la riqueza natural que se esconde
-				bajo las aguas del Atlántico Sur. Las imágenes fueron
-				seleccionadas para transmitir un mensaje claro: cuidar el mar es
-				cuidar nuestro futuro.
-			</p>
-			<video
-				width="640"
-				height="360"
-				controls
-				poster="imagen.jpg"
-				preload="auto"
-				title="Video sobre biodiversidad del Mar Argentino"
-			>
-				<source src="videos/ejemplo.mp4" type="video/mp4" />
-			</video>
-			<button>
-				<a href="media/olas.mp3" download>Descargar video</a>
-			</button>
-		</section>
+        <hr />
 
-		<hr />
+        <section>
+            <h2>Video: “La biodiversidad del Mar Argentino”</h2>
+            <p>
+                Este breve video recopila imágenes y clips que muestran la
+                belleza del mar y algunas de sus especies más representativas.
+                Desde ballenas y lobos marinos hasta bancos de peces y aves
+                costeras, cada escena refleja la riqueza natural que se esconde
+                bajo las aguas del Atlántico Sur. Las imágenes fueron
+                seleccionadas para transmitir un mensaje claro: cuidar el mar es
+                cuidar nuestro futuro.
+            </p>
+            <video
+                width="640"
+                height="360"
+                controls
+                poster="imagen.jpg"
+                preload="auto"
+                title="Video sobre biodiversidad del Mar Argentino"
+            >
+                <source src="videos/ejemplo.mp4" type="video/mp4" />
+            </video>
+            <button>
+                <a href="media/olas.mp3" download>Descargar video</a>
+            </button>
+        </section>
 
-		<section>
-			<h2>Podcast: “Cuidar el mar es cuidarnos”</h2>
-			<p>
-				En este podcast de menos de dos minutos, los tres integrantes
-				del grupo conversamos sobre la importancia del Mar Argentino y
-				cómo nuestras acciones cotidianas influyen en su estado. A
-				través de una charla sencilla, mencionamos problemas como la
-				contaminación, el plástico y la pesca desmedida, pero también
-				las soluciones que todos podemos poner en práctica. Nuestro
-				objetivo fue crear un espacio de reflexión breve y accesible,
-				ideal para que cualquier persona pueda escucharlo y entender por
-				qué la biodiversidad marina es clave para el planeta.
-			</p>
-			<audio
-				src=""
-				controls
-				title="Podcast 'Cuidar el mar es cuidarnos'"
-			></audio>
-			<button>
-				<a href="media/olas.mp3" download>Descargar podcast</a>
-			</button>
-		</section>
+        <hr />
 
-		<footer>
-			<p>
-				© 2025 Proyecto interdisciplinario CTS | Diseño y desarrollo:
-				Estudiantes de Analista en Sistemas
-			</p>
-		</footer>
-	</body>
+        <section>
+            <h2>Podcast: “Cuidar el mar es cuidarnos”</h2>
+            <p>
+                En este podcast de menos de dos minutos, los tres integrantes
+                del grupo conversamos sobre la importancia del Mar Argentino y
+                cómo nuestras acciones cotidianas influyen en su estado. A
+                través de una charla sencilla, mencionamos problemas como la
+                contaminación, el plástico y la pesca desmedida, pero también
+                las soluciones que todos podemos poner en práctica. Nuestro
+                objetivo fue crear un espacio de reflexión breve y accesible,
+                ideal para que cualquier persona pueda escucharlo y entender por
+                qué la biodiversidad marina es clave para el planeta.
+            </p>
+            <audio
+                src=""
+                controls
+                title="Podcast 'Cuidar el mar es cuidarnos'"
+            ></audio>
+            <button>
+                <a href="media/olas.mp3" download>Descargar podcast</a>
+            </button>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-4">
+            <div class="container">
+                <p>
+                    © 2025 Proyecto interdisciplinario CTS | Estudiantes
+                    Analistas de Sistemas
+                </p>
+            </div>
+        </footer>
+        <!-- Scripts -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>

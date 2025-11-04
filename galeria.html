@@ -1,114 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Galería - Bajo el mar, más allá del algoritmo</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
-			rel="stylesheet"
-		/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galería - Bajo el mar, más allá del algoritmo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Prata&display=swap"
+            rel="stylesheet"
+        />
 
-		<!-- Bootstrap -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-			crossorigin="anonymous"
-		/>
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
 
-		<!-- Estilos propios -->
-		<link rel="stylesheet" href="./styles.css" />
-		<link rel="stylesheet" href="./styles/galeria.css" />
-	</head>
-	<body>
-		<header>
-            <div class="container-header">
-                <a href="./index.html" class="logo">
-                    <h1>Bajo el Mar: Más allá del algoritmo</h1>
-                </a>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="./index.html" >Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./biodiversidad.html">Biodiversidad</a>
-                        </li>
-                        <li><a href="./galeria.html" class="active">Galería</a></li>
-                        <li><a href="./multimedia.html">Multimedia</a></li>
-                        <li><a href="./playlist.html">Playlist</a></li>
-                            <a href="./linea_tiempo.html">Línea de Tiempo</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./styles/galeria.css" />
+    </head>
+    <body>
+        <header class="py-3 sticky-top shadow">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a
+                        href="./index.html"
+                        class="navbar-brand text-white fw-bold"
+                    >
+                        Bajo el Mar: Más allá del algoritmo
+                    </a>
+
+                    <!-- Botón hamburguesa -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse justify-content-end"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./biodiversidad.html" class="nav-link"
+                                    >Biodiversidad</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./galeria.html" class="nav-link active"
+                                    >Galería</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./multimedia.html" class="nav-link"
+                                    >Multimedia</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./playlist.html" class="nav-link"
+                                    >Playlist</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="./linea_tiempo.html" class="nav-link"
+                                    >Línea de Tiempo</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
 
-		<!-- ====== SECCIÓN DE GALERÍA ====== -->
-		<section id="figuritas">
-			<h2>Especies del Mar Argentino</h2>
-			<p>
-				Explorá las especies que habitan nuestro mar y descubrí cómo
-				cada una forma parte de un ecosistema único. Cada figurita está
-				inspirada en los recursos del archivo transmedia del CONICET.
-			</p>
+        <!-- ====== SECCIÓN DE GALERÍA ====== -->
+        <section id="figuritas">
+            <h2>Especies del Mar Argentino</h2>
+            <p>
+                Explorá las especies que habitan nuestro mar y descubrí cómo
+                cada una forma parte de un ecosistema único. Cada figurita está
+                inspirada en los recursos del archivo transmedia del CONICET.
+            </p>
 
-			<div class="container-galeria">
-				<div
-					id="carouselFiguritas"
-					class="carousel slide"
-					data-bs-ride="carousel"
-					data-bs-interval="5000"
-				>
-					<div
-						class="carousel-indicators"
-						id="carousel-indicators"
-					></div>
+            <div class="container-galeria">
+                <div
+                    id="carouselFiguritas"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                    data-bs-interval="5000"
+                >
+                    <div
+                        class="carousel-indicators"
+                        id="carousel-indicators"
+                    ></div>
 
-					<div
-						class="carousel-inner"
-						id="carousel-inner-content"
-					></div>
+                    <div
+                        class="carousel-inner"
+                        id="carousel-inner-content"
+                    ></div>
 
-					<button
-						class="carousel-control-prev"
-						type="button"
-						data-bs-target="#carouselFiguritas"
-						data-bs-slide="prev"
-					>
-						<span
-							class="carousel-control-prev-icon"
-							aria-hidden="true"
-						></span>
-						<span class="visually-hidden">Anterior</span>
-					</button>
-					<button
-						class="carousel-control-next"
-						type="button"
-						data-bs-target="#carouselFiguritas"
-						data-bs-slide="next"
-					>
-						<span
-							class="carousel-control-next-icon"
-							aria-hidden="true"
-						></span>
-						<span class="visually-hidden">Siguiente</span>
-					</button>
-				</div>
-				<!-- Aca se van a renderizar las card de las figuritas -->
-			</div>
-		</section>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselFiguritas"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselFiguritas"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+                <!-- Aca se van a renderizar las card de las figuritas -->
+            </div>
+        </section>
 
-		<footer>
-			<p>
-				© 2025 Proyecto interdisciplinario CTS | Diseño y desarrollo:
-				Estudiantes de Analista en Sistemas
-			</p>
-		</footer>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="./scripts/script.js"></script>
-	</body>
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-4">
+            <div class="container">
+                <p>
+                    © 2025 Proyecto interdisciplinario CTS | Estudiantes
+                    Analistas de Sistemas
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/script.js"></script>
+    </body>
 </html>

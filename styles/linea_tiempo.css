@@ -2,21 +2,24 @@
 #linea-tiempo {
     background: linear-gradient(180deg, #002b57 0%, #004c8c 100%);
     color: white;
-    padding: 5em 2em;
+    /* Ajuste de padding responsivo con clamp */
+    padding: clamp(3em, 8vw, 6em) clamp(1em, 5vw, 4em);
     text-align: center;
     min-height: 100vh;
 }
 
 #linea-tiempo h2 {
     text-transform: uppercase;
-    font-size: 2.5rem;
+    /* Fuente responsiva con clamp: min 1.8rem, preferido 2.5rem, max 3.5rem */
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
     font-weight: 700;
     color: var(--celeste_conicet);
     margin-bottom: 1em;
 }
 
 #linea-tiempo p {
-    font-size: 1.1rem;
+    /* Fuente responsiva con clamp: min 0.95rem, preferido 1.1rem, max 1.25rem */
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
     max-width: 850px;
     margin: 0 auto 3em;
     line-height: 1.8;
@@ -29,10 +32,10 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 2em 0;
-    z-index: 0; /* contexto base */
+    z-index: 0;
 }
 
-/* Línea central */
+/* Línea central (sin cambios) */
 .timeline::after {
     content: "";
     position: absolute;
@@ -43,16 +46,16 @@
     left: 50%;
     margin-left: -2px;
     opacity: 0.9;
-    z-index: 1; /* detrás de los puntos */
+    z-index: 1;
 }
 
-/* ====== ÍTEMS ====== */
+/* ====== ÍTEMS (sin cambios) ====== */
 .timeline-item {
     padding: 2.5em 0;
     position: relative;
     width: 50%;
     animation: fadeUp 0.8s ease both;
-    z-index: 2; /* crea un nuevo contexto de apilamiento */
+    z-index: 2;
 }
 
 .timeline-item.left {
@@ -75,7 +78,7 @@
     width: 85%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    margin-top: 10px; /* separación vertical */
+    margin-top: 10px;
 }
 
 .timeline-content:hover {
@@ -83,16 +86,16 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ====== ESPACIADO LATERAL EQUILIBRADO ====== */
+/* ====== ESPACIADO LATERAL EQUILIBRADO (sin cambios) ====== */
 .timeline-item.left .timeline-content {
     margin-left: 8%;
 }
 
 .timeline-item.right .timeline-content {
-    margin-left: 7%; /* empuja un poco hacia adentro */
+    margin-left: 7%;
 }
 
-/* ====== NODOS ====== */
+/* ====== NODOS (sin cambios) ====== */
 .timeline-item::before {
     content: "";
     position: absolute;
@@ -104,7 +107,7 @@
     background: radial-gradient(circle, #ff6b6b 30%, #ffb3b3 90%);
     border: 3px solid #fff;
     box-shadow: 0 0 14px rgba(255, 107, 107, 0.9);
-    z-index: 999; /* ahora sí, siempre encima de la línea */
+    z-index: 999;
 }
 
 .timeline-item.right::before {
@@ -112,25 +115,28 @@
     right: auto;
 }
 
-/* ====== TEXTO ====== */
+/* ====== TEXTO CONTENIDO (con clamp) ====== */
 .timeline-content h3 {
     color: var(--celeste_conicet);
     font-weight: 700;
-    font-size: 1.4rem;
+    /* Fuente responsiva: min 1.2rem, preferido 1.4rem, max 1.6rem */
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
     margin-bottom: 0.3em;
 }
 
 .timeline-content h4 {
-    font-size: 1.1rem;
+    /* Fuente responsiva: min 1rem, preferido 1.1rem, max 1.25rem */
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #fff;
     margin-bottom: 0.8em;
     font-weight: 600;
 }
 
 .timeline-content p {
-    color: #dceeff;
-    font-size: 0.98rem;
+    /* Fuente responsiva: min 0.9rem, preferido 0.98rem, max 1.1rem */
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     line-height: 1.6;
+    color: #dceeff;
 }
 
 .timeline-content blockquote {
@@ -140,58 +146,52 @@
     margin-top: 1em;
     padding-left: 1em;
     opacity: 0.9;
+    /* Mantenemos el tamaño base de p */
+    font-size: inherit;
 }
 
-/* ====== RESPONSIVE ====== */
+/* ====== RESPONSIVE - Móviles (ajustes al CSS existente) ====== */
 @media (max-width: 768px) {
+    /* Línea central se mueve a la izquierda */
     .timeline::after {
         left: 20px;
     }
 
+    /* Los ítems ocupan el 100% y se les da un padding para la línea */
     .timeline-item {
         width: 100%;
-        padding-left: 40px;
+        padding-left: 40px; /* Espacio para la línea y el nodo */
+        padding-right: 0;
     }
 
+    /* Los ítems de la derecha se mueven a la izquierda */
     .timeline-item.right {
         left: 0;
     }
 
-    .timeline-item::before {
-        left: 10px;
+    /* El nodo se alinea a la izquierda para todos los ítems */
+    .timeline-item::before,
+    .timeline-item.right::before {
+        left: 10px; /* Posicionado junto a la nueva línea central */
         right: auto;
     }
 
+    /* El contenido del item se ajusta */
     .timeline-content {
-        width: 90%;
-        margin: 0 0 0 2em;
+        width: 100%; /* Ocupa el ancho disponible */
+        margin: 0; /* Reiniciamos márgenes */
     }
-}
 
-/* ====== ANIMACIONES ====== */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
+    /* Eliminamos el espaciado extra que generaba margen en el modo escritorio */
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        /* Distancia del borde derecho de la pantalla */
+        margin-left: 0;
+        margin-right: 0;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-.timeline-item:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.timeline-item:nth-child(3) {
-    animation-delay: 0.4s;
-}
-.timeline-item:nth-child(4) {
-    animation-delay: 0.6s;
-}
-.timeline-item:nth-child(5) {
-    animation-delay: 0.8s;
-}
-.timeline-item:nth-child(6) {
-    animation-delay: 1s;
+    /* En pantallas muy pequeñas, reducimos el padding para el texto */
+    .timeline-content {
+        padding: 1.2em 1.5em;
+    }
 }

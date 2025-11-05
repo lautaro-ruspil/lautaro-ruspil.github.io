@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Galería - Bajo el mar, más allá del algoritmo</title>
+        <title>Galería - Bajo el Mar: Más allá del algoritmo</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -88,58 +88,66 @@
             </nav>
         </header>
 
-        <!-- ====== SECCIÓN DE GALERÍA ====== -->
-        <section id="figuritas">
-            <h2>Especies del Mar Argentino</h2>
-            <p>
-                Explorá las especies que habitan nuestro mar y descubrí cómo
-                cada una forma parte de un ecosistema único. Cada figurita está
-                inspirada en los recursos del archivo transmedia del CONICET.
-            </p>
-
-            <div class="container-galeria">
-                <div
-                    id="carouselFiguritas"
-                    class="carousel slide"
-                    data-bs-ride="carousel"
-                    data-bs-interval="5000"
-                >
-                    <div
-                        class="carousel-indicators"
-                        id="carousel-indicators"
-                    ></div>
-
-                    <div
-                        class="carousel-inner"
-                        id="carousel-inner-content"
-                    ></div>
-
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#carouselFiguritas"
-                        data-bs-slide="prev"
-                    >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#carouselFiguritas"
-                        data-bs-slide="next"
-                    >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
+        <!-- ===== SECCIÓN DE GALERÍA ===== -->
+        <section id="figuritas" class="py-5">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <h2>Especies del Mar Argentino</h2>
+                        <p>
+                            Explorá las especies que habitan nuestro mar y
+                            descubrí cómo cada una forma parte de un ecosistema
+                            único. Cada figurita está inspirada en los recursos
+                            del archivo transmedia del CONICET.
+                        </p>
+                    </div>
                 </div>
-                <!-- Aca se van a renderizar las card de las figuritas -->
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div
+                            id="carouselFiguritas"
+                            class="carousel slide carousel-fade"
+                            data-bs-ride="carousel"
+                            data-bs-interval="5000"
+                        >
+                            <div
+                                class="carousel-indicators"
+                                id="carousel-indicators"
+                            ></div>
+
+                            <div
+                                class="carousel-inner"
+                                id="carousel-inner-content"
+                            ></div>
+
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselFiguritas"
+                                data-bs-slide="prev"
+                            >
+                                <span
+                                    class="carousel-control-prev-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselFiguritas"
+                                data-bs-slide="next"
+                            >
+                                <span
+                                    class="carousel-control-next-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

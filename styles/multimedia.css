@@ -1,68 +1,129 @@
-/* ====== ESTILOS DE MULTIMEDIA ====== */
+/* ================================
+   MULTIMEDIA - ESTILOS ESPECÍFICOS
+   ================================ */
 
-section p {
-	line-height: 1.6;
-	text-align: center;
-	max-width: 80%;
-	margin: 20px auto;
-}
-
-section h2 {
-	text-align: center;
-	color: var(--azul_grisaceo);
-	font-weight: 700;
-	margin: 30px auto 15px;
-	font-size: 1.8rem;
-}
-
-hr {
-	border: none;
-	height: 2px;
-	background-color: var(--coral_biologico);
-	width: 90%;
-	margin: 40px auto;
-}
-
-video,
-audio {
-	border: 3px solid var(--verde_algal);
-	border-radius: 10px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-	display: block;
-	margin: 20px auto;
-	transition: transform 0.3s, box-shadow 0.3s;
-}
-
-video:hover,
-audio:hover {
-	transform: scale(1.03);
-	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
-}
-
-button {
-	background-color: var(--celeste_conicet);
-	color: white;
-	border: none;
-	border-radius: 8px;
-	padding: 0.6em 1.2em;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	display: block;
-	margin: 15px auto 30px;
-}
-
-button:hover {
-	background-color: var(--coral_biologico);
-}
-
-button a {
-	color: white;
-	text-decoration: none;
-	font-family: "Poppins", sans-serif;
-}
-
+/* CONTENEDOR PRINCIPAL */
 .multimedia-contenido {
-	padding-top: 2em;
-	background-color: var(--gris_perla);
+    background-color: var(--gris_perla, #f5f6f7);
+    font-family: "Poppins", sans-serif;
+    color: #222;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* INTRO */
+.intro p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1vw + 0.3rem, 1.15rem);
+    line-height: 1.8;
+}
+
+/* TÍTULOS DE SECCIÓN */
+.multimedia-contenido h2 {
+    text-align: center;
+    color: var(--azul_oceano_profundo, #1c4e80);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    margin: 1.5em auto 0.8em;
+    font-size: clamp(1.4rem, 2vw + 0.6rem, 2.2rem);
+}
+
+/* PÁRRAFOS */
+.multimedia-contenido section p {
+    max-width: 900px;
+    margin: 0 auto 1.8rem;
+    text-align: center;
+}
+
+/* ===== VIDEO Y AUDIO ===== */
+
+/* CONTENEDOR DE VIDEO RESPONSIVO */
+.video-section video,
+.podcast-section audio {
+    display: block;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Asegurar proporción de video */
+.video-section video {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #000;
+}
+
+/* BOTONES */
+.video-section button,
+.podcast-section button {
+    border: none;
+    background-color: var(--azul_grisaceo, #1c4e80);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.video-section button:hover,
+.podcast-section button:hover {
+    background-color: transparent;
+    color: var(--azul_grisaceo, #1c4e80);
+    border: 2px solid var(--azul_grisaceo, #1c4e80);
+    transform: translateY(-2px);
+}
+
+/* ENLACES DENTRO DE BOTONES */
+.video-section button a,
+.podcast-section button a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ===== HR ===== */
+.multimedia-contenido hr {
+    max-width: 900px;
+    margin: 3rem auto;
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESPONSIVIDAD ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .multimedia-contenido {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .video-section video,
+    .podcast-section audio {
+        max-width: 100%;
+    }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+    .multimedia-contenido h2 {
+        font-size: 1.4rem;
+    }
+
+    .multimedia-contenido section p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .video-section button,
+    .podcast-section button {
+        width: 100%;
+        margin-top: 0.8rem;
+    }
 }

@@ -38,8 +38,24 @@
 
 /* ===== VIDEO Y AUDIO ===== */
 
-/* CONTENEDOR DE VIDEO RESPONSIVO */
-.video-section video,
+/* Contenedor de video responsivo con Bootstrap ratio */
+.video-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Asegura que el iframe llene todo el contenedor */
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Audio */
 .podcast-section audio {
     display: block;
     margin: 1.5rem auto;
@@ -49,17 +65,9 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
-/* Asegurar proporción de video */
-.video-section video {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background-color: #000;
-}
-
-/* BOTONES */
-.video-section button,
-.podcast-section button {
-    border: none;
+/* ===== BOTONES ===== */
+.btn-descargar {
+    display: inline-block;
     background-color: var(--azul_grisaceo, #1c4e80);
     color: #fff;
     font-family: "Montserrat", sans-serif;
@@ -67,32 +75,26 @@
     text-transform: uppercase;
     padding: 0.7rem 1.6rem;
     border-radius: 50px;
+    text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.video-section button:hover,
-.podcast-section button:hover {
+.btn-descargar:hover {
     background-color: transparent;
     color: var(--azul_grisaceo, #1c4e80);
     border: 2px solid var(--azul_grisaceo, #1c4e80);
     transform: translateY(-2px);
 }
 
-/* ENLACES DENTRO DE BOTONES */
-.video-section button a,
-.podcast-section button a {
-    color: inherit;
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* ===== HR ===== */
-.multimedia-contenido hr {
-    max-width: 900px;
-    margin: 3rem auto;
-    border: none;
-    border-top: 2px solid rgba(0, 0, 0, 0.1);
+/* Responsividad */
+@media (max-width: 576px) {
+    .btn-descargar {
+        display: block;
+        width: 90%;
+        margin: 1rem auto;
+        text-align: center;
+    }
 }
 
 /* ===== RESPONSIVIDAD ===== */
